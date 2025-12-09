@@ -13,347 +13,177 @@
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            /* Arkaplan resmi – istersen kendi linkini buraya yaz */
+            font-family: Arial, sans-serif;
             background-image: url("https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #f5f5f5;
+            color: white;
+            padding: 20px;
         }
 
         .overlay {
-            min-height: 100vh;
-            width: 100%;
-            background: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.7),
-                rgba(0, 0, 0, 0.9)
-            );
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 32px 12px 40px;
-        }
-
-        .card {
-            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 16px;
             max-width: 1100px;
-            background: rgba(15, 15, 25, 0.95);
-            border-radius: 18px;
-            padding: 24px 20px 28px;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        @media (min-width: 768px) {
-            .card {
-                padding: 28px 32px 32px;
-            }
-        }
-
-        .header {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 24px;
-            text-align: center;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-size: 12px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            background: rgba(0, 123, 255, 0.18);
-            border: 1px solid rgba(0, 123, 255, 0.6);
-            color: #cae4ff;
-            margin: 0 auto;
+            margin: auto;
         }
 
         h1 {
-            font-size: 26px;
-            font-weight: 700;
-        }
-
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 32px;
-            }
-        }
-
-        .subtitle {
-            font-size: 14px;
-            color: #c4c4c4;
-        }
-
-        .grid {
-            display: grid;
-            gap: 20px;
-        }
-
-        @media (min-width: 900px) {
-            .grid {
-                grid-template-columns: 1.4fr 1fr;
-                align-items: start;
-            }
-        }
-
-        /* Bilgi kutusu / video alanı */
-        .info-box {
-            background: radial-gradient(circle at top left, #1b3b6b 0, #101320 45%, #070814 100%);
-            border-radius: 16px;
-            padding: 16px 16px 18px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .info-box h2 {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .info-box p {
-            font-size: 14px;
-            color: #d3d3d3;
+            text-align: center;
             margin-bottom: 10px;
+            font-size: 32px;
         }
 
-        .tag-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 6px;
-        }
-
-        .tag {
-            font-size: 11px;
-            padding: 3px 8px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            opacity: 0.85;
-        }
-
-        .video-wrapper {
-            margin-top: 12px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            background: #000;
-        }
-
-        .video-wrapper iframe {
-            width: 100%;
-            height: 220px;
-            border: none;
-        }
-
-        @media (min-width: 768px) {
-            .video-wrapper iframe {
-                height: 260px;
-            }
-        }
-
-        /* Tablo alanı */
-        .table-card {
-            background: #101320;
-            border-radius: 16px;
-            padding: 14px 12px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .table-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            gap: 8px;
-        }
-
-        .table-header h2 {
-            font-size: 18px;
-        }
-
-        .table-header small {
-            font-size: 11px;
-            color: #a7a7a7;
-        }
-
-        .table-wrapper {
-            max-height: 420px;
-            overflow-y: auto;
-            overflow-x: auto;
-            border-radius: 10px;
+        p.subtitle {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #ddd;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 460px;
+            margin-top: 16px;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         thead {
-            background: #191c2b;
-            position: sticky;
-            top: 0;
-            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.6);
         }
 
         th, td {
-            padding: 8px 10px;
-            font-size: 13px;
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 14px;
         }
 
         th {
-            font-weight: 600;
-            color: #e8e8e8;
+            font-weight: bold;
+            color: #ffd700;
         }
 
-        tbody tr {
-            transition: background 0.18s ease, transform 0.12s ease;
-        }
-
-        tbody tr:hover {
-            background: rgba(255, 255, 255, 0.04);
-            transform: translateY(-1px);
-        }
-
-        td span.badge-small {
-            font-size: 11px;
-            padding: 2px 6px;
-            border-radius: 999px;
-            background: rgba(0, 200, 120, 0.15);
-            border: 1px solid rgba(0, 200, 120, 0.6);
-            color: #b8ffe1;
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.08);
         }
 
         a {
             color: #4da6ff;
             text-decoration: none;
+            font-weight: bold;
         }
 
         a:hover {
             text-decoration: underline;
         }
 
-        .footer {
-            margin-top: 18px;
+        td span.badge-small {
+            background: rgba(0, 200, 120, 0.25);
+            border: 1px solid rgba(0, 200, 120, 0.6);
+            padding: 2px 6px;
+            border-radius: 6px;
+            color: #b8ffe1;
+            font-size: 12px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 12px;
+            margin-top: 16px;
+            border: none;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
             text-align: center;
-            font-size: 11px;
-            color: #a0a0a0;
-            opacity: 0.9;
+            color: #ccc;
         }
     </style>
 </head>
+
 <body>
+
 <div class="overlay">
-    <main class="card">
-        <!-- ÜST BAŞLIK -->
-        <header class="header">
-            <span class="badge">MLBB • Ucuz Elmas Rehberi</span>
-            <h1>Mobile Legends Elmas Karşılaştırması</h1>
-            <p class="subtitle">
-                Türkiye’deki popüler sitelerde <strong>Mobile Legends</strong> elmas fiyatlarını
-                tek ekranda karşılaştır. Hızlıca en uygun fiyatı bul, linke tıkla ve siteye git.
-            </p>
-        </header>
 
-        <section class="grid">
-            <!-- SOL: Bilgi + video -->
-            <section class="info-box">
-                <h2>Nasıl Kullanılır?</h2>
-                <p>
-                    Aşağıdaki tablodan bir <strong>site adı</strong> seç,
-                    yanındaki <strong>“Siteye git”</strong> linkine tıkla.
-                    Fiyatlar ve kampanyalar her sitenin kendi sayfasındadır,
-                    burası sadece <strong>karşılaştırma rehberi</strong> olarak çalışır.
-                </p>
+    <h1>Mobile Legends Elmas Karşılaştırma</h1>
+    <p class="subtitle">Türkiye’deki en popüler sitelerde Mobile Legends elmas fiyatlarını tek ekranda karşılaştır!</p>
 
-                <div class="tag-row">
-                    <span class="tag">Mobile Legends: Bang Bang</span>
-                    <span class="tag">Türk Lirası (₺)</span>
-                    <span class="tag">Hızlı erişim</span>
-                    <span class="tag">Resmî mağazalar</span>
-                </div>
+    <!-- Video -->
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
 
-                <!-- Küçük video alanı – istersen YouTube embed koy -->
-                <div class="video-wrapper">
-                    <!-- KENDİ VİDEONU KOYMAK İSTERSEN, aşağıdaki src linkini değiştir -->
-                    <iframe
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        title="Mobile Legends Tanıtım"
-                        allowfullscreen
-                    ></iframe>
-                </div>
-            </section>
+    <!-- Tablonun yeni versiyonu -->
+    <table>
+        <thead>
+            <tr>
+                <th>Site Adı</th>
+                <th>Açıklama</th>
+                <th>Link</th>
+                <th>Not</th>
+                <th>Güncel Fiyat</th>
+                <th>Eski Fiyat</th>
+                <th>İndirim</th>
+                <th>Stok</th>
+            </tr>
+        </thead>
 
-            <!-- SAĞ: Tablo -->
-            <section class="table-card">
-                <div class="table-header">
-                    <h2>Site Listesi</h2>
-                    <small>İstediğin siteleri ekleyip / silebilirsin.</small>
-                </div>
+        <tbody>
+            <tr>
+                <td>ByNoGame</td>
+                <td>Güvenilir elmas satış platformu</td>
+                <td><a href="https://www.bynogame.com" target="_blank">Siteye Git</a></td>
+                <td><span class="badge-small">Onaylı Satıcı</span></td>
+                <td>349.99 TL</td>
+                <td><del>449.99 TL</del></td>
+                <td>%22 İndirim</td>
+                <td>Var</td>
+            </tr>
 
-                <div class="table-wrapper">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Site Adı</th>
-                            <th>Kısa Açıklama</th>
-                            <th>Link</th>
-                            <th>Not</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <!-- Her TR bir site – isimleri & linkleri kendine göre değiştir -->
-                        <tr>
-                            <td>ByNoGame</td>
-                            <td>Türkiye'de popüler oyun & elmas satış sitesi</td>
-                            <td><a href="https://www.bynogame.com" target="_blank">Siteye git</a></td>
-                            <td><span class="badge-small">Sık kampanya</span></td>
-                        </tr>
-                        <tr>
-                            <td>Dijipin</td>
-                            <td>MLBB elmas & kod satışı</td>
-                            <td><a href="https://www.dijipin.com" target="_blank">Siteye git</a></td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>GameSatış</td>
-                            <td>Birçok oyun için TL ile elmas / skin</td>
-                            <td><a href="https://www.gamesatis.com" target="_blank">Siteye git</a></td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>Kabarsakal Online</td>
-                            <td>Mobile Legends elmas satışı</td>
-                            <td><a href="https://kabarsakalonline.com" target="_blank">Siteye git</a></td>
-                            <td>-</td>
-                        </tr>
+            <tr>
+                <td>Dijipin</td>
+                <td>Uygun fiyatlı MLBB elmas</td>
+                <td><a href="https://www.dijipin.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>74.99 TL</td>
+                <td><del>89.99 TL</del></td>
+                <td>%17 İndirim</td>
+                <td>Var</td>
+            </tr>
 
-                        <!-- Yeni site eklemek istersen, şu bloğu kopyala:
-                        <tr>
-                            <td>Site Adı</td>
-                            <td>Kısa açıklama</td>
-                            <td><a href="https://siteadresi.com" target="_blank">Siteye git</a></td>
-                            <td>Not veya etiket</td>
-                        </tr>
-                        -->
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-        </section>
+            <tr>
+                <td>GameSatış</td>
+                <td>Hızlı teslimat, güvenilir mağaza</td>
+                <td><a href="https://www.gamesatis.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>16.99 TL</td>
+                <td><del>21.99 TL</del></td>
+                <td>%11 İndirim</td>
+                <td>Var</td>
+            </tr>
 
-        <footer class="footer">
-            Bu site sadece <strong>fiyat karşılaştırma rehberi</strong>dir. Tüm satın alma işlemleri ilgili sitelerin
-            kendi sayfalarında gerçekleşir.
-        </footer>
-    </main>
+            <tr>
+                <td>Kabarsakal Online</td>
+                <td>Kampanyalı MLBB elmas</td>
+                <td><a href="https://kabarsakalonline.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>57.99 TL</td>
+                <td><del>70.99 TL</del></td>
+                <td>%14 İndirim</td>
+                <td>Var</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <footer>
+        Bu site sadece fiyat karşılaştırma rehberidir. Satın alma işlemleri ilgili sitelerin kendi sayfalarında yapılır.
+    </footer>
+
 </div>
+
 </body>
 </html>
-background-image: url("https://images.pexels.com/...");
