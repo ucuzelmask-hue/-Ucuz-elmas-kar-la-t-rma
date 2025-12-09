@@ -19,56 +19,135 @@
             background-position: center;
             background-attachment: fixed;
             color: white;
-            padding: 20px;
+            padding: 16px;
         }
 
         .overlay {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.82);
+            padding: 18px 14px 20px;
+            border-radius: 18px;
             max-width: 1100px;
             margin: auto;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        @media (min-width: 768px) {
+            .overlay {
+                padding: 22px 22px 24px;
+            }
+        }
+
+        /* ÜST BAR */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .logo-text {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+
+        .logo-text span {
+            color: #ffd700;
+        }
+
+        .tag-pill {
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            opacity: 0.9;
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 10px;
-            font-size: 32px;
+            margin-bottom: 8px;
+            font-size: 26px;
+        }
+
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 30px;
+            }
         }
 
         p.subtitle {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             font-size: 14px;
             color: #ddd;
+        }
+
+        iframe {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            margin-top: 10px;
+            border: none;
+        }
+
+        @media (min-width: 768px) {
+            iframe {
+                height: 260px;
+            }
+        }
+
+        .table-container {
+            margin-top: 18px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(10, 10, 20, 0.95);
+        }
+
+        .table-scroll {
+            overflow-x: auto;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 16px;
-            border-radius: 8px;
-            overflow: hidden;
+            min-width: 650px;
         }
 
         thead {
-            background-color: rgba(0, 0, 0, 0.6);
+            background-color: rgba(0, 0, 0, 0.75);
         }
 
         th, td {
             padding: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             text-align: left;
-            font-size: 14px;
+            font-size: 13px;
         }
 
         th {
             font-weight: bold;
             color: #ffd700;
+            white-space: nowrap;
         }
 
-        tr:hover {
-            background-color: rgba(255, 255, 255, 0.08);
+        tbody tr {
+            transition: background 0.18s ease, transform 0.12s ease;
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.06);
+            transform: translateY(-1px);
+        }
+
+        /* En ucuz satır vurgusu */
+        tr.best {
+            background: rgba(0, 180, 120, 0.18);
+        }
+
+        tr.best:hover {
+            background: rgba(0, 200, 140, 0.28);
         }
 
         a {
@@ -83,26 +162,19 @@
 
         td span.badge-small {
             background: rgba(0, 200, 120, 0.25);
-            border: 1px solid rgba(0, 200, 120, 0.6);
+            border: 1px solid rgba(0, 200, 120, 0.7);
             padding: 2px 6px;
             border-radius: 6px;
             color: #b8ffe1;
-            font-size: 12px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 250px;
-            border-radius: 12px;
-            margin-top: 16px;
-            border: none;
+            font-size: 11px;
         }
 
         footer {
-            margin-top: 20px;
-            font-size: 12px;
+            margin-top: 16px;
+            font-size: 11px;
             text-align: center;
             color: #ccc;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -111,76 +183,94 @@
 
 <div class="overlay">
 
+    <!-- ÜST BAR -->
+    <div class="top-bar">
+        <div class="logo-text">
+            MLBB <span>UCUZ ELMAS</span>
+        </div>
+        <div class="tag-pill">
+            Beta sürüm • Galip Abi
+        </div>
+    </div>
+
     <h1>Mobile Legends Elmas Karşılaştırma</h1>
-    <p class="subtitle">Türkiye’deki en popüler sitelerde Mobile Legends elmas fiyatlarını tek ekranda karşılaştır!</p>
+    <p class="subtitle">
+        Türkiye’deki popüler sitelerde <strong>Mobile Legends</strong> elmas fiyatlarını
+        tek ekranda gör. En uygun fiyatlı olan satır yeşil tonla işaretlidir.
+    </p>
 
     <!-- Video -->
     <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
 
-    <!-- Tablonun yeni versiyonu -->
-    <table>
-        <thead>
-            <tr>
-                <th>Site Adı</th>
-                <th>Açıklama</th>
-                <th>Link</th>
-                <th>Not</th>
-                <th>Güncel Fiyat</th>
-                <th>Eski Fiyat</th>
-                <th>İndirim</th>
-                <th>Stok</th>
-            </tr>
-        </thead>
+    <!-- TABLO -->
+    <div class="table-container">
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Site Adı</th>
+                        <th>Açıklama</th>
+                        <th>Link</th>
+                        <th>Not</th>
+                        <th>Güncel Fiyat</th>
+                        <th>Eski Fiyat</th>
+                        <th>İndirim</th>
+                        <th>Stok</th>
+                    </tr>
+                </thead>
 
-        <tbody>
-            <tr>
-                <td>ByNoGame</td>
-                <td>Güvenilir elmas satış platformu</td>
-                <td><a href="https://www.bynogame.com" target="_blank">Siteye Git</a></td>
-                <td><span class="badge-small">Onaylı Satıcı</span></td>
-                <td>349.99 TL</td>
-                <td><del>449.99 TL</del></td>
-                <td>%22 İndirim</td>
-                <td>Var</td>
-            </tr>
+                <tbody>
+                    <!-- En ucuz satır: best -->
+                    <tr class="best">
+                        <td>GameSatış</td>
+                        <td>Hızlı teslimat, güvenilir mağaza</td>
+                        <td><a href="https://www.gamesatis.com" target="_blank">Siteye Git</a></td>
+                        <td><span class="badge-small">En Ucuz</span></td>
+                        <td>16.99 TL</td>
+                        <td><del>21.99 TL</del></td>
+                        <td>%11 İndirim</td>
+                        <td>Var</td>
+                    </tr>
 
-            <tr>
-                <td>Dijipin</td>
-                <td>Uygun fiyatlı MLBB elmas</td>
-                <td><a href="https://www.dijipin.com" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>74.99 TL</td>
-                <td><del>89.99 TL</del></td>
-                <td>%17 İndirim</td>
-                <td>Var</td>
-            </tr>
+                    <tr>
+                        <td>ByNoGame</td>
+                        <td>Güvenilir elmas satış platformu</td>
+                        <td><a href="https://www.bynogame.com" target="_blank">Siteye Git</a></td>
+                        <td><span class="badge-small">Onaylı Satıcı</span></td>
+                        <td>349.99 TL</td>
+                        <td><del>449.99 TL</del></td>
+                        <td>%22 İndirim</td>
+                        <td>Var</td>
+                    </tr>
 
-            <tr>
-                <td>GameSatış</td>
-                <td>Hızlı teslimat, güvenilir mağaza</td>
-                <td><a href="https://www.gamesatis.com" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>16.99 TL</td>
-                <td><del>21.99 TL</del></td>
-                <td>%11 İndirim</td>
-                <td>Var</td>
-            </tr>
+                    <tr>
+                        <td>Dijipin</td>
+                        <td>Uygun fiyatlı MLBB elmas</td>
+                        <td><a href="https://www.dijipin.com" target="_blank">Siteye Git</a></td>
+                        <td>-</td>
+                        <td>74.99 TL</td>
+                        <td><del>89.99 TL</del></td>
+                        <td>%17 İndirim</td>
+                        <td>Var</td>
+                    </tr>
 
-            <tr>
-                <td>Kabarsakal Online</td>
-                <td>Kampanyalı MLBB elmas</td>
-                <td><a href="https://kabarsakalonline.com" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>57.99 TL</td>
-                <td><del>70.99 TL</del></td>
-                <td>%14 İndirim</td>
-                <td>Var</td>
-            </tr>
-        </tbody>
-    </table>
+                    <tr>
+                        <td>Kabarsakal Online</td>
+                        <td>Kampanyalı MLBB elmas</td>
+                        <td><a href="https://kabarsakalonline.com" target="_blank">Siteye Git</a></td>
+                        <td>-</td>
+                        <td>57.99 TL</td>
+                        <td><del>70.99 TL</del></td>
+                        <td>%14 İndirim</td>
+                        <td>Var</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 
     <footer>
-        Bu site sadece fiyat karşılaştırma rehberidir. Satın alma işlemleri ilgili sitelerin kendi sayfalarında yapılır.
+        Bu site sadece <strong>fiyat karşılaştırma rehberi</strong>dir. Tüm satın alma işlemleri ilgili sitelerin kendi sayfalarında gerçekleşir.
     </footer>
 
 </div>
