@@ -14,7 +14,7 @@
 
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-image: url("bg-mlbb.webp"); /* >>> bg-mlbb.webp dosyanı depoya yükle <<< */
+            background-image: url("bg-mlbb.webp");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -374,7 +374,6 @@
             <h3>Yeni Kahraman – Sora Deneme Videosu</h3>
             <p>Galip Abi’nin eklediği Sora hero deneme videosu. Fiyatlara bakarken arkada oynatabilirsin.</p>
 
-            <!-- Videonu depoya "sora-video.mp4" adıyla yüklersen bu çalışır -->
             <video controls poster="bg-mlbb.webp">
                 <source src="sora-video.mp4" type="video/mp4" />
                 Tarayıcınız video etiketini desteklemiyor.
@@ -405,7 +404,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- data-price alanı JS ile en ucuzu bulmak için -->
                         <tr data-price="349.99">
                             <td>ByNoGame</td>
                             <td>Güvenilir elmas satış platformu</td>
@@ -465,7 +463,7 @@
     </footer>
 </div>
 
-<!-- ARKA PLAN MÜZİĞİ – kendi mp3 dosyanı depoya "mlbb-music.mp3" adıyla yükle -->
+<!-- ARKA PLAN MÜZİĞİ -->
 <audio id="bg-music" loop>
     <source src="mlbb-music.mp3" type="audio/mpeg" />
 </audio>
@@ -504,7 +502,7 @@
     musicBtn.addEventListener("click", async () => {
         try {
             if (!musicOn) {
-                music.volume = 0.18; // hafif ses
+                music.volume = 0.18;
                 await music.play();
                 musicOn = true;
                 musicBtn.textContent = "🔇 Müziği Kapat";
