@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>MLBB Ucuz Elmas | Galip Abi</title>
 
+    <!-- SEO -->
+    <meta name="description" content="Galip Abi'nin hazırladığı Mobile Legends: Bang Bang ucuz elmas fiyat karşılaştırma rehberi. Türkiye'deki popüler sitelerdeki MLBB elmas fiyatlarını tek ekranda gör.">
+    <meta name="keywords" content="mobile legends, mlbb, ucuz elmas, elmas fiyat, bynogame, dijipin, gamesatış, kabarsakal, galip abi">
+    <meta name="author" content="Galip Abi">
+
+    <!-- Sosyal medya kartı -->
+    <meta property="og:title" content="MLBB Ucuz Elmas | Galip Abi" />
+    <meta property="og:description" content="Türkiye'deki MLBB elmas fiyatlarını tek ekranda karşılaştır." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/" />
+    <meta property="og:image" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/bg-mlbb.webp" />
+
+    <!-- Favicon (şu an arka plan resmini kullanıyoruz) -->
+    <link rel="icon" type="image/webp" href="bg-mlbb.webp" />
+
     <style>
+        :root {
+            /* tema değişkenleri */
+            --page-bg: rgba(5, 6, 12, 0.94);
+            --navbar-bg: linear-gradient(90deg, #101728, #181b35);
+            --navbar-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            --text-main: #f5f5f5;
+            --text-sub: #c9d4ff;
+            --card-bg: rgba(5, 8, 18, 0.96);
+            --hero-video-bg: radial-gradient(circle at top left, #28345c, #070814);
+            --table-head-bg: #131726;
+            --table-row-hover: rgba(255, 255, 255, 0.06);
+            --accent-yellow: #ffd54a;
+            --accent-blue: #4da6ff;
+        }
+
+        body.theme-light {
+            --page-bg: rgba(245, 248, 255, 0.96);
+            --navbar-bg: linear-gradient(90deg, #edf2ff, #dde7ff);
+            --navbar-shadow: 0 8px 20px rgba(80, 100, 150, 0.35);
+            --text-main: #111320;
+            --text-sub: #4b5678;
+            --card-bg: #ffffff;
+            --hero-video-bg: linear-gradient(145deg, #f4f6ff, #dde6ff);
+            --table-head-bg: #e5ebff;
+            --table-row-hover: rgba(40, 60, 120, 0.06);
+            --accent-yellow: #f4a600;
+            --accent-blue: #1f6fff;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -18,12 +63,13 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: #f5f5f5;
+            color: var(--text-main);
             padding: 10px;
+            transition: background-color 0.25s ease, color 0.25s ease;
         }
 
         a {
-            color: #4da6ff;
+            color: var(--accent-blue);
             text-decoration: none;
         }
 
@@ -34,10 +80,11 @@
         .page {
             max-width: 1200px;
             margin: 0 auto;
-            background: rgba(5, 6, 12, 0.92);
+            background: var(--page-bg);
             border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
             overflow: hidden;
+            transition: background 0.25s ease, box-shadow 0.25s ease;
         }
 
         /* NAVBAR */
@@ -45,12 +92,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 18px;
-            background: linear-gradient(90deg, #101728, #181b35);
+            padding: 12px 18px;
+            background: var(--navbar-bg);
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             position: sticky;
             top: 0;
             z-index: 20;
+            box-shadow: var(--navbar-shadow);
+            transition: padding 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 8px 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.75);
         }
 
         .logo {
@@ -69,16 +123,31 @@
             justify-content: center;
             font-weight: 800;
             font-size: 18px;
+            color: #ffffff;
+            box-shadow: 0 0 14px rgba(30, 150, 255, 0.8);
+            animation: pulse 2.2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(30, 150, 255, 0.6); }
+            50% { transform: scale(1.05); box-shadow: 0 0 18px rgba(30, 150, 255, 1); }
         }
 
         .logo-text-main {
             font-weight: 700;
             font-size: 17px;
+            color: var(--text-main);
         }
 
         .logo-text-sub {
             font-size: 11px;
-            color: #c9d4ff;
+            color: var(--text-sub);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .nav-links {
@@ -92,11 +161,38 @@
             border-radius: 999px;
             background: transparent;
             border: 1px solid transparent;
+            color: var(--text-main);
+            transition: background 0.15s ease, border 0.15s ease, transform 0.12s ease;
         }
 
         .nav-links a:hover {
             border-color: rgba(255, 255, 255, 0.4);
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-1px);
+        }
+
+        .theme-toggle {
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.12s ease;
+        }
+
+        .theme-toggle span.icon {
+            font-size: 14px;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
         }
 
         /* HERO / ÜST KISIM */
@@ -119,12 +215,12 @@
         }
 
         .hero-text h1 span {
-            color: #ffd54a;
+            color: var(--accent-yellow);
         }
 
         .hero-text p {
             font-size: 13px;
-            color: #d0d0f0;
+            color: var(--text-sub);
             margin-bottom: 12px;
         }
 
@@ -141,6 +237,13 @@
             border-radius: 999px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             opacity: 0.9;
+            background: rgba(0, 0, 0, 0.2);
+            color: var(--text-main);
+        }
+
+        body.theme-light .badge {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: rgba(0, 0, 0, 0.1);
         }
 
         .hero-buttons {
@@ -156,17 +259,19 @@
             border-radius: 999px;
             border: none;
             cursor: pointer;
+            transition: transform 0.13s ease, box-shadow 0.13s ease, opacity 0.13s ease;
         }
 
         .btn-primary {
             background: linear-gradient(135deg, #0fdc7b, #00aaff);
             color: #041019;
             font-weight: 600;
+            box-shadow: 0 6px 16px rgba(0, 180, 150, 0.75);
         }
 
         .btn-secondary {
             background: rgba(255, 255, 255, 0.08);
-            color: #f5f5f5;
+            color: var(--text-main);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
@@ -175,15 +280,26 @@
             padding: 5px 10px;
         }
 
+        .btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+            opacity: 0.96;
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
         .hero-note {
             font-size: 11px;
-            color: #bbbbd9;
+            color: var(--text-sub);
             margin-top: 6px;
         }
 
         /* HERO VİDEO */
         .hero-video-card {
-            background: radial-gradient(circle at top left, #28345c, #070814);
+            background: var(--hero-video-bg);
             border-radius: 16px;
             padding: 10px;
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -192,11 +308,12 @@
         .hero-video-card h3 {
             font-size: 14px;
             margin-bottom: 6px;
+            color: var(--text-main);
         }
 
         .hero-video-card p {
             font-size: 11px;
-            color: #c7c7e5;
+            color: var(--text-sub);
             margin-bottom: 6px;
         }
 
@@ -221,18 +338,47 @@
 
         .section-title-row h2 {
             font-size: 18px;
+            color: var(--text-main);
         }
 
         .section-title-row small {
             font-size: 11px;
-            color: #b8b8d8;
+            color: var(--text-sub);
+        }
+
+        .section-controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-input {
+            padding: 6px 10px;
+            font-size: 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            outline: none;
+            min-width: 160px;
+            background: rgba(0, 0, 0, 0.2);
+            color: var(--text-main);
+        }
+
+        body.theme-light .search-input {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .search-input::placeholder {
+            color: #9ca0c0;
         }
 
         .table-container {
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.18);
-            background: rgba(5, 8, 18, 0.96);
+            background: var(--card-bg);
+            transition: background 0.25s ease, border 0.25s ease;
         }
 
         .table-scroll {
@@ -246,7 +392,7 @@
         }
 
         thead {
-            background: #131726;
+            background: var(--table-head-bg);
         }
 
         th, td {
@@ -258,7 +404,7 @@
 
         th {
             font-weight: 600;
-            color: #ffd54a;
+            color: var(--accent-yellow);
             white-space: nowrap;
         }
 
@@ -267,7 +413,7 @@
         }
 
         tbody tr:hover {
-            background: rgba(255, 255, 255, 0.06);
+            background: var(--table-row-hover);
             transform: translateY(-1px);
         }
 
@@ -288,18 +434,17 @@
             font-size: 11px;
         }
 
-        /* ALT BİLGİ + FOOTER */
         .info-row {
             margin-top: 8px;
             font-size: 11px;
-            color: #aaaacc;
+            color: var(--text-sub);
         }
 
         footer {
             padding: 10px 18px 14px;
             font-size: 11px;
             text-align: center;
-            color: #b8b8d8;
+            color: var(--text-sub);
             border-top: 1px solid rgba(255, 255, 255, 0.12);
             background: rgba(3, 5, 13, 0.96);
         }
@@ -318,6 +463,10 @@
                 padding: 8px 10px;
             }
 
+            .navbar.scrolled {
+                padding: 6px 8px;
+            }
+
             .logo-text-main {
                 font-size: 15px;
             }
@@ -327,7 +476,7 @@
             }
 
             .nav-links {
-                display: none; /* mobilde menü çubuğunu sakla, sadece logo kalsın */
+                display: none; /* mobilde menü çubuğunu saklıyoruz */
             }
 
             .hero {
@@ -400,7 +549,7 @@
 <div class="page" id="ust">
 
     <!-- NAVBAR -->
-    <header class="navbar">
+    <header class="navbar" id="navbar">
         <div class="logo">
             <div class="logo-icon">M</div>
             <div>
@@ -409,12 +558,18 @@
             </div>
         </div>
 
-        <nav class="nav-links">
-            <a href="#ust">Anasayfa</a>
-            <a href="#fiyatlar">Fiyatlar</a>
-            <a href="#video">Video</a>
-            <a href="#hakkinda">Hakkında</a>
-        </nav>
+        <div class="nav-right">
+            <nav class="nav-links">
+                <a href="#ust">Anasayfa</a>
+                <a href="#fiyatlar">Fiyatlar</a>
+                <a href="#video">Video</a>
+                <a href="#hakkinda">Hakkında</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle">
+                <span class="icon" id="theme-icon">🌙</span>
+                <span id="theme-text">Koyu Mod</span>
+            </button>
+        </div>
     </header>
 
     <!-- HERO -->
@@ -457,8 +612,14 @@
     <!-- FİYAT TABLOSU -->
     <section class="section" id="fiyatlar">
         <div class="section-title-row">
-            <h2>Site Fiyat Karşılaştırması</h2>
-            <small>“En ucuz fiyatı bul” butonu tabloda en düşük fiyatı öne çıkarır.</small>
+            <div>
+                <h2>Site Fiyat Karşılaştırması</h2>
+                <small>“En ucuz fiyatı bul” butonu tabloda en düşük fiyatı öne çıkarır.</small>
+            </div>
+
+            <div class="section-controls">
+                <input id="search-input" class="search-input" type="text" placeholder="Site veya açıklama ara..." />
+            </div>
         </div>
 
         <div class="table-container">
@@ -542,6 +703,16 @@
 </audio>
 
 <script>
+    // Navbar scroll efekti
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+
     // En ucuz fiyatı bulma
     const btnBest = document.getElementById("btn-best");
     const table = document.getElementById("price-table");
@@ -567,6 +738,21 @@
         }
     });
 
+    // Tablo arama / filtre
+    const searchInput = document.getElementById("search-input");
+    searchInput.addEventListener("input", () => {
+        const q = searchInput.value.toLowerCase().trim();
+
+        rows.forEach(row => {
+            const text = row.innerText.toLowerCase();
+            if (!q || text.includes(q)) {
+                row.style.display = "";
+            } else {
+                row.style.display = "none";
+            }
+        });
+    });
+
     // Müzik kontrolü
     const musicBtn = document.getElementById("btn-music");
     const music = document.getElementById("bg-music");
@@ -587,6 +773,34 @@
         } catch (e) {
             console.log(e);
         }
+    });
+
+    // Tema (dark / light) toggle + localStorage
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+    const themeText = document.getElementById("theme-text");
+
+    function applyTheme(theme) {
+        if (theme === "light") {
+            document.body.classList.add("theme-light");
+            themeIcon.textContent = "☀️";
+            themeText.textContent = "Açık Mod";
+        } else {
+            document.body.classList.remove("theme-light");
+            themeIcon.textContent = "🌙";
+            themeText.textContent = "Koyu Mod";
+        }
+    }
+
+    // ilk yüklemede kaydedilmiş temayı oku
+    const savedTheme = localStorage.getItem("mlbb-theme") || "dark";
+    applyTheme(savedTheme);
+
+    themeToggle.addEventListener("click", () => {
+        const current = document.body.classList.contains("theme-light") ? "light" : "dark";
+        const next = current === "light" ? "dark" : "light";
+        localStorage.setItem("mlbb-theme", next);
+        applyTheme(next);
     });
 </script>
 
