@@ -9,7 +9,7 @@
     <!-- SEO -->
     <meta name="description" content="Mobile Legends: Bang Bang ucuz elmas fiyat karşılaştırma rehberi. Türkiye'deki popüler sitelerdeki MLBB elmas fiyatlarını tek ekranda gör.">
     <meta name="keywords" content="mobile legends, mlbb, ucuz elmas, elmas fiyat, bynogame, dijipin, gamesatış, kabasakal, vatan game, joy alışveriş, perdigital, oyuneks">
-    <meta name="author" content="MLBB Ucuz Elmas Rehberi">
+    <meta name="author" content="MLBB Fiyat Rehberi">
     <meta name="theme-color" content="#050812" />
 
     <!-- Sosyal medya kartı -->
@@ -599,10 +599,6 @@
             margin-bottom: 4px;
         }
 
-        .comment-item strong {
-            font-size: 12px;
-        }
-
         .comment-meta {
             font-size: 10px;
             color: var(--text-sub);
@@ -718,17 +714,8 @@
                 padding: 4px 10px 12px;
             }
 
-            .section-title-row {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
             .section-title-row h2 {
                 font-size: 16px;
-            }
-
-            .section-title-row small {
-                font-size: 10px;
             }
 
             footer {
@@ -839,9 +826,9 @@
                 <small>“En ucuz fiyatı bul” butonu tabloda en düşük fiyatı öne çıkarır. Yıldıza basarak favori siteni seçebilirsin.</small>
             </div>
 
-        <div class="section-controls">
-            <input id="search-input" class="search-input" type="text" placeholder="Site veya açıklama ara..." />
-        </div>
+            <div class="section-controls">
+                <input id="search-input" class="search-input" type="text" placeholder="Site veya açıklama ara..." />
+            </div>
         </div>
 
         <div class="table-container">
@@ -895,8 +882,8 @@
 
                         <tr data-price="57.99" data-site="Kabarsakal Online">
                             <td>Kabarsakal Online</td>
-                            <td>MLBB TR ve Global elmas seçenekleri</td>
-                            <td><a href="https://kabasakalonline.com" target="_blank">Siteye Git</a></td>
+                            <td>MLBB elmas satış sitesi</td>
+                            <td><a href="https://www.kabasakalonline.com/" target="_blank">Siteye Git</a></td>
                             <td>-</td>
                             <td>57.99</td>
                             <td><del>70.99 TL</del></td>
@@ -985,7 +972,6 @@
 <!-- ARKA PLAN MÜZİĞİ -->
 <audio id="bg-music" loop>
     <source src="mlbb-muzik.mp3" type="audio/mpeg" />
-    <source src="mlbb-music.mp3" type="audio/mpeg" />
 </audio>
 
 <!-- Yukarı (Anasayfa) Butonu -->
@@ -1020,7 +1006,7 @@
         "Yeni kahraman Sora yakında tüm sunucularda aktif olacak.",
         "Hafta sonu çift elmas ve skin indirimleri bekleniyor.",
         "TR sunucusunda gecikme ve ping iyileştirmeleri planlanıyor.",
-        "Starlight ve Twilight Pass için özel kampanyalar takipte kal."
+        "Starlight ve Twilight Pass için özel kampanyalar, takipte kal."
     ];
     let newsIndex = 0;
     function showNews() {
@@ -1075,11 +1061,7 @@
 
         rows.forEach(row => {
             const text = row.innerText.toLowerCase();
-            if (!q || text.includes(q)) {
-                row.style.display = "";
-            } else {
-                row.style.display = "none";
-            }
+            row.style.display = (!q || text.includes(q)) ? "" : "none";
         });
     });
 
