@@ -8,8 +8,9 @@
 
     <!-- SEO -->
     <meta name="description" content="Galip Abi'nin hazırladığı Mobile Legends: Bang Bang ucuz elmas fiyat karşılaştırma rehberi. Türkiye'deki popüler sitelerdeki MLBB elmas fiyatlarını tek ekranda gör.">
-    <meta name="keywords" content="mobile legends, mlbb, ucuz elmas, elmas fiyat, bynogame, dijipin, gamesatış, kabarsakal, galip abi">
+    <meta name="keywords" content="mobile legends, mlbb, ucuz elmas, elmas fiyat, bynogame, dijipin, gamesatış, kabarsakal, vatan game, joy alışveriş, perdigital, oyuneks, galip abi">
     <meta name="author" content="Galip Abi">
+    <meta name="theme-color" content="#050812" />
 
     <!-- Sosyal medya kartı -->
     <meta property="og:title" content="MLBB Ucuz Elmas | Galip Abi" />
@@ -18,12 +19,11 @@
     <meta property="og:url" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/" />
     <meta property="og:image" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/bg-mlbb.webp" />
 
-    <!-- Favicon (şu an arka plan resmini kullanıyoruz) -->
+    <!-- Favicon (şimdilik arka plan görseli) -->
     <link rel="icon" type="image/webp" href="bg-mlbb.webp" />
 
     <style>
         :root {
-            /* tema değişkenleri */
             --page-bg: rgba(5, 6, 12, 0.94);
             --navbar-bg: linear-gradient(90deg, #101728, #181b35);
             --navbar-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
@@ -195,6 +195,39 @@
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
         }
 
+        /* HABER BANDI */
+        .news-ticker {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            font-size: 11px;
+            background: rgba(0, 0, 0, 0.35);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        body.theme-light .news-ticker {
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .news-label {
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.15);
+            font-weight: 600;
+            letter-spacing: 0.4px;
+            font-size: 10px;
+        }
+
+        .news-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: var(--text-main);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
         /* HERO / ÜST KISIM */
         .hero {
             display: grid;
@@ -242,7 +275,7 @@
         }
 
         body.theme-light .badge {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             border-color: rgba(0, 0, 0, 0.1);
         }
 
@@ -409,7 +442,7 @@
         }
 
         tbody tr {
-            transition: background 0.16s ease, transform 0.12s ease;
+            transition: background 0.16s ease, transform 0.12s ease, box-shadow 0.12s ease;
         }
 
         tbody tr:hover {
@@ -434,6 +467,26 @@
             font-size: 11px;
         }
 
+        .fav-row {
+            box-shadow: inset 0 0 0 1px rgba(255, 215, 0, 0.7);
+        }
+
+        .fav-btn {
+            margin-left: 6px;
+            font-size: 12px;
+            padding: 2px 6px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(0, 0, 0, 0.4);
+            color: #ffd54a;
+            cursor: pointer;
+        }
+
+        body.theme-light .fav-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(0, 0, 0, 0.15);
+        }
+
         .info-row {
             margin-top: 8px;
             font-size: 11px;
@@ -449,7 +502,7 @@
             background: rgba(3, 5, 13, 0.96);
         }
 
-        /* MOBİL UYUM (GELİŞTİRİLMİŞ) */
+        /* MOBİL UYUM */
         @media (max-width: 600px) {
             body {
                 padding: 4px;
@@ -476,7 +529,7 @@
             }
 
             .nav-links {
-                display: none; /* mobilde menü çubuğunu saklıyoruz */
+                display: none;
             }
 
             .hero {
@@ -572,6 +625,12 @@
         </div>
     </header>
 
+    <!-- HABER BANDI -->
+    <div class="news-ticker">
+        <div class="news-label">MLBB Haber</div>
+        <div class="news-text" id="news-text"></div>
+    </div>
+
     <!-- HERO -->
     <section class="hero">
         <div class="hero-text">
@@ -614,7 +673,7 @@
         <div class="section-title-row">
             <div>
                 <h2>Site Fiyat Karşılaştırması</h2>
-                <small>“En ucuz fiyatı bul” butonu tabloda en düşük fiyatı öne çıkarır.</small>
+                <small>“En ucuz fiyatı bul” butonu tabloda en düşük fiyatı öne çıkarır. Yıldıza basarak favori siteni seçebilirsin.</small>
             </div>
 
             <div class="section-controls">
@@ -634,11 +693,11 @@
                             <th>Güncel Fiyat (TL)</th>
                             <th>Eski Fiyat</th>
                             <th>İndirim</th>
-                            <th>Stok</th>
+                            <th>Stok / Favori</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr data-price="349.99">
+                        <tr data-price="349.99" data-site="ByNoGame">
                             <td>ByNoGame</td>
                             <td>Güvenilir elmas satış platformu</td>
                             <td><a href="https://www.bynogame.com" target="_blank">Siteye Git</a></td>
@@ -646,10 +705,10 @@
                             <td>349.99</td>
                             <td><del>449.99 TL</del></td>
                             <td>%22 İndirim</td>
-                            <td>Var</td>
+                            <td>Var <button class="fav-btn" type="button">☆</button></td>
                         </tr>
 
-                        <tr data-price="74.99">
+                        <tr data-price="74.99" data-site="Dijipin">
                             <td>Dijipin</td>
                             <td>Uygun fiyatlı MLBB elmas</td>
                             <td><a href="https://www.dijipin.com" target="_blank">Siteye Git</a></td>
@@ -657,10 +716,10 @@
                             <td>74.99</td>
                             <td><del>89.99 TL</del></td>
                             <td>%17 İndirim</td>
-                            <td>Var</td>
+                            <td>Var <button class="fav-btn" type="button">☆</button></td>
                         </tr>
 
-                        <tr data-price="16.99">
+                        <tr data-price="16.99" data-site="GameSatış">
                             <td>GameSatış</td>
                             <td>Hızlı teslimat, güvenilir mağaza</td>
                             <td><a href="https://www.gamesatis.com" target="_blank">Siteye Git</a></td>
@@ -668,18 +727,62 @@
                             <td>16.99</td>
                             <td><del>21.99 TL</del></td>
                             <td>%11 İndirim</td>
-                            <td>Var</td>
+                            <td>Var <button class="fav-btn" type="button">☆</button></td>
                         </tr>
 
-                        <tr data-price="57.99">
+                        <tr data-price="57.99" data-site="Kabarsakal Online">
                             <td>Kabarsakal Online</td>
                             <td>Kampanyalı MLBB elmas</td>
-                            <td><a href="https://kabarsakalonline.com" target="_blank">Siteye Git</a></td>
+                            <td><a href="https://www.kabarsakal.com" target="_blank">Siteye Git</a></td>
                             <td>-</td>
                             <td>57.99</td>
                             <td><del>70.99 TL</del></td>
                             <td>%14 İndirim</td>
-                            <td>Var</td>
+                            <td>Var <button class="fav-btn" type="button">☆</button></td>
+                        </tr>
+
+                        <tr data-price="52.99" data-site="VatanGame">
+                            <td>VatanGame</td>
+                            <td>Uygun fiyatlı kod ve elmas satışı</td>
+                            <td><a href="https://www.vatangame.com" target="_blank">Siteye Git</a></td>
+                            <td>-</td>
+                            <td>52.99</td>
+                            <td><del>64.99 TL</del></td>
+                            <td>%18 İndirim</td>
+                            <td>Var <button class="fav-btn" type="button">☆</button></td>
+                        </tr>
+
+                        <tr data-price="59.99" data-site="Joy Alışveriş">
+                            <td>Joy Alışveriş</td>
+                            <td>Oyun içi ürün & elmas satışı</td>
+                            <td><a href="https://www.joyalisveris.com" target="_blank">Siteye Git</a></td>
+                            <td>-</td>
+                            <td>59.99</td>
+                            <td><del>69.99 TL</del></td>
+                            <td>%14 İndirim</td>
+                            <td>Var <button class="fav-btn" type="button">☆</button></td>
+                        </tr>
+
+                        <tr data-price="54.99" data-site="Perdigital">
+                            <td>Perdigital</td>
+                            <td>Dijital kod ve bakiye satışı</td>
+                            <td><a href="https://www.perdigital.com" target="_blank">Siteye Git</a></td>
+                            <td>-</td>
+                            <td>54.99</td>
+                            <td><del>62.99 TL</del></td>
+                            <td>%13 İndirim</td>
+                            <td>Var <button class="fav-btn" type="button">☆</button></td>
+                        </tr>
+
+                        <tr data-price="48.99" data-site="Oyuneks">
+                            <td>Oyuneks</td>
+                            <td>Oyun kodu ve elmas satış platformu</td>
+                            <td><a href="https://www.oyuneks.com" target="_blank">Siteye Git</a></td>
+                            <td>-</td>
+                            <td>48.99</td>
+                            <td><del>59.99 TL</del></td>
+                            <td>%18 İndirim</td>
+                            <td>Var <button class="fav-btn" type="button">☆</button></td>
                         </tr>
                     </tbody>
                 </table>
@@ -699,6 +802,7 @@
 
 <!-- ARKA PLAN MÜZİĞİ -->
 <audio id="bg-music" loop>
+    <source src="mlbb-muzik.mp3" type="audio/mpeg" />
     <source src="mlbb-music.mp3" type="audio/mpeg" />
 </audio>
 
@@ -713,12 +817,40 @@
         }
     });
 
+    // Haber bandı
+    const newsTextEl = document.getElementById("news-text");
+    const newsItems = [
+        "Yeni kahraman Sora yakında tüm sunucularda aktif olacak.",
+        "Hafta sonu etkinliği: Çift elmas ve skin indirimleri bekleniyor.",
+        "Türkiye sunucusunda ping ve bağlantı iyileştirmeleri planlanıyor.",
+        "Starlight ve Twilight Pass için özel kampanyalar takipte kal."
+    ];
+    let newsIndex = 0;
+    function showNews() {
+        if (!newsTextEl) return;
+        newsTextEl.style.opacity = 0;
+        setTimeout(() => {
+            newsTextEl.textContent = newsItems[newsIndex];
+            newsTextEl.style.opacity = 1;
+            newsIndex = (newsIndex + 1) % newsItems.length;
+        }, 200);
+    }
+    if (newsTextEl) {
+        showNews();
+        setInterval(showNews, 6000);
+    }
+
+    const table = document.getElementById("price-table");
+    const tbody = table.querySelector("tbody");
+
+    function getRows() {
+        return Array.from(tbody.querySelectorAll("tr"));
+    }
+
     // En ucuz fiyatı bulma
     const btnBest = document.getElementById("btn-best");
-    const table = document.getElementById("price-table");
-    const rows = Array.from(table.querySelectorAll("tbody tr"));
-
     btnBest.addEventListener("click", () => {
+        const rows = getRows();
         rows.forEach(r => r.classList.remove("best-row"));
 
         let minRow = null;
@@ -742,6 +874,7 @@
     const searchInput = document.getElementById("search-input");
     searchInput.addEventListener("input", () => {
         const q = searchInput.value.toLowerCase().trim();
+        const rows = getRows();
 
         rows.forEach(row => {
             const text = row.innerText.toLowerCase();
@@ -752,6 +885,52 @@
             }
         });
     });
+
+    // Favori satıcı sistemi
+    const favKey = "mlbb-favorite-site";
+
+    function applySavedFavorite() {
+        const favSite = localStorage.getItem(favKey);
+        const rows = getRows();
+
+        rows.forEach(row => {
+            row.classList.remove("fav-row");
+            const btn = row.querySelector(".fav-btn");
+            if (btn) btn.textContent = "☆";
+        });
+
+        if (!favSite) return;
+
+        const favRow = rows.find(r => r.getAttribute("data-site") === favSite);
+        if (favRow) {
+            favRow.classList.add("fav-row");
+            const btn = favRow.querySelector(".fav-btn");
+            if (btn) btn.textContent = "★";
+            tbody.insertBefore(favRow, tbody.firstChild);
+        }
+    }
+
+    function setupFavorites() {
+        const rows = getRows();
+        rows.forEach(row => {
+            const btn = row.querySelector(".fav-btn");
+            if (!btn) return;
+            btn.addEventListener("click", () => {
+                const site = row.getAttribute("data-site");
+                if (!site) return;
+                const current = localStorage.getItem(favKey);
+                if (current === site) {
+                    localStorage.removeItem(favKey);
+                } else {
+                    localStorage.setItem(favKey, site);
+                }
+                applySavedFavorite();
+            });
+        });
+        applySavedFavorite();
+    }
+
+    setupFavorites();
 
     // Müzik kontrolü
     const musicBtn = document.getElementById("btn-music");
@@ -792,7 +971,6 @@
         }
     }
 
-    // ilk yüklemede kaydedilmiş temayı oku
     const savedTheme = localStorage.getItem("mlbb-theme") || "dark";
     applyTheme(savedTheme);
 
