@@ -61,11 +61,10 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
             background-image: url("bg-mlbb.webp");
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-position: center top;
             color: var(--text-main);
             padding: 10px;
-            transition: background-color 0.25s ease, color 0.25s ease;
+            transition: background-color 0.25s ease, color 0.25s ease, background-position 0.25s ease;
         }
 
         a {
@@ -77,14 +76,83 @@
             text-decoration: underline;
         }
 
-        .page {
-            max-width: 1200px;
+        /* DIŞ KABUK (sağ-sol paneller için) */
+        .page-shell {
+            position: relative;
+            max-width: 1300px;
             margin: 0 auto;
+        }
+
+        .page {
+            max-width: 100%;
             background: var(--page-bg);
             border-radius: 20px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
             overflow: hidden;
             transition: background 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Yan paneller */
+        .side-panel {
+            position: absolute;
+            top: 60px;
+            bottom: 40px;
+            width: 155px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            pointer-events: none;
+        }
+
+        .side-panel-left { left: -165px; }
+        .side-panel-right { right: -165px; }
+
+        .side-card {
+            pointer-events: auto;
+            background: radial-gradient(circle at top, rgba(10, 12, 25, 0.95), rgba(5, 7, 18, 0.75));
+            border-radius: 18px;
+            padding: 8px 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            font-size: 11px;
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(7px);
+        }
+
+        .side-card h4 {
+            font-size: 12px;
+            margin-bottom: 3px;
+            color: var(--accent-yellow);
+        }
+
+        .side-card p {
+            font-size: 10px;
+            line-height: 1.3;
+        }
+
+        .side-chip {
+            display: inline-block;
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-bottom: 3px;
+        }
+
+        body.theme-light .side-card {
+            background: rgba(255, 255, 255, 0.96);
+            color: #111320;
+        }
+
+        @media (max-width: 1200px) {
+            .side-panel {
+                display: none;
+            }
+            .page-shell {
+                max-width: 100%;
+            }
         }
 
         /* NAVBAR */
@@ -728,245 +796,276 @@
 
 <body>
 
-<div class="page" id="ust">
-
-    <!-- NAVBAR -->
-    <header class="navbar" id="navbar">
-        <div class="logo">
-            <div class="logo-icon">M</div>
-            <div>
-                <div class="logo-text-main">MLBB Ucuz Elmas</div>
-                <div class="logo-text-sub">Fiyat Karşılaştırma Rehberi</div>
-            </div>
+<div class="page-shell">
+    <!-- SOL PANEL -->
+    <div class="side-panel side-panel-left">
+        <div class="side-card">
+            <div class="side-chip">Etkinlik Takvimi</div>
+            <h4>Starlight & Twilight</h4>
+            <p>Haftalık Starlight ve Twilight Pass dönemlerini takip et.</p>
         </div>
-
-        <div class="nav-right">
-            <nav class="nav-links">
-                <a href="#ust">Anasayfa</a>
-                <a href="#fiyatlar">Fiyatlar</a>
-                <a href="#video">Video</a>
-                <a href="#yorumlar">Yorumlar</a>
-            </nav>
-            <button id="theme-toggle" class="theme-toggle">
-                <span class="icon" id="theme-icon">🌙</span>
-                <span id="theme-text">Koyu Mod</span>
-            </button>
+        <div class="side-card">
+            <div class="side-chip">İndirim Radar</div>
+            <h4>Hafta Sonu Fırsatları</h4>
+            <p>Hafta sonu MLBB elmas ve skin indirimlerini kontrol etmeyi unutma.</p>
         </div>
-    </header>
-
-    <!-- HABER BANDI -->
-    <div class="news-ticker">
-        <div class="news-label">MLBB Haber</div>
-        <div class="news-text" id="news-text"></div>
     </div>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1><span>Mobile Legends</span> Elmas Karşılaştırma</h1>
-            <p>
-                Türkiye’deki popüler sitelerde Mobile Legends: Bang Bang elmas fiyatlarını
-                tek ekranda gör. En ucuz fiyatı otomatik bulan buton ile zamandan kazan.
+    <!-- SAĞ PANEL -->
+    <div class="side-panel side-panel-right">
+        <div class="side-card">
+            <div class="side-chip">MLBB Haber</div>
+            <h4>Yeni Hero & Skin</h4>
+            <p>Yeni kahraman ve kostüm duyurularını buradan takip ettiğini düşün.</p>
+        </div>
+        <div class="side-card">
+            <div class="side-chip">Favori Siteler</div>
+            <h4>Hızlı Kısayol</h4>
+            <p>ByNoGame, GameSatış, VatanGame gibi siteleri favori yapıp öne çıkar.</p>
+        </div>
+    </div>
+
+    <!-- ANA SAYFA KARTI -->
+    <div class="page" id="ust">
+
+        <!-- NAVBAR -->
+        <header class="navbar" id="navbar">
+            <div class="logo">
+                <div class="logo-icon">M</div>
+                <div>
+                    <div class="logo-text-main">MLBB Ucuz Elmas</div>
+                    <div class="logo-text-sub">Fiyat Karşılaştırma Rehberi</div>
+                </div>
+            </div>
+
+            <div class="nav-right">
+                <nav class="nav-links">
+                    <a href="#ust">Anasayfa</a>
+                    <a href="#fiyatlar">Fiyatlar</a>
+                    <a href="#video">Video</a>
+                    <a href="#yorumlar">Yorumlar</a>
+                </nav>
+                <button id="theme-toggle" class="theme-toggle">
+                    <span class="icon" id="theme-icon">🌙</span>
+                    <span id="theme-text">Koyu Mod</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- HABER BANDI -->
+        <div class="news-ticker">
+            <div class="news-label">MLBB Haber</div>
+            <div class="news-text" id="news-text"></div>
+        </div>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-text">
+                <h1><span>Mobile Legends</span> Elmas Karşılaştırma</h1>
+                <p>
+                    Türkiye’deki popüler sitelerde Mobile Legends: Bang Bang elmas fiyatlarını
+                    tek ekranda gör. En ucuz fiyatı otomatik bulan buton ile zamandan kazan.
+                </p>
+
+                <div class="hero-badges">
+                    <div class="badge">Gerçek zamanlı değil, rehber amaçlıdır.</div>
+                    <div class="badge">Fiyatlar için ilgili siteye gitmeniz gerekir.</div>
+                </div>
+
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="btn-best">💸 En ucuz fiyatı bul</button>
+                    <button class="btn btn-secondary btn-small" id="btn-music">🎵 Müziği Aç</button>
+                </div>
+
+                <p class="hero-note">
+                    Not: Bu site sadece fiyat karşılaştırma rehberi olarak tasarlanmıştır.
+                    Satın alma işlemleri ilgili sitelerin kendi sayfalarında gerçekleşir.
+                </p>
+            </div>
+
+            <!-- HERO VIDEO KISMI -->
+            <aside class="hero-video-card" id="video">
+                <h3>Yeni Kahraman – Sora Deneme Videosu</h3>
+                <p>Sora hero deneme videosu. Fiyatlara bakarken arka planda oynatabilirsin.</p>
+
+                <video controls poster="bg-mlbb.webp">
+                    <source src="sora-video.mp4" type="video/mp4" />
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+            </aside>
+        </section>
+
+        <!-- DUYURU / REKLAM KARTLARI -->
+        <section class="ad-section">
+            <div class="ad-grid">
+                <div class="ad-card">
+                    <span class="ad-tag">Etkinlik</span>
+                    <h3>Hafta Sonu Çift Elmas Fırsatları</h3>
+                    <p>Sevilen sitelerde dönemsel olarak MLBB elmas indirimi ve bonus elmas kampanyaları olabilir. Fiyatları bu sayfadan takip edip, satın almayı ilgili sitede yapabilirsin.</p>
+                </div>
+                <div class="ad-card">
+                    <span class="ad-tag">Öneri</span>
+                    <h3>TR ve Global Elmas Ayrımı</h3>
+                    <p>Satın almadan önce her zaman <strong>TR Elmas</strong> mı yoksa <strong>Global Elmas</strong> mı olduğuna dikkat et. Hesabının sunucusuna uygun ürünü seçtiğinden emin ol.</p>
+                </div>
+                <div class="ad-card">
+                    <span class="ad-tag">Güvenlik</span>
+                    <h3>Güvenli Ödeme</h3>
+                    <p>Elmas alırken mümkün olduğunca 3D Secure ve güvenilir ödeme yöntemlerini tercih et. Bu site sadece fiyat rehberi sunar; ödeme ve teslimat ilgili sitelerin sorumluluğundadır.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FİYAT TABLOSU -->
+        <section class="section" id="fiyatlar">
+            <div class="section-title-row">
+                <div>
+                    <h2>Site Fiyat Karşılaştırması</h2>
+                    <small>“En ucuz fiyatı bul” butonu tabloda en düşük fiyatı öne çıkarır. Yıldıza basarak favori siteni seçebilirsin.</small>
+                </div>
+
+                <div class="section-controls">
+                    <input id="search-input" class="search-input" type="text" placeholder="Site veya açıklama ara..." />
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="table-scroll">
+                    <table id="price-table">
+                        <thead>
+                            <tr>
+                                <th>Site Adı</th>
+                                <th>Açıklama</th>
+                                <th>Link</th>
+                                <th>Not</th>
+                                <th>Güncel Fiyat (TL)</th>
+                                <th>Eski Fiyat</th>
+                                <th>İndirim</th>
+                                <th>Stok / Favori</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-price="349.99" data-site="ByNoGame">
+                                <td>ByNoGame</td>
+                                <td>Güvenilir MLBB TR elmas satış platformu</td>
+                                <td><a href="https://www.bynogame.com" target="_blank">Siteye Git</a></td>
+                                <td><span class="badge-small">Onaylı Satıcı</span></td>
+                                <td>349.99</td>
+                                <td><del>449.99 TL</del></td>
+                                <td>%22 İndirim</td>
+                                <td>Var <button class="fav-btn" type="button">☆</button></td>
+                            </tr>
+
+                            <tr data-price="74.99" data-site="Dijipin">
+                                <td>Dijipin</td>
+                                <td>Uygun fiyatlı MLBB elmas & kod</td>
+                                <td><a href="https://www.dijipin.com" target="_blank">Siteye Git</a></td>
+                                <td>-</td>
+                                <td>74.99</td>
+                                <td><del>89.99 TL</del></td>
+                                <td>%17 İndirim</td>
+                                <td>Var <button class="fav-btn" type="button">☆</button></td>
+                            </tr>
+
+                            <tr data-price="16.99" data-site="GameSatış">
+                                <td>GameSatış</td>
+                                <td>Hızlı teslimatlı MLBB elmas & oyun parası</td>
+                                <td><a href="https://www.gamesatis.com" target="_blank">Siteye Git</a></td>
+                                <td><span class="badge-small">Önerilen</span></td>
+                                <td>16.99</td>
+                                <td><del>21.99 TL</del></td>
+                                <td>%11 İndirim</td>
+                                <td>Var <button class="fav-btn" type="button">☆</button></td>
+                            </tr>
+
+                            <tr data-price="57.99" data-site="Kabarsakal Online">
+                                <td>Kabarsakal Online</td>
+                                <td>MLBB elmas satış sitesi</td>
+                                <td><a href="https://www.kabasakalonline.com/" target="_blank">Siteye Git</a></td>
+                                <td>-</td>
+                                <td>57.99</td>
+                                <td><del>70.99 TL</del></td>
+                                <td>%14 İndirim</td>
+                                <td>Var <button class="fav-btn" type="button">☆</button></td>
+                            </tr>
+
+                            <tr data-price="52.99" data-site="VatanGame">
+                                <td>VatanGame</td>
+                                <td>MLBB elmas ve diğer oyun epinleri</td>
+                                <td><a href="https://www.vatangame.com" target="_blank">Siteye Git</a></td>
+                                <td>-</td>
+                                <td>52.99</td>
+                                <td><del>64.99 TL</del></td>
+                                <td>%18 İndirim</td>
+                                <td>Var <button class="fav-btn" type="button">☆</button></td>
+                            </tr>
+
+                            <tr data-price="59.99" data-site="Joy Alışveriş">
+                                <td>Joy Alışveriş</td>
+                                <td>Joy Alışveriş üzerinden MLBB elmas</td>
+                                <td><a href="https://www.joyalisveris.com" target="_blank">Siteye Git</a></td>
+                                <td>-</td>
+                                <td>59.99</td>
+                                <td><del>69.99 TL</del></td>
+                                <td>%14 İndirim</td>
+                                <td>Var <button class="fav-btn" type="button">☆</button></td>
+                            </tr>
+
+                            <tr data-price="54.99" data-site="Perdigital">
+                                <td>Perdigital</td>
+                                <td>Dijital kod ve MLBB elmas bakiyesi</td>
+                                <td><a href="https://www.perdigital.com" target="_blank">Siteye Git</a></td>
+                                <td>-</td>
+                                <td>54.99</td>
+                                <td><del>62.99 TL</del></td>
+                                <td>%13 İndirim</td>
+                                <td>Var <button class="fav-btn" type="button">☆</button></td>
+                            </tr>
+
+                            <tr data-price="48.99" data-site="Oyuneks">
+                                <td>Oyuneks</td>
+                                <td>Oyuneks üzerinde MLBB elmas satışı</td>
+                                <td><a href="https://www.oyuneks.com" target="_blank">Siteye Git</a></td>
+                                <td>-</td>
+                                <td>48.99</td>
+                                <td><del>59.99 TL</del></td>
+                                <td>%18 İndirim</td>
+                                <td>Var <button class="fav-btn" type="button">☆</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <p class="info-row">
+                Fiyatlar örnek olarak yazılmıştır; gerçek fiyatlar için ilgili sitelerin sayfalarını ziyaret etmelisiniz.
             </p>
+        </section>
 
-            <div class="hero-badges">
-                <div class="badge">Gerçek zamanlı değil, rehber amaçlıdır.</div>
-                <div class="badge">Fiyatlar için ilgili siteye gitmeniz gerekir.</div>
-            </div>
+        <!-- YORUM BÖLÜMÜ -->
+        <section class="comments-section" id="yorumlar">
+            <h2>Yorumlar</h2>
+            <small>Bu bölüm sadece bu cihazda saklanan örnek yorumlar içindir. Gerçek üyelik / giriş sistemi için ayrı bir sunucu gerekir.</small>
 
-            <div class="hero-buttons">
-                <button class="btn btn-primary" id="btn-best">💸 En ucuz fiyatı bul</button>
-                <button class="btn btn-secondary btn-small" id="btn-music">🎵 Müziği Aç</button>
-            </div>
+            <form id="comment-form" class="comment-form">
+                <div class="comment-form-row">
+                    <input type="text" id="comment-name" class="comment-input" placeholder="İsim (isteğe bağlı)">
+                    <input type="text" id="comment-server" class="comment-input" placeholder="Sunucu / ID (isteğe bağlı)">
+                </div>
+                <textarea id="comment-text" class="comment-textarea" placeholder="Yorumunuzu yazın (ör: Hangi siteden memnunsunuz?)" required></textarea>
+                <div style="margin-top:6px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <small style="font-size:10px; color:var(--text-sub);">Yorumlar bu cihazda saklanır, sayfayı silmezsen yerel olarak kalır.</small>
+                    <button type="submit" class="btn btn-secondary btn-small">Yorumu Gönder</button>
+                </div>
+            </form>
 
-            <p class="hero-note">
-                Not: Bu site sadece fiyat karşılaştırma rehberi olarak tasarlanmıştır.
-                Satın alma işlemleri ilgili sitelerin kendi sayfalarında gerçekleşir.
-            </p>
-        </div>
+            <div id="comment-list" class="comment-list"></div>
+        </section>
 
-        <!-- HERO VIDEO KISMI -->
-        <aside class="hero-video-card" id="video">
-            <h3>Yeni Kahraman – Sora Deneme Videosu</h3>
-            <p>Sora hero deneme videosu. Fiyatlara bakarken arka planda oynatabilirsin.</p>
-
-            <video controls poster="bg-mlbb.webp">
-                <source src="sora-video.mp4" type="video/mp4" />
-                Tarayıcınız video etiketini desteklemiyor.
-            </video>
-        </aside>
-    </section>
-
-    <!-- DUYURU / REKLAM KARTLARI -->
-    <section class="ad-section">
-        <div class="ad-grid">
-            <div class="ad-card">
-                <span class="ad-tag">Etkinlik</span>
-                <h3>Hafta Sonu Çift Elmas Fırsatları</h3>
-                <p>Sevilen sitelerde dönemsel olarak MLBB elmas indirimi ve bonus elmas kampanyaları olabilir. Fiyatları bu sayfadan takip edip, satın almayı ilgili sitede yapabilirsin.</p>
-            </div>
-            <div class="ad-card">
-                <span class="ad-tag">Öneri</span>
-                <h3>TR ve Global Elmas Ayrımı</h3>
-                <p>Satın almadan önce her zaman <strong>TR Elmas</strong> mı yoksa <strong>Global Elmas</strong> mı olduğuna dikkat et. Hesabının sunucusuna uygun ürünü seçtiğinden emin ol.</p>
-            </div>
-            <div class="ad-card">
-                <span class="ad-tag">Güvenlik</span>
-                <h3>Güvenli Ödeme</h3>
-                <p>Elmas alırken mümkün olduğunca 3D Secure ve güvenilir ödeme yöntemlerini tercih et. Bu site sadece fiyat rehberi sunar; ödeme ve teslimat ilgili sitelerin sorumluluğundadır.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FİYAT TABLOSU -->
-    <section class="section" id="fiyatlar">
-        <div class="section-title-row">
-            <div>
-                <h2>Site Fiyat Karşılaştırması</h2>
-                <small>“En ucuz fiyatı bul” butonu tabloda en düşük fiyatı öne çıkarır. Yıldıza basarak favori siteni seçebilirsin.</small>
-            </div>
-
-            <div class="section-controls">
-                <input id="search-input" class="search-input" type="text" placeholder="Site veya açıklama ara..." />
-            </div>
-        </div>
-
-        <div class="table-container">
-            <div class="table-scroll">
-                <table id="price-table">
-                    <thead>
-                        <tr>
-                            <th>Site Adı</th>
-                            <th>Açıklama</th>
-                            <th>Link</th>
-                            <th>Not</th>
-                            <th>Güncel Fiyat (TL)</th>
-                            <th>Eski Fiyat</th>
-                            <th>İndirim</th>
-                            <th>Stok / Favori</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-price="349.99" data-site="ByNoGame">
-                            <td>ByNoGame</td>
-                            <td>Güvenilir MLBB TR elmas satış platformu</td>
-                            <td><a href="https://www.bynogame.com" target="_blank">Siteye Git</a></td>
-                            <td><span class="badge-small">Onaylı Satıcı</span></td>
-                            <td>349.99</td>
-                            <td><del>449.99 TL</del></td>
-                            <td>%22 İndirim</td>
-                            <td>Var <button class="fav-btn" type="button">☆</button></td>
-                        </tr>
-
-                        <tr data-price="74.99" data-site="Dijipin">
-                            <td>Dijipin</td>
-                            <td>Uygun fiyatlı MLBB elmas & kod</td>
-                            <td><a href="https://www.dijipin.com" target="_blank">Siteye Git</a></td>
-                            <td>-</td>
-                            <td>74.99</td>
-                            <td><del>89.99 TL</del></td>
-                            <td>%17 İndirim</td>
-                            <td>Var <button class="fav-btn" type="button">☆</button></td>
-                        </tr>
-
-                        <tr data-price="16.99" data-site="GameSatış">
-                            <td>GameSatış</td>
-                            <td>Hızlı teslimatlı MLBB elmas & oyun parası</td>
-                            <td><a href="https://www.gamesatis.com" target="_blank">Siteye Git</a></td>
-                            <td><span class="badge-small">Önerilen</span></td>
-                            <td>16.99</td>
-                            <td><del>21.99 TL</del></td>
-                            <td>%11 İndirim</td>
-                            <td>Var <button class="fav-btn" type="button">☆</button></td>
-                        </tr>
-
-                        <tr data-price="57.99" data-site="Kabarsakal Online">
-                            <td>Kabarsakal Online</td>
-                            <td>MLBB elmas satış sitesi</td>
-                            <td><a href="https://www.kabasakalonline.com/" target="_blank">Siteye Git</a></td>
-                            <td>-</td>
-                            <td>57.99</td>
-                            <td><del>70.99 TL</del></td>
-                            <td>%14 İndirim</td>
-                            <td>Var <button class="fav-btn" type="button">☆</button></td>
-                        </tr>
-
-                        <tr data-price="52.99" data-site="VatanGame">
-                            <td>VatanGame</td>
-                            <td>MLBB elmas ve diğer oyun epinleri</td>
-                            <td><a href="https://www.vatangame.com" target="_blank">Siteye Git</a></td>
-                            <td>-</td>
-                            <td>52.99</td>
-                            <td><del>64.99 TL</del></td>
-                            <td>%18 İndirim</td>
-                            <td>Var <button class="fav-btn" type="button">☆</button></td>
-                        </tr>
-
-                        <tr data-price="59.99" data-site="Joy Alışveriş">
-                            <td>Joy Alışveriş</td>
-                            <td>Joy Alışveriş üzerinden MLBB elmas</td>
-                            <td><a href="https://www.joyalisveris.com" target="_blank">Siteye Git</a></td>
-                            <td>-</td>
-                            <td>59.99</td>
-                            <td><del>69.99 TL</del></td>
-                            <td>%14 İndirim</td>
-                            <td>Var <button class="fav-btn" type="button">☆</button></td>
-                        </tr>
-
-                        <tr data-price="54.99" data-site="Perdigital">
-                            <td>Perdigital</td>
-                            <td>Dijital kod ve MLBB elmas bakiyesi</td>
-                            <td><a href="https://www.perdigital.com" target="_blank">Siteye Git</a></td>
-                            <td>-</td>
-                            <td>54.99</td>
-                            <td><del>62.99 TL</del></td>
-                            <td>%13 İndirim</td>
-                            <td>Var <button class="fav-btn" type="button">☆</button></td>
-                        </tr>
-
-                        <tr data-price="48.99" data-site="Oyuneks">
-                            <td>Oyuneks</td>
-                            <td>Oyuneks üzerinde MLBB elmas satışı</td>
-                            <td><a href="https://www.oyuneks.com" target="_blank">Siteye Git</a></td>
-                            <td>-</td>
-                            <td>48.99</td>
-                            <td><del>59.99 TL</del></td>
-                            <td>%18 İndirim</td>
-                            <td>Var <button class="fav-btn" type="button">☆</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <p class="info-row">
-            Fiyatlar örnek olarak yazılmıştır; gerçek fiyatlar için ilgili sitelerin sayfalarını ziyaret etmelisiniz.
-        </p>
-    </section>
-
-    <!-- YORUM BÖLÜMÜ -->
-    <section class="comments-section" id="yorumlar">
-        <h2>Yorumlar</h2>
-        <small>Bu bölüm sadece bu cihazda saklanan örnek yorumlar içindir. Gerçek üyelik / giriş sistemi için ayrı bir sunucu gerekir.</small>
-
-        <form id="comment-form" class="comment-form">
-            <div class="comment-form-row">
-                <input type="text" id="comment-name" class="comment-input" placeholder="İsim (isteğe bağlı)">
-                <input type="text" id="comment-server" class="comment-input" placeholder="Sunucu / ID (isteğe bağlı)">
-            </div>
-            <textarea id="comment-text" class="comment-textarea" placeholder="Yorumunuzu yazın (ör: Hangi siteden memnunsunuz?)" required></textarea>
-            <div style="margin-top:6px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
-                <small style="font-size:10px; color:var(--text-sub);">Yorumlar bu cihazda saklanır, sayfayı silmezsen yerel olarak kalır.</small>
-                <button type="submit" class="btn btn-secondary btn-small">Yorumu Gönder</button>
-            </div>
-        </form>
-
-        <div id="comment-list" class="comment-list"></div>
-    </section>
-
-    <footer>
-        Bu site Mobile Legends oyuncuları için hazırlanmış bağımsız bir fiyat karşılaştırma rehberidir.
-    </footer>
+        <footer>
+            Bu site Mobile Legends oyuncuları için hazırlanmış bağımsız bir fiyat karşılaştırma rehberidir.
+        </footer>
+    </div>
 </div>
 
 <!-- ARKA PLAN MÜZİĞİ -->
@@ -978,18 +1077,20 @@
 <button id="go-top-btn" class="go-top-btn" title="Anasayfaya dön">↑</button>
 
 <script>
-    // Navbar scroll efekti + yukarı butonu
     const navbar = document.getElementById("navbar");
     const goTopBtn = document.getElementById("go-top-btn");
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 20) {
+        const offset = window.scrollY || window.pageYOffset || 0;
+        document.body.style.backgroundPositionY = -(offset * 0.15) + "px";
+
+        if (offset > 20) {
             navbar.classList.add("scrolled");
         } else {
             navbar.classList.remove("scrolled");
         }
 
-        if (window.scrollY > 200) {
+        if (offset > 200) {
             goTopBtn.classList.add("show");
         } else {
             goTopBtn.classList.remove("show");
