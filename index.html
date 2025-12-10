@@ -1,1523 +1,674 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>MLBB Ucuz Elmas | Fiyat Karşılaştırma</title>
-
-    <!-- SEO -->
-    <meta name="description" content="Mobile Legends: Bang Bang ucuz elmas fiyat karşılaştırma rehberi. Türkiye'deki popüler sitelerdeki MLBB elmas fiyatlarını tek ekranda gör.">
-    <meta name="keywords" content="mobile legends, mlbb, ucuz elmas, elmas fiyat, bynogame, dijipin, gamesatış, kabasakal, vatan game, joy alışveriş, perdigital, oyuneks">
-    <meta name="author" content="MLBB Fiyat Rehberi">
-    <meta name="theme-color" content="#050812" />
-
-    <!-- Sosyal medya kartı -->
-    <meta property="og:title" content="MLBB Ucuz Elmas | Fiyat Karşılaştırma" />
-    <meta property="og:description" content="Türkiye'deki MLBB elmas fiyatlarını tek ekranda karşılaştır." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/" />
-    <meta property="og:image" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/bg-mlbb.webp" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/webp" href="bg-mlbb.webp" />
-
-    <style>
-        :root {
-            --page-bg: rgba(5, 6, 12, 0.94);
-            --navbar-bg: linear-gradient(90deg, #101728, #181b35);
-            --navbar-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-            --text-main: #f5f5f5;
-            --text-sub: #c9d4ff;
-            --card-bg: rgba(5, 8, 18, 0.96);
-            --hero-video-bg: radial-gradient(circle at top left, #28345c, #070814);
-            --table-head-bg: #131726;
-            --table-row-hover: rgba(255, 255, 255, 0.06);
-            --accent-yellow: #ffd54a;
-            --accent-blue: #4da6ff;
-        }
-
-        body.theme-light {
-            --page-bg: rgba(245, 248, 255, 0.96);
-            --navbar-bg: linear-gradient(90deg, #edf2ff, #dde7ff);
-            --navbar-shadow: 0 8px 20px rgba(80, 100, 150, 0.35);
-            --text-main: #111320;
-            --text-sub: #4b5678;
-            --card-bg: #ffffff;
-            --hero-video-bg: linear-gradient(145deg, #f4f6ff, #dde6ff);
-            --table-head-bg: #e5ebff;
-            --table-row-hover: rgba(40, 60, 120, 0.06);
-            --accent-yellow: #f4a600;
-            --accent-blue: #1f6fff;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-image: url("bg-mlbb.webp");
-            background-size: cover;
-            background-position: center top;
-            color: var(--text-main);
-            padding: 10px;
-            transition: background-color 0.25s ease, color 0.25s ease, background-position 0.25s ease;
-        }
-
-        a {
-            color: var(--accent-blue);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* DIŞ KABUK */
-        .page-shell {
-            position: relative;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .page {
-            max-width: 100%;
-            background: var(--page-bg);
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-            overflow: hidden;
-            transition: background 0.25s ease, box-shadow 0.25s ease;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Yan paneller */
-        .side-panel {
-            position: absolute;
-            top: 60px;
-            bottom: 40px;
-            width: 155px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            pointer-events: none;
-        }
-
-        .side-panel-left { left: -165px; }
-        .side-panel-right { right: -165px; }
-
-        .side-card {
-            pointer-events: auto;
-            position: relative;
-            background: radial-gradient(circle at top, rgba(10, 12, 25, 0.95), rgba(5, 7, 18, 0.75));
-            border-radius: 18px;
-            padding: 8px 10px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: #ffffff;
-            font-size: 11px;
-            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(7px);
-            overflow: hidden;
-        }
-
-        /* Yan kart animasyonları */
-        .side-card::before {
-            content: "";
-            position: absolute;
-            inset: -40%;
-            background: radial-gradient(circle at 0 0, rgba(120, 200, 255, 0.6), transparent 60%);
-            opacity: 0.0;
-            mix-blend-mode: screen;
-            animation: glow 4s ease-in-out infinite alternate;
-            pointer-events: none;
-        }
-
-        .side-panel-left .side-card:nth-child(1) {
-            animation: floatLeft 6s ease-in-out infinite alternate;
-        }
-
-        .side-panel-left .side-card:nth-child(2) {
-            animation: floatLeft2 7s ease-in-out infinite alternate;
-        }
-
-        .side-panel-right .side-card:nth-child(1) {
-            animation: floatRight 6.5s ease-in-out infinite alternate;
-        }
-
-        .side-panel-right .side-card:nth-child(2) {
-            animation: floatRight2 7.5s ease-in-out infinite alternate;
-        }
-
-        .side-card:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.95);
-        }
-
-        @keyframes glow {
-            0% { opacity: 0; transform: translate3d(-10px, -10px, 0); }
-            100% { opacity: 0.9; transform: translate3d(8px, 8px, 0); }
-        }
-
-        @keyframes floatLeft {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-8px); }
-        }
-
-        @keyframes floatLeft2 {
-            0% { transform: translateY(4px); }
-            100% { transform: translateY(-4px); }
-        }
-
-        @keyframes floatRight {
-            0% { transform: translateY(-2px); }
-            100% { transform: translateY(8px); }
-        }
-
-        @keyframes floatRight2 {
-            0% { transform: translateY(3px); }
-            100% { transform: translateY(-5px); }
-        }
-
-        .side-card h4 {
-            font-size: 12px;
-            margin-bottom: 3px;
-            color: var(--accent-yellow);
-        }
-
-        .side-card p {
-            font-size: 10px;
-            line-height: 1.3;
-        }
-
-        .side-chip {
-            display: inline-block;
-            font-size: 9px;
-            padding: 2px 6px;
-            border-radius: 999px;
-            background: rgba(0, 0, 0, 0.5);
-            margin-bottom: 3px;
-        }
-
-        body.theme-light .side-card {
-            background: rgba(255, 255, 255, 0.96);
-            color: #111320;
-        }
-
-        body.theme-light .side-card::before {
-            mix-blend-mode: normal;
-        }
-
-        @media (max-width: 1200px) {
-            .side-panel {
-                display: none;
-            }
-            .page-shell {
-                max-width: 100%;
-            }
-        }
-
-        /* NAVBAR */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 18px;
-            background: var(--navbar-bg);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            position: sticky;
-            top: 0;
-            z-index: 20;
-            box-shadow: var(--navbar-shadow);
-            transition: padding 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
-        }
-
-        .navbar.scrolled {
-            padding: 8px 16px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.75);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-icon {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, #35c0ff, #0040ff);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 18px;
-            color: #ffffff;
-            box-shadow: 0 0 14px rgba(30, 150, 255, 0.8);
-            animation: pulse 2.2s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(30, 150, 255, 0.6); }
-            50% { transform: scale(1.05); box-shadow: 0 0 18px rgba(30, 150, 255, 1); }
-        }
-
-        .logo-text-main {
-            font-weight: 700;
-            font-size: 17px;
-            color: var(--text-main);
-        }
-
-        .logo-text-sub {
-            font-size: 11px;
-            color: var(--text-sub);
-        }
-
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 14px;
-            font-size: 13px;
-        }
-
-        .nav-links a {
-            padding: 4px 8px;
-            border-radius: 999px;
-            background: transparent;
-            border: 1px solid transparent;
-            color: var(--text-main);
-            transition: background 0.15s ease, border 0.15s ease, transform 0.12s ease;
-        }
-
-        .nav-links a:hover {
-            border-color: rgba(255, 255, 255, 0.4);
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-1px);
-        }
-
-        .theme-toggle {
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            background: rgba(0, 0, 0, 0.2);
-            color: #fff;
-            padding: 4px 10px;
-            font-size: 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: background 0.15s ease, transform 0.12s ease, box-shadow 0.12s ease;
-        }
-
-        .theme-toggle span.icon {
-            font-size: 14px;
-        }
-
-        .theme-toggle:hover {
-            background: rgba(0, 0, 0, 0.4);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
-        }
-
-        /* HABER BANDI */
-        .news-ticker {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 18px;
-            font-size: 11px;
-            background: rgba(0, 0, 0, 0.35);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        body.theme-light .news-ticker {
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .news-label {
-            padding: 3px 8px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.15);
-            font-weight: 600;
-            letter-spacing: 0.4px;
-            font-size: 10px;
-        }
-
-        .news-text {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            color: var(--text-main);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        /* HERO */
-        .hero {
-            display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.1fr);
-            gap: 18px;
-            padding: 18px 18px 10px;
-        }
-
-        @media (max-width: 860px) {
-            .hero {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .hero-text h1 {
-            font-size: 26px;
-            margin-bottom: 8px;
-        }
-
-        .hero-text h1 span {
-            color: var(--accent-yellow);
-        }
-
-        .hero-text p {
-            font-size: 13px;
-            color: var(--text-sub);
-            margin-bottom: 12px;
-        }
-
-        .hero-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 12px;
-        }
-
-        .badge {
-            font-size: 11px;
-            padding: 4px 10px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            opacity: 0.9;
-            background: rgba(0, 0, 0, 0.2);
-            color: var(--text-main);
-        }
-
-        body.theme-light .badge {
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 10px;
-        }
-
-        .btn {
-            font-size: 13px;
-            padding: 8px 14px;
-            border-radius: 999px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.13s ease, box-shadow 0.13s ease, opacity 0.13s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #0fdc7b, #00aaff);
-            color: #041019;
-            font-weight: 600;
-            box-shadow: 0 6px 16px rgba(0, 180, 150, 0.75);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--text-main);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-small {
-            font-size: 11px;
-            padding: 5px 10px;
-        }
-
-        .btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-            opacity: 0.96;
-        }
-
-        .btn:active {
-            transform: translateY(0);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-note {
-            font-size: 11px;
-            color: var(--text-sub);
-            margin-top: 6px;
-        }
-
-        /* HERO VİDEO */
-        .hero-video-card {
-            background: var(--hero-video-bg);
-            border-radius: 16px;
-            padding: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .hero-video-card h3 {
-            font-size: 14px;
-            margin-bottom: 6px;
-            color: var(--text-main);
-        }
-
-        .hero-video-card p {
-            font-size: 11px;
-            color: var(--text-sub);
-            margin-bottom: 6px;
-        }
-
-        .hero-video-card video {
-            width: 100%;
-            border-radius: 12px;
-            display: block;
-        }
-
-        /* DUYURU / REKLAM KARTLARI */
-        .ad-section {
-            padding: 4px 18px 14px;
-        }
-
-        .ad-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 12px;
-        }
-
-        .ad-card {
-            background: var(--card-bg);
-            border-radius: 14px;
-            padding: 10px 12px;
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            font-size: 12px;
-        }
-
-        .ad-card h3 {
-            font-size: 13px;
-            margin-bottom: 4px;
-            color: var(--accent-yellow);
-        }
-
-        .ad-card p {
-            font-size: 11px;
-            color: var(--text-sub);
-            margin-bottom: 4px;
-        }
-
-        .ad-tag {
-            display: inline-block;
-            font-size: 10px;
-            padding: 2px 7px;
-            border-radius: 999px;
-            background: rgba(0, 0, 0, 0.4);
-            margin-bottom: 4px;
-        }
-
-        /* GENEL SECTION */
-        .section {
-            padding: 4px 18px 18px;
-        }
-
-        .section-title-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
-        }
-
-        .section-title-row h2 {
-            font-size: 18px;
-            color: var(--text-main);
-        }
-
-        .section-title-row small {
-            font-size: 11px;
-            color: var(--text-sub);
-        }
-
-        .section-controls {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Tablo arama vs */
-        .search-input {
-            padding: 6px 10px;
-            font-size: 12px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            outline: none;
-            min-width: 160px;
-            background: rgba(0, 0, 0, 0.2);
-            color: var(--text-main);
-        }
-
-        body.theme-light .search-input {
-            background: rgba(255, 255, 255, 0.95);
-            border-color: rgba(0, 0, 0, 0.15);
-        }
-
-        .search-input::placeholder {
-            color: #9ca0c0;
-        }
-
-        .table-container {
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            background: var(--card-bg);
-            transition: background 0.25s ease, border 0.25s ease;
-        }
-
-        .table-scroll {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            min-width: 700px;
-        }
-
-        thead {
-            background: var(--table-head-bg);
-        }
-
-        th, td {
-            padding: 9px 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            text-align: left;
-            font-size: 13px;
-        }
-
-        th {
-            font-weight: 600;
-            color: var(--accent-yellow);
-            white-space: nowrap;
-        }
-
-        tbody tr {
-            transition: background 0.16s ease, transform 0.12s ease, box-shadow 0.12s ease;
-        }
-
-        tbody tr:hover {
-            background: var(--table-row-hover);
-            transform: translateY(-1px);
-        }
-
-        tr.best-row {
-            background: rgba(0, 190, 120, 0.22);
-        }
-
-        tr.best-row:hover {
-            background: rgba(0, 210, 140, 0.32);
-        }
-
-        .badge-small {
-            background: rgba(0, 200, 120, 0.22);
-            border: 1px solid rgba(0, 200, 120, 0.7);
-            padding: 2px 6px;
-            border-radius: 6px;
-            color: #b8ffe1;
-            font-size: 11px;
-        }
-
-        .fav-row {
-            box-shadow: inset 0 0 0 1px rgba(255, 215, 0, 0.7);
-        }
-
-        .fav-btn {
-            margin-left: 6px;
-            font-size: 12px;
-            padding: 2px 6px;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            background: rgba(0, 0, 0, 0.4);
-            color: #ffd54a;
-            cursor: pointer;
-        }
-
-        body.theme-light .fav-btn {
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(0, 0, 0, 0.15);
-        }
-
-        .info-row {
-            margin-top: 8px;
-            font-size: 11px;
-            color: var(--text-sub);
-        }
-
-        /* YORUM BÖLÜMÜ */
-        .comments-section {
-            padding: 4px 18px 18px;
-        }
-
-        .comments-section h2 {
-            font-size: 18px;
-            margin-bottom: 4px;
-        }
-
-        .comments-section small {
-            font-size: 11px;
-            color: var(--text-sub);
-        }
-
-        .comment-form {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            background: var(--card-bg);
-            border-radius: 14px;
-            padding: 10px 12px;
-            border: 1px solid rgba(255, 255, 255, 0.16);
-        }
-
-        .comment-form-row {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 6px;
-        }
-
-        .comment-input,
-        .comment-textarea {
-            width: 100%;
-            padding: 6px 10px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            background: rgba(0, 0, 0, 0.25);
-            color: var(--text-main);
-            font-size: 12px;
-            outline: none;
-        }
-
-        body.theme-light .comment-input,
-        body.theme-light .comment-textarea {
-            background: rgba(255, 255, 255, 0.96);
-            border-color: rgba(0, 0, 0, 0.1);
-        }
-
-        .comment-textarea {
-            resize: vertical;
-            min-height: 60px;
-        }
-
-        .comment-list {
-            margin-top: 8px;
-        }
-
-        .comment-item {
-            padding: 6px 10px;
-            background: var(--card-bg);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            font-size: 12px;
-            margin-bottom: 4px;
-        }
-
-        .comment-meta {
-            font-size: 10px;
-            color: var(--text-sub);
-            margin-bottom: 2px;
-        }
-
-        footer {
-            padding: 10px 18px 14px;
-            font-size: 11px;
-            text-align: center;
-            color: var(--text-sub);
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            background: rgba(3, 5, 13, 0.96);
-        }
-
-        /* Yukarı (Anasayfa) butonu */
-        .go-top-btn {
-            position: fixed;
-            right: 14px;
-            bottom: 18px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: none;
-            background: linear-gradient(135deg, #0fdc7b, #00aaff);
-            color: #051018;
-            font-size: 20px;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 50;
-        }
-
-        .go-top-btn.show {
-            display: flex;
-        }
-
-        /* MOBİL UYUM */
-        @media (max-width: 600px) {
-            body {
-                padding: 4px;
-            }
-
-            .page {
-                border-radius: 12px;
-            }
-
-            .navbar {
-                padding: 8px 10px;
-            }
-
-            .navbar.scrolled {
-                padding: 6px 8px;
-            }
-
-            .logo-text-main {
-                font-size: 15px;
-            }
-
-            .logo-text-sub {
-                font-size: 10px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero {
-                padding: 12px 10px 4px;
-                gap: 10px;
-            }
-
-            .hero-text h1 {
-                font-size: 20px;
-            }
-
-            .hero-text p {
-                font-size: 12px;
-            }
-
-            .hero-badges {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .hero-video-card {
-                padding: 8px;
-            }
-
-            .hero-video-card h3 {
-                font-size: 13px;
-            }
-
-            .hero-video-card p {
-                font-size: 10px;
-            }
-
-            .section,
-            .ad-section,
-            .comments-section {
-                padding: 4px 10px 12px;
-            }
-
-            .section-title-row h2 {
-                font-size: 16px;
-            }
-
-            footer {
-                font-size: 10px;
-                padding: 8px 10px 10px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>MLBB Ucuz Elmas | Fiyat Karşılaştırma</title>
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/"/>
+  <meta name="description" content="Mobile Legends: Bang Bang ucuz elmas fiyat karşılaştırma rehberi. Türkiye'deki popüler sitelerdeki MLBB elmas fiyatlarını tek ekranda gör.">
+  <meta name="keywords" content="mobile legends, mlbb, ucuz elmas, elmas fiyat, bynogame, dijipin, gamesatış, kabasakal, vatan game, joy alışveriş, perdigital, oyuneks">
+  <meta name="author" content="MLBB Fiyat Rehberi">
+  <meta name="theme-color" content="#050812"/>
+
+  <!-- OpenGraph -->
+  <meta property="og:title" content="MLBB Ucuz Elmas | Fiyat Karşılaştırma"/>
+  <meta property="og:description" content="Türkiye'deki MLBB elmas fiyatlarını tek ekranda karşılaştır."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/"/>
+  <meta property="og:image" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/bg-mlbb.webp"/>
+
+  <!-- JSON-LD (Google için) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"MLBB Ucuz Elmas",
+    "url":"https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/",
+    "potentialAction":{"@type":"SearchAction","target":"https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/?q={search_term_string}","query-input":"required name=search_term_string"}
+  }
+  </script>
+
+  <link rel="icon" type="image/webp" href="bg-mlbb.webp"/>
+
+  <style>
+    :root{
+      --page-bg:rgba(5,6,12,.94);
+      --navbar-bg:linear-gradient(90deg,#101728,#181b35);
+      --navbar-shadow:0 10px 25px rgba(0,0,0,.6);
+      --text-main:#f5f5f5;--text-sub:#c9d4ff;
+      --card-bg:rgba(5,8,18,.96);
+      --hero-video-bg:radial-gradient(circle at top left,#28345c,#070814);
+      --table-head-bg:#131726;--table-row-hover:rgba(255,255,255,.06);
+      --accent-yellow:#ffd54a;--accent-blue:#4da6ff;
+      --good:#49d29a;--warn:#ffa72b;--bad:#ff4d4d;
+    }
+    body.theme-light{
+      --page-bg:rgba(245,248,255,.96);
+      --navbar-bg:linear-gradient(90deg,#edf2ff,#dde7ff);
+      --navbar-shadow:0 8px 20px rgba(80,100,150,.35);
+      --text-main:#111320;--text-sub:#4b5678;
+      --card-bg:#fff;--hero-video-bg:linear-gradient(145deg,#f4f6ff,#dde6ff);
+      --table-head-bg:#e5ebff;--table-row-hover:rgba(40,60,120,.06);
+      --accent-yellow:#f4a600;--accent-blue:#1f6fff;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background-image:url("bg-mlbb.webp");
+      background-size:cover;background-position:center top;color:var(--text-main);
+      padding:10px;transition:background-color .25s ease,color .25s ease,background-position .25s ease;
+    }
+    a{color:var(--accent-blue);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .page-shell{position:relative;max-width:1300px;margin:0 auto}
+    .page{max-width:100%;background:var(--page-bg);border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.8);overflow:hidden;transition:background .25s ease,box-shadow .25s ease;position:relative;z-index:2}
+
+    /* Yan paneller */
+    .side-panel{position:absolute;top:60px;bottom:40px;width:155px;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+    .side-panel-left{left:-165px}.side-panel-right{right:-165px}
+    .side-card{pointer-events:auto;position:relative;background:radial-gradient(circle at top,rgba(10,12,25,.95),rgba(5,7,18,.75));border-radius:18px;padding:8px 10px;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;box-shadow:0 16px 30px rgba(0,0,0,.85);backdrop-filter:blur(7px);overflow:hidden}
+    .side-card::before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle at 0 0,rgba(120,200,255,.6),transparent 60%);opacity:0;mix-blend-mode:screen;animation:glow 4s ease-in-out infinite alternate;pointer-events:none}
+    .side-panel-left .side-card:nth-child(1){animation:floatLeft 6s ease-in-out infinite alternate}
+    .side-panel-left .side-card:nth-child(2){animation:floatLeft2 7s ease-in-out infinite alternate}
+    .side-panel-right .side-card:nth-child(1){animation:floatRight 6.5s ease-in-out infinite alternate}
+    .side-panel-right .side-card:nth-child(2){animation:floatRight2 7.5s ease-in-out infinite alternate}
+    .side-card:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 20px 35px rgba(0,0,0,.95)}
+    @keyframes glow{0%{opacity:0;transform:translate3d(-10px,-10px,0)}100%{opacity:.9;transform:translate3d(8px,8px,0)}}
+    @keyframes floatLeft{0%{transform:translateY(0)}100%{transform:translateY(-8px)}}
+    @keyframes floatLeft2{0%{transform:translateY(4px)}100%{transform:translateY(-4px)}}
+    @keyframes floatRight{0%{transform:translateY(-2px)}100%{transform:translateY(8px)}}
+    @keyframes floatRight2{0%{transform:translateY(3px)}100%{transform:translateY(-5px)}}
+    .side-card h4{font-size:12px;margin-bottom:3px;color:var(--accent-yellow)}
+    .side-card p{font-size:10px;line-height:1.3}
+    .side-chip{display:inline-block;font-size:9px;padding:2px 6px;border-radius:999px;background:rgba(0,0,0,.5);margin-bottom:3px}
+    body.theme-light .side-card{background:rgba(255,255,255,.96);color:#111320}
+    body.theme-light .side-card::before{mix-blend-mode:normal}
+    @media (max-width:1200px){.side-panel{display:none}.page-shell{max-width:100%}}
+
+    /* NAVBAR */
+    .navbar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:var(--navbar-bg);border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;z-index:20;box-shadow:var(--navbar-shadow);transition:padding .2s ease,box-shadow .2s ease,background .25s ease}
+    .navbar.scrolled{padding:8px 16px;box-shadow:0 6px 20px rgba(0,0,0,.75)}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo-icon{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#35c0ff,#0040ff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:#fff;box-shadow:0 0 14px rgba(30,150,255,.8);animation:pulse 2.2s infinite ease-in-out}
+    @keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 10px rgba(30,150,255,.6)}50%{transform:scale(1.05);box-shadow:0 0 18px rgba(30,150,255,1)}}
+    .logo-text-main{font-weight:700;font-size:17px;color:var(--text-main)}
+    .logo-text-sub{font-size:11px;color:var(--text-sub)}
+    .nav-right{display:flex;align-items:center;gap:12px}
+    .nav-links{display:flex;gap:14px;font-size:13px}
+    .nav-links a{padding:4px 8px;border-radius:999px;background:transparent;border:1px solid transparent;color:var(--text-main);transition:background .15s ease,border .15s ease,transform .12s ease}
+    .nav-links a:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);transform:translateY(-1px)}
+    .theme-toggle{border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.2);color:#fff;padding:4px 10px;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:background .15s ease,transform .12s ease,box-shadow .12s ease}
+    .theme-toggle:hover{background:rgba(0,0,0,.4);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.6)}
+    .theme-toggle span.icon{font-size:14px}
+
+    /* Haber bandı */
+    .news-ticker{display:flex;align-items:center;gap:8px;padding:6px 18px;font-size:11px;background:rgba(0,0,0,.35);border-bottom:1px solid rgba(255,255,255,.08)}
+    body.theme-light .news-ticker{background:rgba(255,255,255,.9)}
+    .news-label{padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.15);font-weight:600;letter-spacing:.4px;font-size:10px}
+    .news-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text-main);opacity:0;transition:opacity .3s ease}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.1fr);gap:18px;padding:18px 18px 10px}
+    @media (max-width:860px){.hero{grid-template-columns:1fr}}
+    .hero-text h1{font-size:26px;margin-bottom:8px}
+    .hero-text h1 span{color:var(--accent-yellow)}
+    .hero-text p{font-size:13px;color:var(--text-sub);margin-bottom:12px}
+    .hero-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+    .badge{font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.2);opacity:.9;background:rgba(0,0,0,.2);color:var(--text-main)}
+    body.theme-light .badge{background:rgba(255,255,255,.9);border-color:rgba(0,0,0,.1)}
+    .hero-buttons{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+    .btn{font-size:13px;padding:8px 14px;border-radius:999px;border:none;cursor:pointer;transition:transform .13s ease,box-shadow .13s ease,opacity .13s ease}
+    .btn-primary{background:linear-gradient(135deg,#0fdc7b,#00aaff);color:#041019;font-weight:600;box-shadow:0 6px 16px rgba(0,180,150,.75)}
+    .btn-secondary{background:rgba(255,255,255,.08);color:var(--text-main);border:1px solid rgba(255,255,255,.3)}
+    .btn-small{font-size:11px;padding:5px 10px}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.6);opacity:.96}
+    .btn:active{transform:translateY(0);box-shadow:0 4px 10px rgba(0,0,0,.7)}
+    .hero-note{font-size:11px;color:var(--text-sub);margin-top:6px}
+
+    /* Video */
+    .hero-video-card{background:var(--hero-video-bg);border-radius:16px;padding:10px;border:1px solid rgba(255,255,255,.1)}
+    .hero-video-card h3{font-size:14px;margin-bottom:6px;color:var(--text-main)}
+    .hero-video-card p{font-size:11px;color:var(--text-sub);margin-bottom:6px}
+    .hero-video-card video{width:100%;border-radius:12px;display:block}
+
+    /* Duyuru kartları */
+    .ad-section{padding:4px 18px 14px}
+    .ad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .ad-card{background:var(--card-bg);border-radius:14px;padding:10px 12px;border:1px solid rgba(255,255,255,.14);font-size:12px}
+    .ad-card h3{font-size:13px;margin-bottom:4px;color:var(--accent-yellow)}
+    .ad-card p{font-size:11px;color:var(--text-sub);margin-bottom:4px}
+    .ad-tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:999px;background:rgba(0,0,0,.4);margin-bottom:4px}
+
+    /* Section + tablo */
+    .section{padding:4px 18px 18px}
+    .section-title-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+    .section-title-row h2{font-size:18px;color:var(--text-main)}
+    .section-title-row small{font-size:11px;color:var(--text-sub)}
+    .section-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+    .search-input{padding:6px 10px;font-size:12px;border-radius:999px;border:1px solid rgba(255,255,255,.3);outline:none;min-width:160px;background:rgba(0,0,0,.2);color:var(--text-main)}
+    body.theme-light .search-input{background:rgba(255,255,255,.95);border-color:rgba(0,0,0,.15)}
+    .search-input::placeholder{color:#9ca0c0}
+    .table-container{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.18);background:var(--card-bg);transition:background .25s ease,border .25s ease}
+    .table-scroll{overflow-x:auto}
+    table{width:100%;border-collapse:collapse;min-width:700px}
+    thead{background:var(--table-head-bg)}
+    th,td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.12);text-align:left;font-size:13px}
+    th{font-weight:600;color:var(--accent-yellow);white-space:nowrap}
+    tbody tr{transition:background .16s ease,transform .12s ease,box-shadow .12s ease}
+    tbody tr:hover{background:var(--table-row-hover);transform:translateY(-1px)}
+    tr.best-row{background:rgba(0,190,120,.22)}
+    tr.best-row:hover{background:rgba(0,210,140,.32)}
+    .badge-small{background:rgba(0,200,120,.22);border:1px solid rgba(0,200,120,.7);padding:2px 6px;border-radius:6px;color:#b8ffe1;font-size:11px}
+    .fav-row{box-shadow:inset 0 0 0 1px rgba(255,215,0,.7)}
+    .fav-btn{margin-left:6px;font-size:12px;padding:2px 6px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.4);color:#ffd54a;cursor:pointer}
+    body.theme-light .fav-btn{background:rgba(255,255,255,.9);border-color:rgba(0,0,0,.15)}
+    .info-row{margin-top:8px;font-size:11px;color:var(--text-sub)}
+
+    /* Skin/Paket kutusu: aç/kapa animasyon */
+    #extra-prices-wrap{overflow:hidden;max-height:0;transition:max-height .35s ease}
+    #extra-prices-wrap.open{max-height:800px}
+
+    /* Yorumlar */
+    .comments-section{padding:4px 18px 18px}
+    .comments-section h2{font-size:18px;margin-bottom:4px}
+    .comments-section small{font-size:11px;color:var(--text-sub)}
+    .comment-form{margin-top:10px;margin-bottom:10px;background:var(--card-bg);border-radius:14px;padding:10px 12px;border:1px solid rgba(255,255,255,.16)}
+    .comment-form-row{display:flex;gap:8px;margin-bottom:6px}
+    .comment-input,.comment-textarea{width:100%;padding:6px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:var(--text-main);font-size:12px;outline:none}
+    body.theme-light .comment-input,body.theme-light .comment-textarea{background:rgba(255,255,255,.96);border-color:rgba(0,0,0,.1)}
+    .comment-textarea{resize:vertical;min-height:60px}
+    .comment-list{margin-top:8px}
+    .comment-item{padding:6px 10px;background:var(--card-bg);border-radius:10px;border:1px solid rgba(255,255,255,.08);font-size:12px;margin-bottom:4px}
+    .comment-meta{font-size:10px;color:var(--text-sub);margin-bottom:2px}
+    .stars{cursor:pointer;font-size:16px;user-select:none}
+    .del-btn{margin-left:8px;font-size:11px;padding:2px 6px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:var(--text-main);cursor:pointer}
+
+    footer{padding:10px 18px 14px;font-size:11px;text-align:center;color:var(--text-sub);border-top:1px solid rgba(255,255,255,.12);background:rgba(3,5,13,.96)}
+
+    /* Go top */
+    .go-top-btn{position:fixed;right:14px;bottom:18px;width:40px;height:40px;border-radius:50%;border:none;background:linear-gradient(135deg,#0fdc7b,#00aaff);color:#051018;font-size:20px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:50}
+    .go-top-btn.show{display:flex}
+
+    /* Mobil */
+    @media (max-width:600px){
+      body{padding:4px}.page{border-radius:12px}
+      .navbar{padding:8px 10px}.navbar.scrolled{padding:6px 8px}
+      .logo-text-main{font-size:15px}.logo-text-sub{font-size:10px}
+      .nav-links{display:none}
+      .hero{padding:12px 10px 4px;gap:10px}
+      .hero-text h1{font-size:20px}.hero-text p{font-size:12px}
+      .hero-badges{flex-direction:column;align-items:flex-start}
+      .hero-buttons{flex-direction:column;align-items:stretch}
+      .btn{width:100%;text-align:center}
+      .hero-video-card{padding:8px}.hero-video-card h3{font-size:13px}.hero-video-card p{font-size:10px}
+      .section,.ad-section,.comments-section{padding:4px 10px 12px}
+      .section-title-row h2{font-size:16px}
+      footer{font-size:10px;padding:8px 10px 10px}
+    }
+  </style>
 </head>
-
 <body>
 
 <div class="page-shell">
-    <!-- SOL PANEL -->
-    <div class="side-panel side-panel-left">
-        <div class="side-card">
-            <div class="side-chip">Etkinlik Takvimi</div>
-            <h4>Starlight &amp; Twilight</h4>
-            <p>Haftalık Starlight ve Twilight Pass dönemlerini takip et.</p>
+  <!-- SOL PANEL -->
+  <div class="side-panel side-panel-left">
+    <div class="side-card">
+      <div class="side-chip">Etkinlik Takvimi</div>
+      <h4>Starlight &amp; Twilight</h4>
+      <p>Haftalık Starlight ve Twilight Pass dönemlerini takip et.</p>
+    </div>
+    <div class="side-card">
+      <div class="side-chip">İndirim Radar</div>
+      <h4>Hafta Sonu Fırsatları</h4>
+      <p>Hafta sonu MLBB elmas ve skin indirimlerini kontrol etmeyi unutma.</p>
+    </div>
+  </div>
+
+  <!-- SAĞ PANEL -->
+  <div class="side-panel side-panel-right">
+    <div class="side-card">
+      <div class="side-chip">MLBB Haber</div>
+      <h4>Yeni Hero &amp; Skin</h4>
+      <p>Yeni kahraman ve kostüm duyurularını buradan takip ettiğini düşün.</p>
+    </div>
+    <div class="side-card">
+      <div class="side-chip">Favori Siteler</div>
+      <h4>Hızlı Kısayol</h4>
+      <p>ByNoGame, GameSatış, VatanGame gibi siteleri favori yapıp öne çıkar.</p>
+    </div>
+  </div>
+
+  <!-- ANA KART -->
+  <div class="page" id="ust">
+
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <div class="logo">
+        <div class="logo-icon">M</div>
+        <div>
+          <div class="logo-text-main">MLBB Ucuz Elmas</div>
+          <div class="logo-text-sub">Fiyat Karşılaştırma Rehberi</div>
         </div>
-        <div class="side-card">
-            <div class="side-chip">İndirim Radar</div>
-            <h4>Hafta Sonu Fırsatları</h4>
-            <p>Hafta sonu MLBB elmas ve skin indirimlerini kontrol etmeyi unutma.</p>
-        </div>
+      </div>
+
+      <div class="nav-right">
+        <nav class="nav-links">
+          <a href="#ust">Anasayfa</a>
+          <a href="#fiyatlar">Fiyatlar</a>
+          <a href="#video">Video</a>
+          <a href="#yorumlar">Yorumlar</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle">
+          <span class="icon" id="theme-icon">🌙</span>
+          <span id="theme-text">Koyu Mod</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- HABER -->
+    <div class="news-ticker">
+      <div class="news-label">MLBB Haber</div>
+      <div class="news-text" id="news-text"></div>
     </div>
 
-    <!-- SAĞ PANEL -->
-    <div class="side-panel side-panel-right">
-        <div class="side-card">
-            <div class="side-chip">MLBB Haber</div>
-            <h4>Yeni Hero &amp; Skin</h4>
-            <p>Yeni kahraman ve kostüm duyurularını buradan takip ettiğini düşün.</p>
-        </div>
-        <div class="side-card">
-            <div class="side-chip">Favori Siteler</div>
-            <h4>Hızlı Kısayol</h4>
-            <p>ByNoGame, GameSatış, VatanGame gibi siteleri favori yapıp öne çıkar.</p>
-        </div>
-    </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1><span>Mobile Legends</span> Elmas Karşılaştırma</h1>
+        <p>Türkiye’deki popüler sitelerde Mobile Legends: Bang Bang elmas fiyatlarını
+          tek ekranda gör. En ucuz fiyatı otomatik bulan buton ile zamandan kazan.</p>
 
-    <!-- ANA SAYFA KARTI -->
-    <div class="page" id="ust">
-
-        <!-- NAVBAR -->
-        <header class="navbar" id="navbar">
-            <div class="logo">
-                <div class="logo-icon">M</div>
-                <div>
-                    <div class="logo-text-main">MLBB Ucuz Elmas</div>
-                    <div class="logo-text-sub">Fiyat Karşılaştırma Rehberi</div>
-                </div>
-            </div>
-
-            <div class="nav-right">
-                <nav class="nav-links">
-                    <a href="#ust">Anasayfa</a>
-                    <a href="#fiyatlar">Fiyatlar</a>
-                    <a href="#video">Video</a>
-                    <a href="#yorumlar">Yorumlar</a>
-                </nav>
-                <button id="theme-toggle" class="theme-toggle">
-                    <span class="icon" id="theme-icon">🌙</span>
-                    <span id="theme-text">Koyu Mod</span>
-                </button>
-            </div>
-        </header>
-
-        <!-- HABER BANDI -->
-        <div class="news-ticker">
-            <div class="news-label">MLBB Haber</div>
-            <div class="news-text" id="news-text"></div>
+        <div class="hero-badges">
+          <div class="badge">Gerçek zamanlı değil, rehber amaçlıdır.</div>
+          <div class="badge">Fiyatlar için ilgili siteye gitmeniz gerekir.</div>
         </div>
 
-        <!-- HERO -->
-        <section class="hero">
-            <div class="hero-text">
-                <h1><span>Mobile Legends</span> Elmas Karşılaştırma</h1>
-                <p>
-                    Türkiye’deki popüler sitelerde Mobile Legends: Bang Bang elmas fiyatlarını
-                    tek ekranda gör. En ucuz fiyatı otomatik bulan buton ile zamandan kazan.
-                </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" id="btn-best">💸 En ucuz fiyatı bul</button>
+          <button class="btn btn-secondary btn-small" id="btn-music">🎵 Müziği Aç</button>
+        </div>
 
-                <div class="hero-badges">
-                    <div class="badge">Gerçek zamanlı değil, rehber amaçlıdır.</div>
-                    <div class="badge">Fiyatlar için ilgili siteye gitmeniz gerekir.</div>
-                </div>
+        <p class="hero-note">Not: Bu site sadece fiyat karşılaştırma rehberi olarak tasarlanmıştır.
+          Satın alma işlemleri ilgili sitelerin kendi sayfalarında gerçekleşir.</p>
+      </div>
 
-                <div class="hero-buttons">
-                    <button class="btn btn-primary" id="btn-best">💸 En ucuz fiyatı bul</button>
-                    <button class="btn btn-secondary btn-small" id="btn-music">🎵 Müziği Aç</button>
-                </div>
+      <aside class="hero-video-card" id="video">
+        <h3>Yeni Kahraman – Sora Deneme Videosu</h3>
+        <p>Sora hero deneme videosu. Fiyatlara bakarken arka planda oynatabilirsin.</p>
+        <video controls poster="bg-mlbb.webp">
+          <source src="sora-video.mp4" type="video/mp4"/>
+          Tarayıcınız video etiketini desteklemiyor.
+        </video>
+      </aside>
+    </section>
 
-                <p class="hero-note">
-                    Not: Bu site sadece fiyat karşılaştırma rehberi olarak tasarlanmıştır.
-                    Satın alma işlemleri ilgili sitelerin kendi sayfalarında gerçekleşir.
-                </p>
-            </div>
+    <!-- DUYURU -->
+    <section class="ad-section">
+      <div class="ad-grid">
+        <div class="ad-card">
+          <span class="ad-tag">Etkinlik</span>
+          <h3>Hafta Sonu Çift Elmas Fırsatları</h3>
+          <p>Sevilen sitelerde dönemsel olarak MLBB elmas indirimi ve bonus elmas kampanyaları olabilir. Fiyatları bu sayfadan takip edip, satın almayı ilgili sitede yapabilirsin.</p>
+        </div>
+        <div class="ad-card">
+          <span class="ad-tag">Öneri</span>
+          <h3>TR ve Global Elmas Ayrımı</h3>
+          <p>Satın almadan önce her zaman <strong>TR Elmas</strong> mı yoksa <strong>Global Elmas</strong> mı olduğuna dikkat et. Hesabının sunucusuna uygun ürünü seçtiğinden emin ol.</p>
+        </div>
+        <div class="ad-card">
+          <span class="ad-tag">Güvenlik</span>
+          <h3>Güvenli Ödeme</h3>
+          <p>Elmas alırken mümkün olduğunca <strong>3D Secure</strong> ve güvenilir ödeme yöntemlerini tercih et. Bu site sadece fiyat rehberi sunar; ödeme ve teslimat ilgili sitelerin sorumluluğundadır.</p>
+        </div>
+      </div>
+    </section>
 
-            <!-- HERO VIDEO KISMI -->
-            <aside class="hero-video-card" id="video">
-                <h3>Yeni Kahraman – Sora Deneme Videosu</h3>
-                <p>Sora hero deneme videosu. Fiyatlara bakarken arka planda oynatabilirsin.</p>
+    <!-- FİYATLAR -->
+    <section class="section" id="fiyatlar">
+      <div class="section-title-row">
+        <div>
+          <h2>Site Fiyat Karşılaştırması</h2>
+          <small>“En ucuz fiyatı bul” butonu tabloda en düşük fiyatı öne çıkarır. Yıldıza basarak favori siteni seçebilirsin.</small>
+        </div>
 
-                <video controls poster="bg-mlbb.webp">
-                    <source src="sora-video.mp4" type="video/mp4" />
-                    Tarayıcınız video etiketini desteklemiyor.
-                </video>
-            </aside>
-        </section>
+        <div class="section-controls">
+          <input id="search-input" class="search-input" type="text" placeholder="Site veya açıklama ara..."/>
+          <button type="button" class="btn btn-secondary btn-small" id="toggle-extra">🎭 Skin / Paket Fiyatları</button>
+        </div>
+      </div>
 
-        <!-- DUYURU / REKLAM KARTLARI -->
-        <section class="ad-section">
-            <div class="ad-grid">
-                <div class="ad-card">
-                    <span class="ad-tag">Etkinlik</span>
-                    <h3>Hafta Sonu Çift Elmas Fırsatları</h3>
-                    <p>Sevilen sitelerde dönemsel olarak MLBB elmas indirimi ve bonus elmas kampanyaları olabilir. Fiyatları bu sayfadan takip edip, satın almayı ilgili sitede yapabilirsin.</p>
-                </div>
-                <div class="ad-card">
-                    <span class="ad-tag">Öneri</span>
-                    <h3>TR ve Global Elmas Ayrımı</h3>
-                    <p>Satın almadan önce her zaman <strong>TR Elmas</strong> mı yoksa <strong>Global Elmas</strong> mı olduğuna dikkat et. Hesabının sunucusuna uygun ürünü seçtiğinden emin ol.</p>
-                </div>
-                <div class="ad-card">
-                    <span class="ad-tag">Güvenlik</span>
-                    <h3>Güvenli Ödeme</h3>
-                    <p>Elmas alırken mümkün olduğunca <strong>3D Secure</strong> ve güvenilir ödeme yöntemlerini tercih et. Bu site sadece fiyat rehberi sunar; ödeme ve teslimat ilgili sitelerin sorumluluğundadır.</p>
-                </div>
-            </div>
-        </section>
+      <div class="table-container">
+        <div class="table-scroll">
+          <table id="price-table">
+            <thead>
+              <tr>
+                <th>Site Adı</th><th>Açıklama</th><th>Link</th><th>Not</th>
+                <th>Güncel Fiyat (TL)</th><th>Eski Fiyat</th><th>İndirim</th><th>Stok / Favori</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-price="349.99" data-discount="22" data-site="ByNoGame">
+                <td>ByNoGame</td>
+                <td>Güvenilir MLBB TR elmas satış platformu</td>
+                <td><a href="https://www.bynogame.com" target="_blank">Siteye Git</a></td>
+                <td><span class="badge-small">Onaylı Satıcı</span></td>
+                <td>349.99</td><td><del>449.99 TL</del></td><td>%22 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
 
-        <!-- FİYAT TABLOSU -->
-        <section class="section" id="fiyatlar">
-            <div class="section-title-row">
-                <div>
-                    <h2>Site Fiyat Karşılaştırması</h2>
-                    <small>“En ucuz fiyatı bul” butonu tabloda en düşük fiyatı öne çıkarır. Yıldıza basarak favori siteni seçebilirsin.</small>
-                </div>
+              <tr data-price="74.99" data-discount="17" data-site="Dijipin">
+                <td>Dijipin</td>
+                <td>Uygun fiyatlı MLBB elmas &amp; kod</td>
+                <td><a href="https://www.dijipin.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>74.99</td><td><del>89.99 TL</del></td><td>%17 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
 
-                <div class="section-controls">
-                    <input id="search-input" class="search-input" type="text" placeholder="Site veya açıklama ara..." />
-                    <button type="button" class="btn btn-secondary btn-small" id="toggle-extra">
-                        🎭 Skin / Paket Fiyatları
-                    </button>
-                </div>
-            </div>
+              <tr data-price="16.99" data-discount="11" data-site="GameSatış">
+                <td>GameSatış</td>
+                <td>Hızlı teslimatlı MLBB elmas &amp; oyun parası</td>
+                <td><a href="https://www.gamesatis.com" target="_blank">Siteye Git</a></td>
+                <td><span class="badge-small">Önerilen</span></td>
+                <td>16.99</td><td><del>21.99 TL</del></td><td>%11 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
 
-            <!-- Ana elmas fiyat tablosu -->
-            <div class="table-container">
-                <div class="table-scroll">
-                    <table id="price-table">
-                        <thead>
-                            <tr>
-                                <th>Site Adı</th>
-                                <th>Açıklama</th>
-                                <th>Link</th>
-                                <th>Not</th>
-                                <th>Güncel Fiyat (TL)</th>
-                                <th>Eski Fiyat</th>
-                                <th>İndirim</th>
-                                <th>Stok / Favori</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr data-price="349.99" data-site="ByNoGame">
-                                <td>ByNoGame</td>
-                                <td>Güvenilir MLBB TR elmas satış platformu</td>
-                                <td><a href="https://www.bynogame.com" target="_blank">Siteye Git</a></td>
-                                <td><span class="badge-small">Onaylı Satıcı</span></td>
-                                <td>349.99</td>
-                                <td><del>449.99 TL</del></td>
-                                <td>%22 İndirim</td>
-                                <td>Var <button class="fav-btn" type="button">☆</button></td>
-                            </tr>
+              <tr data-price="57.99" data-discount="14" data-site="Kabasakal Online">
+                <td>Kabasakal Online</td>
+                <td>MLBB elmas satış sitesi</td>
+                <td><a href="https://www.kabasakalonline.com/" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>57.99</td><td><del>70.99 TL</del></td><td>%14 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
 
-                            <tr data-price="74.99" data-site="Dijipin">
-                                <td>Dijipin</td>
-                                <td>Uygun fiyatlı MLBB elmas &amp; kod</td>
-                                <td><a href="https://www.dijipin.com" target="_blank">Siteye Git</a></td>
-                                <td>-</td>
-                                <td>74.99</td>
-                                <td><del>89.99 TL</del></td>
-                                <td>%17 İndirim</td>
-                                <td>Var <button class="fav-btn" type="button">☆</button></td>
-                            </tr>
+              <tr data-price="52.99" data-discount="18" data-site="VatanGame">
+                <td>VatanGame</td>
+                <td>MLBB elmas ve diğer oyun epinleri</td>
+                <td><a href="https://www.vatangame.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>52.99</td><td><del>64.99 TL</del></td><td>%18 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
 
-                            <tr data-price="16.99" data-site="GameSatış">
-                                <td>GameSatış</td>
-                                <td>Hızlı teslimatlı MLBB elmas &amp; oyun parası</td>
-                                <td><a href="https://www.gamesatis.com" target="_blank">Siteye Git</a></td>
-                                <td><span class="badge-small">Önerilen</span></td>
-                                <td>16.99</td>
-                                <td><del>21.99 TL</del></td>
-                                <td>%11 İndirim</td>
-                                <td>Var <button class="fav-btn" type="button">☆</button></td>
-                            </tr>
+              <tr data-price="59.99" data-discount="14" data-site="Joy Alışveriş">
+                <td>Joy Alışveriş</td>
+                <td>Joy alışveriş üzerinden MLBB elmas</td>
+                <td><a href="https://www.joyalisveris.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>59.99</td><td><del>69.99 TL</del></td><td>%14 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
 
-                            <tr data-price="57.99" data-site="Kabarsakal Online">
-                                <td>Kabarsakal Online</td>
-                                <td>MLBB elmas satış sitesi</td>
-                                <td><a href="https://www.kabasakalonline.com/" target="_blank">Siteye Git</a></td>
-                                <td>-</td>
-                                <td>57.99</td>
-                                <td><del>70.99 TL</del></td>
-                                <td>%14 İndirim</td>
-                                <td>Var <button class="fav-btn" type="button">☆</button></td>
-                            </tr>
+              <tr data-price="54.99" data-discount="13" data-site="Perdigital">
+                <td>Perdigital</td>
+                <td>Dijital kod ve MLBB elmas bakiyesi</td>
+                <td><a href="https://www.perdigital.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>54.99</td><td><del>62.99 TL</del></td><td>%13 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
 
-                            <tr data-price="52.99" data-site="VatanGame">
-                                <td>VatanGame</td>
-                                <td>MLBB elmas ve diğer oyun epinleri</td>
-                                <td><a href="https://www.vatangame.com" target="_blank">Siteye Git</a></td>
-                                <td>-</td>
-                                <td>52.99</td>
-                                <td><del>64.99 TL</del></td>
-                                <td>%18 İndirim</td>
-                                <td>Var <button class="fav-btn" type="button">☆</button></td>
-                            </tr>
+              <tr data-price="48.99" data-discount="18" data-site="Oyuneks">
+                <td>Oyuneks</td>
+                <td>Oyuneks üzerinde MLBB elmas satışı</td>
+                <td><a href="https://www.oyuneks.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>48.99</td><td><del>59.99 TL</del></td><td>%18 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-                            <tr data-price="59.99" data-site="Joy Alışveriş">
-                                <td>Joy Alışveriş</td>
-                                <td>Joy Alışveriş üzerinden MLBB elmas</td>
-                                <td><a href="https://www.joyalisveris.com" target="_blank">Siteye Git</a></td>
-                                <td>-</td>
-                                <td>59.99</td>
-                                <td><del>69.99 TL</del></td>
-                                <td>%14 İndirim</td>
-                                <td>Var <button class="fav-btn" type="button">☆</button></td>
-                            </tr>
+      <!-- Skin/Paket fiyatları -->
+      <div id="extra-prices-wrap">
+        <div class="table-container" id="extra-prices" style="margin-top:8px;">
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>Site Adı</th><th>Paket / Skin</th><th>Açıklama</th><th>Yaklaşık Fiyat (TL)</th><th>Not</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ByNoGame</td><td>Starlight Üyeliği</td><td>Sezonluk Starlight üyelik kodu</td><td>~149 TL</td><td>Örnek veri, gerçek fiyatı siteden kontrol et.</td>
+                </tr>
+                <tr>
+                  <td>GameSatış</td><td>Twilight Pass</td><td>Etkinlik dönemine özel paket</td><td>~99 TL</td><td>Örnek tablo, sadece rehber amaçlı.</td>
+                </tr>
+                <tr>
+                  <td>Perdigital</td><td>Elit Skin Paketi</td><td>Kampanyalı skin paketi</td><td>~120 TL</td><td>Satın almadan önce açıklamayı oku.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
 
-                            <tr data-price="54.99" data-site="Perdigital">
-                                <td>Perdigital</td>
-                                <td>Dijital kod ve MLBB elmas bakiyesi</td>
-                                <td><a href="https://www.perdigital.com" target="_blank">Siteye Git</a></td>
-                                <td>-</td>
-                                <td>54.99</td>
-                                <td><del>62.99 TL</del></td>
-                                <td>%13 İndirim</td>
-                                <td>Var <button class="fav-btn" type="button">☆</button></td>
-                            </tr>
+      <p class="info-row">Fiyatlar örnek olarak yazılmıştır; gerçek fiyatlar için ilgili sitelerin sayfalarını ziyaret etmelisiniz.</p>
+    </section>
 
-                            <tr data-price="48.99" data-site="Oyuneks">
-                                <td>Oyuneks</td>
-                                <td>Oyuneks üzerinde MLBB elmas satışı</td>
-                                <td><a href="https://www.oyuneks.com" target="_blank">Siteye Git</a></td>
-                                <td>-</td>
-                                <td>48.99</td>
-                                <td><del>59.99 TL</del></td>
-                                <td>%18 İndirim</td>
-                                <td>Var <button class="fav-btn" type="button">☆</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+    <!-- YORUMLAR -->
+    <section class="comments-section" id="yorumlar">
+      <h2>Yorumlar</h2>
+      <small>Bu bölüm bu cihazda saklanan örnek yorumlar içindir. Gerçek üyelik / giriş için sunucu gerekir.</small>
 
-            <!-- 2. TABLO: Skin / Paket fiyatları (butonla aç/kapa) -->
-            <div class="table-container" id="extra-prices" style="margin-top:8px; display:none;">
-                <div class="table-scroll">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Site Adı</th>
-                                <th>Paket / Skin</th>
-                                <th>Açıklama</th>
-                                <th>Yaklaşık Fiyat (TL)</th>
-                                <th>Not</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ByNoGame</td>
-                                <td>Starlight Üyeliği</td>
-                                <td>Sezonluk Starlight üyelik kodu</td>
-                                <td>~149 TL</td>
-                                <td>Örnek veri, gerçek fiyatı siteden kontrol et.</td>
-                            </tr>
-                            <tr>
-                                <td>GameSatış</td>
-                                <td>Twilight Pass</td>
-                                <td>Etkinlik dönemine özel paket</td>
-                                <td>~99 TL</td>
-                                <td>Örnek tablo, sadece rehber amaçlı.</td>
-                            </tr>
-                            <tr>
-                                <td>Perdigital</td>
-                                <td>Elit Skin Paketi</td>
-                                <td>Kampanyalı skin paketi</td>
-                                <td>~120 TL</td>
-                                <td>Satın almadan önce açıklamayı oku.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+      <form id="comment-form" class="comment-form">
+        <div class="comment-form-row">
+          <input type="text" id="comment-name" class="comment-input" placeholder="İsim (isteğe bağlı)">
+          <input type="text" id="comment-server" class="comment-input" placeholder="Sunucu / ID (isteğe bağlı)">
+        </div>
+        <div class="comment-form-row" style="align-items:center">
+          <div id="rating" class="stars" aria-label="Puan">
+            <span data-s="1">☆</span><span data-s="2">☆</span><span data-s="3">☆</span><span data-s="4">☆</span><span data-s="5">☆</span>
+          </div>
+          <small style="color:var(--text-sub)">Puan ver (isteğe bağlı)</small>
+        </div>
+        <textarea id="comment-text" class="comment-textarea" placeholder="Yorumunu yaz..." required></textarea>
+        <div style="margin-top:6px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+          <small style="font-size:10px;color:var(--text-sub);">Yorumlar bu cihazda saklanır.</small>
+          <button type="submit" class="btn btn-secondary btn-small">Yorumu Gönder</button>
+        </div>
+      </form>
 
-            <p class="info-row">
-                Fiyatlar örnek olarak yazılmıştır; gerçek fiyatlar için ilgili sitelerin sayfalarını ziyaret etmelisiniz.
-            </p>
-        </section>
+      <div id="comment-list" class="comment-list"></div>
+    </section>
 
-        <!-- YORUM BÖLÜMÜ -->
-        <section class="comments-section" id="yorumlar">
-            <h2>Yorumlar</h2>
-            <small>Bu bölüm sadece bu cihazda saklanan örnek yorumlar içindir. Gerçek üyelik / giriş sistemi için ayrı bir sunucu gerekir.</small>
-
-            <form id="comment-form" class="comment-form">
-                <div class="comment-form-row">
-                    <input type="text" id="comment-name" class="comment-input" placeholder="İsim (isteğe bağlı)">
-                    <input type="text" id="comment-server" class="comment-input" placeholder="Sunucu / ID (isteğe bağlı)">
-                </div>
-                <textarea id="comment-text" class="comment-textarea" placeholder="Yorumunuzu yazın (ör: Hangi siteden memnunsunuz?)" required></textarea>
-                <div style="margin-top:6px; display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
-                    <small style="font-size:10px; color:var(--text-sub);">Yorumlar bu cihazda saklanır, sayfayı silmezsen yerel olarak kalır.</small>
-                    <button type="submit" class="btn btn-secondary btn-small">Yorumu Gönder</button>
-                </div>
-            </form>
-
-            <div id="comment-list" class="comment-list"></div>
-        </section>
-
-        <!-- SSS / GÜVENLİK -->
-        <section class="section" id="sss">
-            <div class="section-title-row">
-                <div>
-                    <h2>Sık Sorulan Sorular</h2>
-                    <small>Bu bölüm, sitenin nasıl çalıştığını ve nelere dikkat etmen gerektiğini anlatır.</small>
-                </div>
-            </div>
-
-            <div class="table-container" style="margin-top:6px;">
-                <div class="table-scroll">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th style="width:35%;">Bu sitedeki fiyatlar gerçek mi?</th>
-                                <td>
-                                    Bu sayfadaki fiyatlar <strong>örnek ve rehber amaçlıdır</strong>.
-                                    Gerçek fiyatlar için her zaman ilgili sitenin kendi sayfasına gitmen gerekir.
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Hangi siteden alışveriş yapmalıyım?</th>
-                                <td>
-                                    Kararı her zaman sen vermelisin. Bu site sadece siteleri yan yana gösterir.
-                                    <strong>ByNoGame, GameSatış, VatanGame</strong> gibi bilinen sitelerden
-                                    alışveriş yapmak çoğu oyuncu tarafından tercih edilir ama kesin garanti vermez.
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>TR elmas / Global elmas farkı nedir?</th>
-                                <td>
-                                    Bazı siteler <strong>TR sunucu</strong> için, bazıları ise
-                                    <strong>global sunucu</strong> için elmas satar. Hesabının hangi sunucuda
-                                    olduğundan emin ol ve ürünü ona göre seç. Yanlış sunucuya alınan elmas hesabına düşmez.
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Hesabıma nasıl elmas yükleniyor?</th>
-                                <td>
-                                    Her sitenin yöntemi farklı olabilir:
-                                    <ul>
-                                        <li>Çoğu zaman <strong>Oyuncu ID + Sunucu kodu</strong> istenir.</li>
-                                        <li>Bazı siteler <strong>kod (redeem)</strong> şeklinde elmas verir.</li>
-                                    </ul>
-                                    Ödeme yapmadan önce sitenin açıklama kısmını mutlaka oku.
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Bu sitede üyelik / giriş var mı?</th>
-                                <td>
-                                    Şu anda bu sayfa sadece <strong>rehber &amp; fiyat karşılaştırma</strong> sitesidir.
-                                    Gerçek bir üyelik sistemi yoktur. Yorumlar sadece senin cihazında saklanır ve başka
-                                    hiç kimse tarafından görülemez.
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Güvenli ödeme için ne yapmalıyım?</th>
-                                <td>
-                                    Mümkün olduğunca <strong>3D Secure</strong> ve bilinen ödeme yöntemlerini kullan.
-                                    İnternet kafeden veya ortak cihazlardan kart / hesap bilgisi kaydetme.
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            Bu site Mobile Legends oyuncuları için hazırlanmış bağımsız bir fiyat karşılaştırma rehberidir.
-        </footer>
-    </div>
+    <footer>
+      Bu site Mobile Legends oyuncuları için hazırlanmış bağımsız bir fiyat karşılaştırma rehberidir.
+    </footer>
+  </div>
 </div>
 
-<!-- ARKA PLAN MÜZİĞİ -->
-<audio id="bg-music" loop>
-    <source src="mlbb-muzik.mp3" type="audio/mpeg" />
-</audio>
+<!-- Müzik -->
+<audio id="bg-music" loop><source src="mlbb-muzik.mp3" type="audio/mpeg"/></audio>
 
-<!-- Yukarı (Anasayfa) Butonu -->
+<!-- Go Top -->
 <button id="go-top-btn" class="go-top-btn" title="Anasayfaya dön">↑</button>
 
 <script>
-    const navbar = document.getElementById("navbar");
-    const goTopBtn = document.getElementById("go-top-btn");
+  const navbar=document.getElementById("navbar");
+  const goTopBtn=document.getElementById("go-top-btn");
+  window.addEventListener("scroll",()=>{
+    const offset=window.scrollY||0;
+    document.body.style.backgroundPositionY=-(offset*0.15)+"px";
+    if(offset>20) navbar.classList.add("scrolled"); else navbar.classList.remove("scrolled");
+    if(offset>200) goTopBtn.classList.add("show"); else goTopBtn.classList.remove("show");
+  });
+  goTopBtn.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 
-    window.addEventListener("scroll", () => {
-        const offset = window.scrollY || window.pageYOffset || 0;
-        document.body.style.backgroundPositionY = -(offset * 0.15) + "px";
+  // Haber bandı
+  const newsTextEl=document.getElementById("news-text");
+  const newsItems=[
+    "Yeni kahraman Sora yakında tüm sunucularda aktif olacak.",
+    "Hafta sonu çift elmas ve skin indirimleri bekleniyor.",
+    "TR sunucusunda gecikme/ping iyileştirmeleri planlanıyor.",
+    "Starlight ve Twilight Pass için özel kampanyalar, takipte kal."
+  ];
+  let newsIndex=0;
+  function showNews(){
+    if(!newsTextEl) return;
+    newsTextEl.style.opacity=0;
+    setTimeout(()=>{
+      newsTextEl.textContent=newsItems[newsIndex];
+      newsTextEl.style.opacity=1;
+      newsIndex=(newsIndex+1)%newsItems.length;
+    },200);
+  }
+  if(newsTextEl){ showNews(); setInterval(showNews,6000); }
 
-        if (offset > 20) {
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
-        }
+  // Fiyat tablosu
+  const table=document.getElementById("price-table");
+  const tbody=table.querySelector("tbody");
+  const getRows=()=>Array.from(tbody.querySelectorAll("tr"));
 
-        if (offset > 200) {
-            goTopBtn.classList.add("show");
-        } else {
-            goTopBtn.classList.remove("show");
-        }
+  // İndirim renklendir
+  function colorizeDiscounts(){
+    getRows().forEach(row=>{
+      const disc=parseFloat(row.getAttribute("data-discount")||"0");
+      const cell=row.children[6];
+      if(!cell) return;
+      if(disc>=50){ cell.style.color="var(--bad)"; }
+      else if(disc>=20){ cell.style.color="var(--warn)"; }
+      else { cell.style.color="var(--good)"; }
     });
+  }
 
-    goTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+  // En ucuz
+  document.getElementById("btn-best").addEventListener("click",()=>{
+    const rows=getRows(); rows.forEach(r=>r.classList.remove("best-row"));
+    let minRow=null, min=Infinity;
+    rows.forEach(r=>{
+      const p=parseFloat(r.getAttribute("data-price"));
+      if(!isNaN(p)&&p<min){min=p;minRow=r;}
     });
+    if(minRow){ minRow.classList.add("best-row"); minRow.scrollIntoView({behavior:"smooth",block:"center"}); }
+  });
 
-    // Haber bandı
-    const newsTextEl = document.getElementById("news-text");
-    const newsItems = [
-        "Yeni kahraman Sora yakında tüm sunucularda aktif olacak.",
-        "Hafta sonu çift elmas ve skin indirimleri bekleniyor.",
-        "TR sunucusunda gecikme ve ping iyileştirmeleri planlanıyor.",
-        "Starlight ve Twilight Pass için özel kampanyalar, takipte kal."
-    ];
-    let newsIndex = 0;
-    function showNews() {
-        if (!newsTextEl) return;
-        newsTextEl.style.opacity = 0;
-        setTimeout(() => {
-            newsTextEl.textContent = newsItems[newsIndex];
-            newsTextEl.style.opacity = 1;
-            newsIndex = (newsIndex + 1) % newsItems.length;
-        }, 200);
-    }
-    if (newsTextEl) {
-        showNews();
-        setInterval(showNews, 6000);
-    }
-
-    const table = document.getElementById("price-table");
-    const tbody = table.querySelector("tbody");
-
-    function getRows() {
-        return Array.from(tbody.querySelectorAll("tr"));
-    }
-
-    // En ucuz fiyatı bul
-    const btnBest = document.getElementById("btn-best");
-    btnBest.addEventListener("click", () => {
-        const rows = getRows();
-        rows.forEach(r => r.classList.remove("best-row"));
-
-        let minRow = null;
-        let minPrice = Infinity;
-
-        rows.forEach(row => {
-            const price = parseFloat(row.getAttribute("data-price"));
-            if (!isNaN(price) && price < minPrice) {
-                minPrice = price;
-                minRow = row;
-            }
-        });
-
-        if (minRow) {
-            minRow.classList.add("best-row");
-            minRow.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
+  // Arama
+  const searchInput=document.getElementById("search-input");
+  searchInput.addEventListener("input",()=>{
+    const q=searchInput.value.toLowerCase().trim();
+    getRows().forEach(r=>{
+      const t=r.innerText.toLowerCase();
+      r.style.display=(!q||t.includes(q))?"":"none";
     });
+  });
 
-    // Tablo arama / filtre
-    const searchInput = document.getElementById("search-input");
-    searchInput.addEventListener("input", () => {
-        const q = searchInput.value.toLowerCase().trim();
-        const rows = getRows();
-
-        rows.forEach(row => {
-            const text = row.innerText.toLowerCase();
-            row.style.display = (!q || text.includes(q)) ? "" : "none";
-        });
+  // Favori
+  const favKey="mlbb-favorite-site";
+  function applySavedFavorite(){
+    const fav=localStorage.getItem(favKey);
+    const rows=getRows();
+    rows.forEach(r=>{
+      r.classList.remove("fav-row");
+      const b=r.querySelector(".fav-btn"); if(b) b.textContent="☆";
     });
-
-    // Favori satıcı sistemi
-    const favKey = "mlbb-favorite-site";
-
-    function applySavedFavorite() {
-        const favSite = localStorage.getItem(favKey);
-        const rows = getRows();
-
-        rows.forEach(row => {
-            row.classList.remove("fav-row");
-            const btn = row.querySelector(".fav-btn");
-            if (btn) btn.textContent = "☆";
-        });
-
-        if (!favSite) return;
-
-        const favRow = rows.find(r => r.getAttribute("data-site") === favSite);
-        if (favRow) {
-            favRow.classList.add("fav-row");
-            const btn = favRow.querySelector(".fav-btn");
-            if (btn) btn.textContent = "★";
-            tbody.insertBefore(favRow, tbody.firstChild);
-        }
-    }
-
-    function setupFavorites() {
-        const rows = getRows();
-        rows.forEach(row => {
-            const btn = row.querySelector(".fav-btn");
-            if (!btn) return;
-            btn.addEventListener("click", () => {
-                const site = row.getAttribute("data-site");
-                if (!site) return;
-                const current = localStorage.getItem(favKey);
-                if (current === site) {
-                    localStorage.removeItem(favKey);
-                } else {
-                    localStorage.setItem(favKey, site);
-                }
-                applySavedFavorite();
-            });
-        });
+    if(!fav) return;
+    const favRow=rows.find(r=>r.getAttribute("data-site")===fav);
+    if(favRow){ favRow.classList.add("fav-row"); const b=favRow.querySelector(".fav-btn"); if(b) b.textContent="★"; tbody.insertBefore(favRow,tbody.firstChild); }
+  }
+  function setupFavorites(){
+    getRows().forEach(r=>{
+      const b=r.querySelector(".fav-btn");
+      if(!b) return;
+      b.addEventListener("click",()=>{
+        const site=r.getAttribute("data-site");
+        const cur=localStorage.getItem(favKey);
+        if(cur===site) localStorage.removeItem(favKey); else localStorage.setItem(favKey,site);
         applySavedFavorite();
-    }
-
-    setupFavorites();
-
-    // Müzik kontrolü
-    const musicBtn = document.getElementById("btn-music");
-    const music = document.getElementById("bg-music");
-    let musicOn = false;
-
-    musicBtn.addEventListener("click", async () => {
-        try {
-            if (!musicOn) {
-                music.volume = 0.18;
-                await music.play();
-                musicOn = true;
-                musicBtn.textContent = "🔇 Müziği Kapat";
-            } else {
-                music.pause();
-                musicOn = false;
-                musicBtn.textContent = "🎵 Müziği Aç";
-            }
-        } catch (e) {
-            console.log(e);
-        }
+      });
     });
+    applySavedFavorite();
+  }
 
-    // Tema (dark / light) toggle
-    const themeToggle = document.getElementById("theme-toggle");
-    const themeIcon = document.getElementById("theme-icon");
-    const themeText = document.getElementById("theme-text");
+  // Müzik
+  const musicBtn=document.getElementById("btn-music");
+  const music=document.getElementById("bg-music");
+  let musicOn=false;
+  musicBtn.addEventListener("click",async()=>{
+    try{
+      if(!musicOn){ music.volume=.18; await music.play(); musicOn=true; musicBtn.textContent="🔇 Müziği Kapat"; }
+      else { music.pause(); musicOn=false; musicBtn.textContent="🎵 Müziği Aç"; }
+    }catch(e){ console.log(e); }
+  });
 
-    function applyTheme(theme) {
-        if (theme === "light") {
-            document.body.classList.add("theme-light");
-            themeIcon.textContent = "☀️";
-            themeText.textContent = "Açık Mod";
-        } else {
-            document.body.classList.remove("theme-light");
-            themeIcon.textContent = "🌙";
-            themeText.textContent = "Koyu Mod";
-        }
-    }
+  // Tema
+  const themeToggle=document.getElementById("theme-toggle");
+  const themeIcon=document.getElementById("theme-icon");
+  const themeText=document.getElementById("theme-text");
+  function applyTheme(t){
+    if(t==="light"){ document.body.classList.add("theme-light"); themeIcon.textContent="☀️"; themeText.textContent="Açık Mod"; }
+    else { document.body.classList.remove("theme-light"); themeIcon.textContent="🌙"; themeText.textContent="Koyu Mod"; }
+  }
+  applyTheme(localStorage.getItem("mlbb-theme")||"dark");
+  themeToggle.addEventListener("click",()=>{
+    const cur=document.body.classList.contains("theme-light")?"light":"dark";
+    const next=cur==="light"?"dark":"light";
+    localStorage.setItem("mlbb-theme",next); applyTheme(next);
+  });
 
-    const savedTheme = localStorage.getItem("mlbb-theme") || "dark";
-    applyTheme(savedTheme);
-
-    themeToggle.addEventListener("click", () => {
-        const current = document.body.classList.contains("theme-light") ? "light" : "dark";
-        const next = current === "light" ? "dark" : "light";
-        localStorage.setItem("mlbb-theme", next);
-        applyTheme(next);
+  // Yorumlar + yıldızlı puan
+  const commentForm=document.getElementById("comment-form");
+  const commentListEl=document.getElementById("comment-list");
+  const COMMENT_KEY="mlbb-comments";
+  let currentStars=0;
+  const starWrap=document.getElementById("rating");
+  starWrap.addEventListener("mouseover",e=>{
+    if(e.target.dataset.s){ paintStars(parseInt(e.target.dataset.s)); }
+  });
+  starWrap.addEventListener("mouseout",()=>paintStars(currentStars));
+  starWrap.addEventListener("click",e=>{
+    if(e.target.dataset.s){ currentStars=parseInt(e.target.dataset.s); paintStars(currentStars); }
+  });
+  function paintStars(n){
+    [...starWrap.children].forEach((el,i)=>{ el.textContent=(i<n)?"★":"☆"; });
+  }
+  function loadComments(){ try{ const raw=localStorage.getItem(COMMENT_KEY); return raw?JSON.parse(raw):[] }catch{ return [] } }
+  function saveComments(arr){ localStorage.setItem(COMMENT_KEY,JSON.stringify(arr.slice(-50))); }
+  function renderComments(){
+    const arr=loadComments(); commentListEl.innerHTML="";
+    if(arr.length===0){ const div=document.createElement("div"); div.className="comment-item"; div.textContent="Henüz yorum yok. İlk yorumu sen yaz."; commentListEl.appendChild(div); return; }
+    arr.forEach((c,idx)=>{
+      const item=document.createElement("div"); item.className="comment-item";
+      const meta=document.createElement("div"); meta.className="comment-meta";
+      const stars="★".repeat(c.stars||0)+"☆".repeat(5-(c.stars||0));
+      meta.textContent=(c.name||"Anonim")+(c.server?(" • "+c.server):"")+" • "+(c.time||"")+" • "+stars;
+      const del=document.createElement("button"); del.className="del-btn"; del.textContent="Sil";
+      del.addEventListener("click",()=>{ const arr=loadComments(); arr.splice(idx,1); saveComments(arr); renderComments(); });
+      const text=document.createElement("div"); text.textContent=c.text;
+      item.appendChild(meta); item.appendChild(text); item.appendChild(del); commentListEl.appendChild(item);
     });
+  }
+  commentForm.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    const name=document.getElementById("comment-name").value.trim();
+    const server=document.getElementById("comment-server").value.trim();
+    const text=document.getElementById("comment-text").value.trim(); if(!text) return;
+    const now=new Date(); const timeStr=now.toLocaleString("tr-TR",{hour12:false});
+    const arr=loadComments(); arr.push({name,server,text,time:timeStr,stars:currentStars}); saveComments(arr);
+    commentForm.reset(); currentStars=0; paintStars(0); renderComments();
+  });
 
-    // Yorum sistemi (localStorage)
-    const commentForm = document.getElementById("comment-form");
-    const commentListEl = document.getElementById("comment-list");
-    const COMMENT_KEY = "mlbb-comments";
+  // Skin/Paket aç-kapa
+  const toggleExtraBtn=document.getElementById("toggle-extra");
+  const extraWrap=document.getElementById("extra-prices-wrap");
+  toggleExtraBtn.addEventListener("click",()=>{
+    const isOpen=extraWrap.classList.toggle("open");
+    toggleExtraBtn.textContent=isOpen?"🎭 Skin / Paket Fiyatlarını Gizle":"🎭 Skin / Paket Fiyatları";
+    if(isOpen){ extraWrap.scrollIntoView({behavior:"smooth",block:"start"}); }
+  });
 
-    function loadComments() {
-        try {
-            const raw = localStorage.getItem(COMMENT_KEY);
-            if (!raw) return [];
-            return JSON.parse(raw);
-        } catch {
-            return [];
-        }
-    }
-
-    function saveComments(comments) {
-        localStorage.setItem(COMMENT_KEY, JSON.stringify(comments.slice(-50)));
-    }
-
-    function renderComments() {
-        const comments = loadComments();
-        commentListEl.innerHTML = "";
-        if (comments.length === 0) {
-            const empty = document.createElement("div");
-            empty.className = "comment-item";
-            empty.textContent = "Henüz yorum yok. İlk yorumu sen yazabilirsin.";
-            commentListEl.appendChild(empty);
-            return;
-        }
-        comments.forEach(c => {
-            const item = document.createElement("div");
-            item.className = "comment-item";
-
-            const meta = document.createElement("div");
-            meta.className = "comment-meta";
-            meta.textContent = (c.name || "Anonim") + (c.server ? " • " + c.server : "") + " • " + (c.time || "");
-            item.appendChild(meta);
-
-            const text = document.createElement("div");
-            text.textContent = c.text;
-            item.appendChild(text);
-
-            commentListEl.appendChild(item);
-        });
-    }
-
-    commentForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const name = document.getElementById("comment-name").value.trim();
-        const server = document.getElementById("comment-server").value.trim();
-        const text = document.getElementById("comment-text").value.trim();
-        if (!text) return;
-
-        const now = new Date();
-        const timeStr = now.toLocaleString("tr-TR", { hour12: false });
-
-        const comments = loadComments();
-        comments.push({ name, server, text, time: timeStr });
-        saveComments(comments);
-        commentForm.reset();
-        renderComments();
-    });
-
-    renderComments();
-
-    // 2. tablo: Skin / paket fiyatları toggle
-    const toggleExtraBtn = document.getElementById("toggle-extra");
-    const extraPrices = document.getElementById("extra-prices");
-
-    toggleExtraBtn.addEventListener("click", () => {
-        const isHidden = extraPrices.style.display === "none" || !extraPrices.style.display;
-        extraPrices.style.display = isHidden ? "block" : "none";
-        toggleExtraBtn.textContent = isHidden
-            ? "🎭 Skin / Paket Fiyatlarını Gizle"
-            : "🎭 Skin / Paket Fiyatları";
-        if (isHidden) {
-            extraPrices.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-    });
+  // İlk yükleme
+  colorizeDiscounts();
+  setupFavorites();
+  renderComments();
 </script>
-
 </body>
 </html>
