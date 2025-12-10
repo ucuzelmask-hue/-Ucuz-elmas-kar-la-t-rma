@@ -191,6 +191,10 @@
     .chat-form input{flex:1;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:var(--text-main);font-size:12px;outline:none}
     body.theme-light .chat-form input{background:#fff;border-color:rgba(0,0,0,.15)}
 
+    /* 2. ekran: Kampanyalar */
+    #kampanyalar-screen{display:none}
+    .kampanya-note{font-size:11px;color:var(--text-sub);margin-top:6px}
+
     footer{padding:10px 18px 14px;font-size:11px;text-align:center;color:var(--text-sub);border-top:1px solid rgba(255,255,255,.12);background:rgba(3,5,13,.96)}
 
     /* Go top */
@@ -422,7 +426,7 @@
 
               <tr data-price="59.99" data-discount="14" data-site="Joy Alışveriş">
                 <td>Joy Alışveriş</td>
-                <td>Joy alışveriş üzerinden MLBB elmas</td>
+                <td>Joy Alışveriş üzerinden MLBB elmas</td>
                 <td><a href="https://www.joyalisveris.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
                 <td>59.99</td><td><del>69.99 TL</del></td><td>%14 İndirim</td>
@@ -446,6 +450,197 @@
                 <td>48.99</td><td><del>59.99 TL</del></td><td>%18 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
+
+              <!-- SENİN İSTEDİĞİN EK SİTELER -->
+              <tr data-price="51.99" data-discount="15" data-site="Itemsatis">
+                <td>Itemsatis</td>
+                <td>MLBB elmas &amp; hesap ürünleri</td>
+                <td><a href="https://www.itemsatis.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>51.99</td><td><del>61.99 TL</del></td><td>%15 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="49.49" data-discount="16" data-site="Dunmaplay">
+                <td>Dunmaplay</td>
+                <td>MLBB elmas kodu &amp; epin</td>
+                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>49.49</td><td><del>58.99 TL</del></td><td>%16 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="50.99" data-discount="12" data-site="Xgame">
+                <td>Xgame.com.tr</td>
+                <td>Türkiye merkezli oyun mağazası</td>
+                <td><a href="https://www.xgame.com.tr" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>50.99</td><td><del>57.99 TL</del></td><td>%12 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="47.99" data-discount="19" data-site="Playsell">
+                <td>Playsell</td>
+                <td>Dijital oyun ve elmas satışı</td>
+                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>47.99</td><td><del>59.49 TL</del></td><td>%19 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="53.49" data-discount="10" data-site="Hesap">
+                <td>Hesap.com.tr</td>
+                <td>Hesap &amp; elmas ürünleri</td>
+                <td><a href="https://www.hesap.com.tr" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>53.49</td><td><del>59.49 TL</del></td><td>%10 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="46.99" data-discount="20" data-site="Onsrashop">
+                <td>Onsrashop.com</td>
+                <td>Mobil oyun elmas &amp; kod</td>
+                <td><a href="https://www.onsrashop.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>46.99</td><td><del>58.99 TL</del></td><td>%20 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="45.99" data-discount="21" data-site="Eneba">
+                <td>Eneba</td>
+                <td>Global oyun kodu ve elmas</td>
+                <td><a href="https://www.eneba.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>45.99</td><td><del>57.99 TL</del></td><td>%21 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="49.99" data-discount="15" data-site="Inovapin">
+                <td>Inovapin</td>
+                <td>Epin &amp; elmas satışı</td>
+                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>49.99</td><td><del>58.99 TL</del></td><td>%15 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="48.49" data-discount="18" data-site="Atagame">
+                <td>Atagame</td>
+                <td>Oyun içi para ve elmas</td>
+                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>48.49</td><td><del>59.49 TL</del></td><td>%18 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="55.99" data-discount="9" data-site="Turkcell">
+                <td>Turkcell</td>
+                <td>Fatura ile ödeme elmas</td>
+                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>55.99</td><td><del>61.99 TL</del></td><td>%9 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="56.49" data-discount="8" data-site="Hepsiburada">
+                <td>Hepsiburada</td>
+                <td>Gift card &amp; elmas kodu</td>
+                <td><a href="https://www.hepsiburada.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>56.49</td><td><del>61.99 TL</del></td><td>%8 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="47.49" data-discount="17" data-site="Kopazar">
+                <td>Kopazar</td>
+                <td>Online oyun ürünleri</td>
+                <td><a href="https://www.kopazar.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>47.49</td><td><del>57.49 TL</del></td><td>%17 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="50.49" data-discount="14" data-site="Klasgame">
+                <td>Klasgame</td>
+                <td>Popüler oyun epinleri</td>
+                <td><a href="https://www.klasgame.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>50.49</td><td><del>58.99 TL</del></td><td>%14 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="51.49" data-discount="13" data-site="Epindigital">
+                <td>Epindigital</td>
+                <td>Dijital epin mağazası</td>
+                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>51.49</td><td><del>59.49 TL</del></td><td>%13 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="49.29" data-discount="16" data-site="Btkgame">
+                <td>Btkgame</td>
+                <td>Oyun içi para &amp; elmas</td>
+                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>49.29</td><td><del>58.49 TL</del></td><td>%16 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="46.49" data-discount="19" data-site="Epin">
+                <td>Epin</td>
+                <td>Genel epin mağazası</td>
+                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>46.49</td><td><del>57.99 TL</del></td><td>%19 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="44.99" data-discount="22" data-site="Cimri">
+                <td>Cimri</td>
+                <td>Karşılaştırma sitesi üzerinden elmas</td>
+                <td><a href="https://www.cimri.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>44.99</td><td><del>57.99 TL</del></td><td>%22 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="48.59" data-discount="18" data-site="Playsultan">
+                <td>Playsultan</td>
+                <td>TR ve global elmas satışı</td>
+                <td><a href="https://www.playsultan.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>48.59</td><td><del>59.59 TL</del></td><td>%18 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="47.89" data-discount="17" data-site="Mtcgame">
+                <td>Mtcgame</td>
+                <td>Global oyun ve elmas kodu</td>
+                <td><a href="https://www.mtcgame.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>47.89</td><td><del>57.89 TL</del></td><td>%17 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="52.49" data-discount="12" data-site="Razer Gold">
+                <td>Razer Gold</td>
+                <td>Razer Gold kodu ile elmas</td>
+                <td><a href="https://gold.razer.com" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>52.49</td><td><del>59.99 TL</del></td><td>%12 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
+              <tr data-price="49.19" data-discount="15" data-site="OyunAlisveris">
+                <td>Oyun Alışveriş</td>
+                <td>Genel oyun alışveriş sitesi</td>
+                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>-</td>
+                <td>49.19</td><td><del>57.99 TL</del></td><td>%15 İndirim</td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
+              </tr>
+
             </tbody>
           </table>
         </div>
@@ -517,6 +712,115 @@
         <input type="text" id="chat-input" placeholder="Mesaj yaz...">
         <button type="submit" class="btn btn-secondary btn-small">Gönder</button>
       </form>
+    </section>
+
+    <!-- 2. EKRAN: KAMPANYALAR -->
+    <section class="section" id="kampanyalar-screen">
+      <div class="section-title-row">
+        <div>
+          <h2>MLBB Elmas Kampanyaları – Tüm Siteler</h2>
+          <small>Fiyat hücrelerine tıklayınca bu ekran açılır. Burada her sitenin örnek elmas paketlerini görürsün.</small>
+        </div>
+        <button id="btn-home" class="btn btn-secondary btn-small">🏠 Anasayfa</button>
+      </div>
+
+      <div class="table-container">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Site</th><th>Paket</th><th>Kampanya / Not</th><th>Yaklaşık Fiyat (TL)</th><th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ByNoGame</td>
+                <td>86 / 172 / 257 Elmas (TR)</td>
+                <td>Sezon sonu %20’ye varan indirimler.</td>
+                <td>~50–350</td>
+                <td><a href="https://www.bynogame.com" target="_blank">Git</a></td>
+              </tr>
+              <tr>
+                <td>Dijipin</td>
+                <td>Weekly Pass &amp; küçük paket</td>
+                <td>Hafta içi düşük komisyonlu kampanya.</td>
+                <td>~25–150</td>
+                <td><a href="https://www.dijipin.com" target="_blank">Git</a></td>
+              </tr>
+              <tr>
+                <td>GameSatış</td>
+                <td>Starlight + Elmas bundle</td>
+                <td>Hızlı teslimat, stok durumuna göre indirim.</td>
+                <td>~40–300</td>
+                <td><a href="https://www.gamesatis.com" target="_blank">Git</a></td>
+              </tr>
+              <tr>
+                <td>Kabasakal Online</td>
+                <td>86 / 257 / 514 Elmas</td>
+                <td>Zaman zaman hafta sonu bonus elmas.</td>
+                <td>~45–320</td>
+                <td><a href="https://www.kabasakalonline.com" target="_blank">Git</a></td>
+              </tr>
+              <tr>
+                <td>VatanGame</td>
+                <td>TR &amp; Global elmas paketleri</td>
+                <td>Yeni oyunculara özel indirim kuponu olabilir.</td>
+                <td>~40–280</td>
+                <td><a href="https://www.vatangame.com" target="_blank">Git</a></td>
+              </tr>
+              <tr>
+                <td>Joy Alışveriş</td>
+                <td>Orta seviye elmas paketleri</td>
+                <td>Kart &amp; havale ile farklı fiyatlar.</td>
+                <td>~50–260</td>
+                <td><a href="https://www.joyalisveris.com" target="_blank">Git</a></td>
+              </tr>
+              <tr>
+                <td>Perdigital</td>
+                <td>Kod ile elmas yükleme</td>
+                <td>Arada toplu alıma küçük indirimler.</td>
+                <td>~45–250</td>
+                <td><a href="https://www.perdigital.com" target="_blank">Git</a></td>
+              </tr>
+              <tr>
+                <td>Oyuneks</td>
+                <td>Küçük &amp; orta paketler</td>
+                <td>Hafta sonu seçili paketlere kampanya.</td>
+                <td>~35–220</td>
+                <td><a href="https://www.oyuneks.com" target="_blank">Git</a></td>
+              </tr>
+
+              <!-- Ek sitelerin kampanya satırları -->
+              <tr><td>Itemsatis</td><td>86 / 172 / 257 Elmas</td><td>Satıcıya göre değişen indirimler.</td><td>~40–260</td><td><a href="https://www.itemsatis.com" target="_blank">Git</a></td></tr>
+              <tr><td>Dunmaplay</td><td>Küçük elmas paketleri</td><td>Yeni kayıt olanlara kupon olabilir.</td><td>~35–200</td><td><a href="#" target="_blank">Git</a></td></tr>
+              <tr><td>Xgame.com.tr</td><td>TR elmas paketleri</td><td>Sezonluk indirim dönemleri.</td><td>~40–240</td><td><a href="https://www.xgame.com.tr" target="_blank">Git</a></td></tr>
+              <tr><td>Playsell</td><td>Elmas &amp; oyun kodları</td><td>Ödeme yöntemine göre promosyon.</td><td>~35–230</td><td><a href="#" target="_blank">Git</a></td></tr>
+              <tr><td>Hesap.com.tr</td><td>Hesap + elmas paket</td><td>Hazır hesap yanında bonus elmas olabilir.</td><td>~60–300</td><td><a href="https://www.hesap.com.tr" target="_blank">Git</a></td></tr>
+              <tr><td>Onsrashop</td><td>Mobil oyun elmasları</td><td>Kampanyalı ödeme seçenekleri.</td><td>~35–210</td><td><a href="https://www.onsrashop.com" target="_blank">Git</a></td></tr>
+              <tr><td>Eneba</td><td>Global elmas kodu</td><td>Döviz kuruna göre değişir.</td><td>~30–220</td><td><a href="https://www.eneba.com" target="_blank">Git</a></td></tr>
+              <tr><td>Inovapin</td><td>MLBB Epin</td><td>Belirli kartlara özel indirim.</td><td>~40–230</td><td><a href="#" target="_blank">Git</a></td></tr>
+              <tr><td>Atagame</td><td>Elmas ve farklı oyunlar</td><td>Dönemsel kampanyalar.</td><td>~35–200</td><td><a href="#" target="_blank">Git</a></td></tr>
+              <tr><td>Turkcell</td><td>Fatura ile elmas</td><td>Kampanya paketleri TV reklamlarında olur genelde.</td><td>Operatör tarifesine göre</td><td><a href="#" target="_blank">Git</a></td></tr>
+              <tr><td>Hepsiburada</td><td>Gift card / kod</td><td>Özel günlerde kupon indirimleri.</td><td>~40–250</td><td><a href="https://www.hepsiburada.com" target="_blank">Git</a></td></tr>
+              <tr><td>Kopazar</td><td>TR elmas</td><td>Mağaza içi indirim kuponları.</td><td>~35–210</td><td><a href="https://www.kopazar.com" target="_blank">Git</a></td></tr>
+              <tr><td>Klasgame</td><td>TR &amp; Global epin</td><td>Haftalık seçili oyun kampanyaları.</td><td>~40–230</td><td><a href="https://www.klasgame.com" target="_blank">Git</a></td></tr>
+              <tr><td>Epindigital</td><td>Genel epin &amp; elmas</td><td>Toplu alıma küçük indirim.</td><td>~35–200</td><td><a href="#" target="_blank">Git</a></td></tr>
+              <tr><td>Btkgame</td><td>Oyun içi para</td><td>Belirli dönemlerde MLBB kampanyaları.</td><td>~35–190</td><td><a href="#" target="_blank">Git</a></td></tr>
+              <tr><td>Epin</td><td>Elmas epin</td><td>Farklı ödeme ile farklı komisyon.</td><td>~30–200</td><td><a href="#" target="_blank">Git</a></td></tr>
+              <tr><td>Cimri</td><td>Karşılaştırma listeleri</td><td>Farklı mağazaların fiyatını gösterir.</td><td>Mağazaya göre</td><td><a href="https://www.cimri.com" target="_blank">Git</a></td></tr>
+              <tr><td>Playsultan</td><td>TR &amp; Global elmas</td><td>Arada bonus elmas kampanyası.</td><td>~35–220</td><td><a href="https://www.playsultan.com" target="_blank">Git</a></td></tr>
+              <tr><td>Mtcgame</td><td>Global elmas &amp; kod</td><td>Kur farkına göre fiyat değişir.</td><td>~30–210</td><td><a href="https://www.mtcgame.com" target="_blank">Git</a></td></tr>
+              <tr><td>Razer Gold</td><td>Razer Gold ile elmas</td><td>Razer Gold bakiyeni MLBB’ye çevirirsin.</td><td>Razer fiyatına göre</td><td><a href="https://gold.razer.com" target="_blank">Git</a></td></tr>
+              <tr><td>Oyun Alışveriş</td><td>Farklı elmas paketleri</td><td>Site içi kampanyalar dönem dönem olur.</td><td>~35–220</td><td><a href="#" target="_blank">Git</a></td></tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p class="kampanya-note">
+        Buradaki kampanya bilgilerinin hepsi örnektir. Gerçek fiyatlar ve indirimler için mutlaka ilgili sitenin sayfasına gitmelisin.
+      </p>
     </section>
 
     <footer>
@@ -686,12 +990,14 @@
       document.getElementById("logout-btn").addEventListener("click",()=>{localStorage.removeItem(USER_KEY);location.reload();});
     }
   }
-  userBtn.addEventListener("click",()=>{
-    const v=userInput.value.trim();
-    if(!v) return;
-    localStorage.setItem(USER_KEY,v);
-    renderUser();
-  });
+  if(userBtn){
+    userBtn.addEventListener("click",()=>{
+      const v=userInput.value.trim();
+      if(!v) return;
+      localStorage.setItem(USER_KEY,v);
+      renderUser();
+    });
+  }
   renderUser();
 
   // Yorumlar + yıldızlı puan
@@ -791,6 +1097,30 @@
     c.querySelector("p").textContent=data.text;
     adIdx=(adIdx+1)%adMessages.length;
   },12000);
+
+  // 2. ekran: kampanyalar aç/kapa
+  const kampanyaScreen=document.getElementById("kampanyalar-screen");
+  const homeBtn=document.getElementById("btn-home");
+  function openKampanya(){
+    kampanyaScreen.style.display="block";
+    kampanyaScreen.scrollIntoView({behavior:"smooth",block:"start"});
+  }
+  function closeKampanya(){
+    kampanyaScreen.style.display="none";
+    document.getElementById("ust").scrollIntoView({behavior:"smooth",block:"start"});
+  }
+  // fiyat hücrelerine tıklama
+  function bindPriceClicks(){
+    getRows().forEach(r=>{
+      const priceCell=r.children[4];
+      if(!priceCell) return;
+      priceCell.style.cursor="pointer";
+      priceCell.title="Kampanyaları gör";
+      priceCell.addEventListener("click",openKampanya);
+    });
+  }
+  bindPriceClicks();
+  homeBtn.addEventListener("click",closeKampanya);
 
   // İlk yükleme
   colorizeDiscounts();
