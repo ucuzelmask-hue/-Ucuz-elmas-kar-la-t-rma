@@ -20,21 +20,6 @@
   <meta property="og:url" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/"/>
   <meta property="og:image" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/bg-mlbb.webp"/>
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"MLBB Ucuz Elmas",
-    "url":"https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/",
-    "potentialAction":{
-      "@type":"SearchAction",
-      "target":"https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/?q={search_term_string}",
-      "query-input":"required name=search_term_string"
-    }
-  }
-  </script>
-
   <link rel="icon" type="image/webp" href="bg-mlbb.webp"/>
 
   <style>
@@ -42,92 +27,40 @@
       --page-bg:rgba(5,6,12,.94);
       --navbar-bg:linear-gradient(90deg,#101728,#181b35);
       --navbar-shadow:0 10px 25px rgba(0,0,0,.6);
-      --text-main:#f5f5f5;
-      --text-sub:#c9d4ff;
+      --text-main:#f5f5f5;--text-sub:#c9d4ff;
       --card-bg:rgba(5,8,18,.96);
       --hero-video-bg:radial-gradient(circle at top left,#28345c,#070814);
-      --table-head-bg:#131726;
-      --table-row-hover:rgba(255,255,255,.06);
-      --accent-yellow:#ffd54a;
-      --accent-blue:#4da6ff;
-      --good:#49d29a;
-      --warn:#ffa72b;
-      --bad:#ff4d4d;
+      --table-head-bg:#131726;--table-row-hover:rgba(255,255,255,.06);
+      --accent-yellow:#ffd54a;--accent-blue:#4da6ff;
+      --good:#49d29a;--warn:#ffa72b;--bad:#ff4d4d;
     }
     body.theme-light{
       --page-bg:rgba(245,248,255,.96);
       --navbar-bg:linear-gradient(90deg,#edf2ff,#dde7ff);
       --navbar-shadow:0 8px 20px rgba(80,100,150,.35);
-      --text-main:#111320;
-      --text-sub:#4b5678;
-      --card-bg:#fff;
-      --hero-video-bg:linear-gradient(145deg,#f4f6ff,#dde6ff);
-      --table-head-bg:#e5ebff;
-      --table-row-hover:rgba(40,60,120,.06);
-      --accent-yellow:#f4a600;
-      --accent-blue:#1f6fff;
+      --text-main:#111320;--text-sub:#4b5678;
+      --card-bg:#fff;--hero-video-bg:linear-gradient(145deg,#f4f6ff,#dde6ff);
+      --table-head-bg:#e5ebff;--table-row-hover:rgba(40,60,120,.06);
+      --accent-yellow:#f4a600;--accent-blue:#1f6fff;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       background-image:url("bg-mlbb.webp");
-      background-size:cover;
-      background-position:center top;
-      color:var(--text-main);
-      padding:10px;
-      transition:background-color .25s ease,color .25s ease,background-position .25s ease;
+      background-size:cover;background-position:center top;color:var(--text-main);
+      padding:10px;transition:background-color .25s ease,color .25s ease,background-position .25s ease;
     }
     a{color:var(--accent-blue);text-decoration:none}
     a:hover{text-decoration:underline}
 
     .page-shell{position:relative;max-width:1300px;margin:0 auto}
-    .page{
-      max-width:100%;
-      background:var(--page-bg);
-      border-radius:20px;
-      box-shadow:0 20px 50px rgba(0,0,0,.8);
-      overflow:hidden;
-      transition:background .25s ease,box-shadow .25s ease;
-      position:relative;
-      z-index:2;
-    }
+    .page{max-width:100%;background:var(--page-bg);border-radius:20px;box-shadow:0 20px 50px rgba(0,0,0,.8);overflow:hidden;transition:background .25s ease,box-shadow .25s ease;position:relative;z-index:2}
 
     /* Yan paneller */
-    .side-panel{
-      position:absolute;
-      top:60px;
-      bottom:40px;
-      width:155px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      pointer-events:none;
-    }
-    .side-panel-left{left:-165px}
-    .side-panel-right{right:-165px}
-    .side-card{
-      pointer-events:auto;
-      position:relative;
-      background:radial-gradient(circle at top,rgba(10,12,25,.95),rgba(5,7,18,.75));
-      border-radius:18px;
-      padding:8px 10px;
-      border:1px solid rgba(255,255,255,.3);
-      color:#fff;
-      font-size:11px;
-      box-shadow:0 16px 30px rgba(0,0,0,.85);
-      backdrop-filter:blur(7px);
-      overflow:hidden;
-    }
-    .side-card::before{
-      content:"";
-      position:absolute;
-      inset:-40%;
-      background:radial-gradient(circle at 0 0,rgba(120,200,255,.6),transparent 60%);
-      opacity:0;
-      mix-blend-mode:screen;
-      animation:glow 4s ease-in-out infinite alternate;
-      pointer-events:none;
-    }
+    .side-panel{position:absolute;top:60px;bottom:40px;width:155px;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+    .side-panel-left{left:-165px}.side-panel-right{right:-165px}
+    .side-card{pointer-events:auto;position:relative;background:radial-gradient(circle at top,rgba(10,12,25,.95),rgba(5,7,18,.75));border-radius:18px;padding:8px 10px;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:11px;box-shadow:0 16px 30px rgba(0,0,0,.85);backdrop-filter:blur(7px);overflow:hidden}
+    .side-card::before{content:"";position:absolute;inset:-40%;background:radial-gradient(circle at 0 0,rgba(120,200,255,.6),transparent 60%);opacity:0;mix-blend-mode:screen;animation:glow 4s ease-in-out infinite alternate;pointer-events:none}
     .side-panel-left .side-card:nth-child(1){animation:floatLeft 6s ease-in-out infinite alternate}
     .side-panel-left .side-card:nth-child(2){animation:floatLeft2 7s ease-in-out infinite alternate}
     .side-panel-right .side-card:nth-child(1){animation:floatRight 6.5s ease-in-out infinite alternate}
@@ -140,236 +73,95 @@
     @keyframes floatRight2{0%{transform:translateY(3px)}100%{transform:translateY(-5px)}}
     .side-card h4{font-size:12px;margin-bottom:3px;color:var(--accent-yellow)}
     .side-card p{font-size:10px;line-height:1.3}
-    .side-chip{
-      display:inline-block;
-      font-size:9px;
-      padding:2px 6px;
-      border-radius:999px;
-      background:rgba(0,0,0,.5);
-      margin-bottom:3px;
-    }
+    .side-chip{display:inline-block;font-size:9px;padding:2px 6px;border-radius:999px;background:rgba(0,0,0,.5);margin-bottom:3px}
     body.theme-light .side-card{background:rgba(255,255,255,.96);color:#111320}
     body.theme-light .side-card::before{mix-blend-mode:normal}
-    @media (max-width:1200px){
-      .side-panel{display:none}
-      .page-shell{max-width:100%}
-    }
+    @media (max-width:1200px){.side-panel{display:none}.page-shell{max-width:100%}}
 
     /* NAVBAR */
-    .navbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:12px 18px;
-      background:var(--navbar-bg);
-      border-bottom:1px solid rgba(255,255,255,.06);
-      position:sticky;
-      top:0;
-      z-index:20;
-      box-shadow:var(--navbar-shadow);
-      transition:padding .2s ease,box-shadow .2s ease,background .25s ease;
-    }
+    .navbar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:var(--navbar-bg);border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;z-index:20;box-shadow:var(--navbar-shadow);transition:padding .2s ease,box-shadow .2s ease,background .25s ease}
     .navbar.scrolled{padding:8px 16px;box-shadow:0 6px 20px rgba(0,0,0,.75)}
     .logo{display:flex;align-items:center;gap:10px}
-    .logo-icon{
-      width:34px;height:34px;border-radius:50%;
-      background:radial-gradient(circle at 30% 30%,#35c0ff,#0040ff);
-      display:flex;align-items:center;justify-content:center;
-      font-weight:800;font-size:18px;color:#fff;
-      box-shadow:0 0 14px rgba(30,150,255,.8);
-      animation:pulse 2.2s infinite ease-in-out;
-    }
-    @keyframes pulse{
-      0%,100%{transform:scale(1);box-shadow:0 0 10px rgba(30,150,255,.6)}
-      50%{transform:scale(1.05);box-shadow:0 0 18px rgba(30,150,255,1)}
-    }
+    .logo-icon{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#35c0ff,#0040ff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:#fff;box-shadow:0 0 14px rgba(30,150,255,.8);animation:pulse 2.2s infinite ease-in-out}
+    @keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 10px rgba(30,150,255,.6)}50%{transform:scale(1.05);box-shadow:0 0 18px rgba(30,150,255,1)}}
     .logo-text-main{font-weight:700;font-size:17px;color:var(--text-main)}
     .logo-text-sub{font-size:11px;color:var(--text-sub)}
     .nav-right{display:flex;align-items:center;gap:12px}
     .nav-links{display:flex;gap:14px;font-size:13px}
-    .nav-links a{
-      padding:4px 8px;border-radius:999px;
-      background:transparent;border:1px solid transparent;
-      color:var(--text-main);
-      transition:background .15s ease,border .15s ease,transform .12s ease;
-    }
-    .nav-links a:hover{
-      border-color:rgba(255,255,255,.4);
-      background:rgba(255,255,255,.08);
-      transform:translateY(-1px);
-    }
-    .theme-toggle{
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.35);
-      background:rgba(0,0,0,.2);
-      color:#fff;
-      padding:4px 10px;
-      font-size:12px;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      gap:6px;
-      transition:background .15s ease,transform .12s ease,box-shadow .12s ease;
-    }
-    .theme-toggle:hover{
-      background:rgba(0,0,0,.4);
-      transform:translateY(-1px);
-      box-shadow:0 6px 18px rgba(0,0,0,.6);
-    }
+    .nav-links a{padding:4px 8px;border-radius:999px;background:transparent;border:1px solid transparent;color:var(--text-main);transition:background .15s ease,border .15s ease,transform .12s ease}
+    .nav-links a:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);transform:translateY(-1px)}
+    .theme-toggle{border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.2);color:#fff;padding:4px 10px;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:background .15s ease,transform .12s ease,box-shadow .12s ease}
+    .theme-toggle:hover{background:rgba(0,0,0,.4);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.6)}
     .theme-toggle span.icon{font-size:14px}
 
+    .user-area{font-size:12px;color:var(--text-sub);display:flex;align-items:center;gap:6px}
+    .user-area input{padding:3px 7px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:var(--text-main);font-size:11px;outline:none}
+    body.theme-light .user-area input{background:#fff;border-color:rgba(0,0,0,.15)}
+    .user-area button{font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:var(--text-main);cursor:pointer}
+
     /* Haber bandı */
-    .news-ticker{
-      display:flex;align-items:center;gap:8px;
-      padding:6px 18px;font-size:11px;
-      background:rgba(0,0,0,.35);
-      border-bottom:1px solid rgba(255,255,255,.08);
-    }
+    .news-ticker{display:flex;align-items:center;gap:8px;padding:6px 18px;font-size:11px;background:rgba(0,0,0,.35);border-bottom:1px solid rgba(255,255,255,.08)}
     body.theme-light .news-ticker{background:rgba(255,255,255,.9)}
-    .news-label{
-      padding:3px 8px;border-radius:999px;
-      background:rgba(255,255,255,.15);
-      font-weight:600;letter-spacing:.4px;font-size:10px;
-    }
-    .news-text{
-      white-space:nowrap;overflow:hidden;
-      text-overflow:ellipsis;color:var(--text-main);
-      opacity:0;transition:opacity .3s ease;
-    }
+    .news-label{padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.15);font-weight:600;letter-spacing:.4px;font-size:10px}
+    .news-text{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text-main);opacity:0;transition:opacity .3s ease}
 
     /* HERO */
-    .hero{
-      display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(0,1.1fr);
-      gap:18px;
-      padding:18px 18px 10px;
-    }
+    .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1.1fr);gap:18px;padding:18px 18px 10px}
     @media (max-width:860px){.hero{grid-template-columns:1fr}}
     .hero-text h1{font-size:26px;margin-bottom:8px}
     .hero-text h1 span{color:var(--accent-yellow)}
     .hero-text p{font-size:13px;color:var(--text-sub);margin-bottom:12px}
     .hero-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-    .badge{
-      font-size:11px;padding:4px 10px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.2);
-      opacity:.9;background:rgba(0,0,0,.2);color:var(--text-main);
-    }
+    .badge{font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.2);opacity:.9;background:rgba(0,0,0,.2);color:var(--text-main)}
     body.theme-light .badge{background:rgba(255,255,255,.9);border-color:rgba(0,0,0,.1)}
     .hero-buttons{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
-    .btn{
-      font-size:13px;padding:8px 14px;border-radius:999px;
-      border:none;cursor:pointer;
-      transition:transform .13s ease,box-shadow .13s ease,opacity .13s ease;
-    }
-    .btn-primary{
-      background:linear-gradient(135deg,#0fdc7b,#00aaff);
-      color:#041019;font-weight:600;
-      box-shadow:0 6px 16px rgba(0,180,150,.75);
-    }
-    .btn-secondary{
-      background:rgba(255,255,255,.08);
-      color:var(--text-main);
-      border:1px solid rgba(255,255,255,.3);
-    }
+    .btn{font-size:13px;padding:8px 14px;border-radius:999px;border:none;cursor:pointer;transition:transform .13s ease,box-shadow .13s ease,opacity .13s ease}
+    .btn-primary{background:linear-gradient(135deg,#0fdc7b,#00aaff);color:#041019;font-weight:600;box-shadow:0 6px 16px rgba(0,180,150,.75)}
+    .btn-secondary{background:rgba(255,255,255,.08);color:var(--text-main);border:1px solid rgba(255,255,255,.3)}
     .btn-small{font-size:11px;padding:5px 10px}
     .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,0,0,.6);opacity:.96}
     .btn:active{transform:translateY(0);box-shadow:0 4px 10px rgba(0,0,0,.7)}
     .hero-note{font-size:11px;color:var(--text-sub);margin-top:6px}
 
     /* Video */
-    .hero-video-card{
-      background:var(--hero-video-bg);
-      border-radius:16px;
-      padding:10px;
-      border:1px solid rgba(255,255,255,.1);
-    }
+    .hero-video-card{background:var(--hero-video-bg);border-radius:16px;padding:10px;border:1px solid rgba(255,255,255,.1)}
     .hero-video-card h3{font-size:14px;margin-bottom:6px;color:var(--text-main)}
     .hero-video-card p{font-size:11px;color:var(--text-sub);margin-bottom:6px}
     .hero-video-card video{width:100%;border-radius:12px;display:block}
 
     /* Duyuru kartları */
     .ad-section{padding:4px 18px 14px}
-    .ad-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:12px;
-    }
-    .ad-card{
-      background:var(--card-bg);
-      border-radius:14px;
-      padding:10px 12px;
-      border:1px solid rgba(255,255,255,.14);
-      font-size:12px;
-    }
+    .ad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+    .ad-card{background:var(--card-bg);border-radius:14px;padding:10px 12px;border:1px solid rgba(255,255,255,.14);font-size:12px}
     .ad-card h3{font-size:13px;margin-bottom:4px;color:var(--accent-yellow)}
     .ad-card p{font-size:11px;color:var(--text-sub);margin-bottom:4px}
-    .ad-tag{
-      display:inline-block;font-size:10px;
-      padding:2px 7px;border-radius:999px;
-      background:rgba(0,0,0,.4);margin-bottom:4px;
-    }
+    .ad-tag{display:inline-block;font-size:10px;padding:2px 7px;border-radius:999px;background:rgba(0,0,0,.4);margin-bottom:4px}
 
     /* Section + tablo */
     .section{padding:4px 18px 18px}
-    .section-title-row{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
-      margin-bottom:8px;
-    }
+    .section-title-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
     .section-title-row h2{font-size:18px;color:var(--text-main)}
     .section-title-row small{font-size:11px;color:var(--text-sub)}
     .section-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-    .search-input{
-      padding:6px 10px;font-size:12px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.3);
-      outline:none;min-width:160px;
-      background:rgba(0,0,0,.2);color:var(--text-main);
-    }
-    body.theme-light .search-input{
-      background:rgba(255,255,255,.95);
-      border-color:rgba(0,0,0,.15);
-    }
+    .search-input{padding:6px 10px;font-size:12px;border-radius:999px;border:1px solid rgba(255,255,255,.3);outline:none;min-width:160px;background:rgba(0,0,0,.2);color:var(--text-main)}
+    body.theme-light .search-input{background:rgba(255,255,255,.95);border-color:rgba(0,0,0,.15)}
     .search-input::placeholder{color:#9ca0c0}
-    .table-container{
-      border-radius:14px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.18);
-      background:var(--card-bg);
-      transition:background .25s ease,border .25s ease;
-    }
+    .table-container{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.18);background:var(--card-bg);transition:background .25s ease,border .25s ease}
     .table-scroll{overflow-x:auto}
     table{width:100%;border-collapse:collapse;min-width:700px}
     thead{background:var(--table-head-bg)}
-    th,td{
-      padding:9px 10px;
-      border-bottom:1px solid rgba(255,255,255,.12);
-      text-align:left;
-      font-size:13px;
-    }
+    th,td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.12);text-align:left;font-size:13px}
     th{font-weight:600;color:var(--accent-yellow);white-space:nowrap}
     tbody tr{transition:background .16s ease,transform .12s ease,box-shadow .12s ease}
     tbody tr:hover{background:var(--table-row-hover);transform:translateY(-1px)}
     tr.best-row{background:rgba(0,190,120,.22)}
     tr.best-row:hover{background:rgba(0,210,140,.32)}
-    .badge-small{
-      background:rgba(0,200,120,.22);
-      border:1px solid rgba(0,200,120,.7);
-      padding:2px 6px;border-radius:6px;
-      color:#b8ffe1;font-size:11px;
-    }
+    .badge-small{background:rgba(0,200,120,.22);border:1px solid rgba(0,200,120,.7);padding:2px 6px;border-radius:6px;color:#b8ffe1;font-size:11px}
     .fav-row{box-shadow:inset 0 0 0 1px rgba(255,215,0,.7)}
-    .fav-btn{
-      margin-left:6px;font-size:12px;padding:2px 6px;
-      border-radius:999px;border:1px solid rgba(255,255,255,.4);
-      background:rgba(0,0,0,.4);color:#ffd54a;cursor:pointer;
-    }
-    body.theme-light .fav-btn{
-      background:rgba(255,255,255,.9);
-      border-color:rgba(0,0,0,.15);
-    }
+    .fav-btn{margin-left:6px;font-size:12px;padding:2px 6px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.4);color:#ffd54a;cursor:pointer}
+    body.theme-light .fav-btn{background:rgba(255,255,255,.9);border-color:rgba(0,0,0,.15)}
     .info-row{margin-top:8px;font-size:11px;color:var(--text-sub)}
+    .last-update{font-size:11px;color:var(--text-sub);margin-left:6px}
 
     /* Skin/Paket kutusu: aç/kapa animasyon */
     #extra-prices-wrap{overflow:hidden;max-height:0;transition:max-height .35s ease}
@@ -379,84 +171,62 @@
     .comments-section{padding:4px 18px 18px}
     .comments-section h2{font-size:18px;margin-bottom:4px}
     .comments-section small{font-size:11px;color:var(--text-sub)}
-    .comment-form{
-      margin-top:10px;margin-bottom:10px;
-      background:var(--card-bg);
-      border-radius:14px;
-      padding:10px 12px;
-      border:1px solid rgba(255,255,255,.16);
-    }
+    .comment-form{margin-top:10px;margin-bottom:10px;background:var(--card-bg);border-radius:14px;padding:10px 12px;border:1px solid rgba(255,255,255,.16)}
     .comment-form-row{display:flex;gap:8px;margin-bottom:6px}
-    .comment-input,.comment-textarea{
-      width:100%;padding:6px 10px;border-radius:10px;
-      border:1px solid rgba(255,255,255,.25);
-      background:rgba(0,0,0,.25);
-      color:var(--text-main);font-size:12px;outline:none;
-    }
-    body.theme-light .comment-input,
-    body.theme-light .comment-textarea{
-      background:rgba(255,255,255,.96);
-      border-color:rgba(0,0,0,.1);
-    }
+    .comment-input,.comment-textarea{width:100%;padding:6px 10px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:var(--text-main);font-size:12px;outline:none}
+    body.theme-light .comment-input,body.theme-light .comment-textarea{background:rgba(255,255,255,.96);border-color:rgba(0,0,0,.1)}
     .comment-textarea{resize:vertical;min-height:60px}
     .comment-list{margin-top:8px}
-    .comment-item{
-      padding:6px 10px;background:var(--card-bg);
-      border-radius:10px;border:1px solid rgba(255,255,255,.08);
-      font-size:12px;margin-bottom:4px;
-    }
+    .comment-item{padding:6px 10px;background:var(--card-bg);border-radius:10px;border:1px solid rgba(255,255,255,.08);font-size:12px;margin-bottom:4px}
     .comment-meta{font-size:10px;color:var(--text-sub);margin-bottom:2px}
     .stars{cursor:pointer;font-size:16px;user-select:none}
-    .del-btn{
-      margin-left:8px;font-size:11px;padding:2px 6px;
-      border-radius:8px;border:1px solid rgba(255,255,255,.25);
-      background:rgba(255,255,255,.06);color:var(--text-main);cursor:pointer;
-    }
+    .del-btn{margin-left:8px;font-size:11px;padding:2px 6px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:var(--text-main);cursor:pointer}
 
-    footer{
-      padding:10px 18px 14px;
-      font-size:11px;text-align:center;
-      color:var(--text-sub);
-      border-top:1px solid rgba(255,255,255,.12);
-      background:rgba(3,5,13,.96);
-    }
+    /* Sohbet */
+    .chat-section{padding:4px 18px 18px}
+    .chat-box{background:var(--card-bg);border-radius:14px;padding:10px 12px;border:1px solid rgba(255,255,255,.16);max-height:260px;overflow-y:auto;font-size:12px}
+    .chat-msg{margin-bottom:4px}
+    .chat-meta{font-size:10px;color:var(--text-sub)}
+    .chat-form{display:flex;gap:6px;margin-top:6px}
+    .chat-form input{flex:1;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:var(--text-main);font-size:12px;outline:none}
+    body.theme-light .chat-form input{background:#fff;border-color:rgba(0,0,0,.15)}
+
+    footer{padding:10px 18px 14px;font-size:11px;text-align:center;color:var(--text-sub);border-top:1px solid rgba(255,255,255,.12);background:rgba(3,5,13,.96)}
 
     /* Go top */
-    .go-top-btn{
-      position:fixed;right:14px;bottom:18px;
-      width:40px;height:40px;border-radius:50%;
-      border:none;background:linear-gradient(135deg,#0fdc7b,#00aaff);
-      color:#051018;font-size:20px;cursor:pointer;
-      box-shadow:0 8px 20px rgba(0,0,0,.7);
-      display:none;align-items:center;justify-content:center;z-index:50;
-    }
+    .go-top-btn{position:fixed;right:14px;bottom:18px;width:40px;height:40px;border-radius:50%;border:none;background:linear-gradient(135deg,#0fdc7b,#00aaff);color:#051018;font-size:20px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:50}
     .go-top-btn.show{display:flex}
+
+    /* Tema geçiş efekti */
+    .theme-flash{
+      position:fixed;inset:0;pointer-events:none;
+      background:radial-gradient(circle at center,rgba(255,255,255,.6),transparent 70%);
+      opacity:0;transition:opacity .35s ease;
+      z-index:100;
+    }
+    .theme-flash.show{opacity:1}
 
     /* Mobil */
     @media (max-width:600px){
-      body{padding:4px}
-      .page{border-radius:12px}
-      .navbar{padding:8px 10px}
-      .navbar.scrolled{padding:6px 8px}
-      .logo-text-main{font-size:15px}
-      .logo-text-sub{font-size:10px}
+      body{padding:4px}.page{border-radius:12px}
+      .navbar{padding:8px 10px}.navbar.scrolled{padding:6px 8px}
+      .logo-text-main{font-size:15px}.logo-text-sub{font-size:10px}
       .nav-links{display:none}
       .hero{padding:12px 10px 4px;gap:10px}
-      .hero-text h1{font-size:20px}
-      .hero-text p{font-size:12px}
+      .hero-text h1{font-size:20px}.hero-text p{font-size:12px}
       .hero-badges{flex-direction:column;align-items:flex-start}
       .hero-buttons{flex-direction:column;align-items:stretch}
       .btn{width:100%;text-align:center}
-      .hero-video-card{padding:8px}
-      .hero-video-card h3{font-size:13px}
-      .hero-video-card p{font-size:10px}
-      .section,.ad-section,.comments-section{padding:4px 10px 12px}
+      .hero-video-card{padding:8px}.hero-video-card h3{font-size:13px}.hero-video-card p{font-size:10px}
+      .section,.ad-section,.comments-section,.chat-section{padding:4px 10px 12px}
       .section-title-row h2{font-size:16px}
       footer{font-size:10px;padding:8px 10px 10px}
     }
   </style>
 </head>
 <body>
+
+<div class="theme-flash" id="theme-flash"></div>
 
 <div class="page-shell">
   <!-- SOL PANEL -->
@@ -506,7 +276,14 @@
           <a href="#fiyatlar">Fiyatlar</a>
           <a href="#video">Video</a>
           <a href="#yorumlar">Yorumlar</a>
+          <a href="#sohbet">Sohbet</a>
         </nav>
+
+        <div class="user-area" id="user-area">
+          <input type="text" id="user-name-input" placeholder="İsim yaz">
+          <button id="user-login-btn">Giriş</button>
+        </div>
+
         <button id="theme-toggle" class="theme-toggle">
           <span class="icon" id="theme-icon">🌙</span>
           <span id="theme-text">Koyu Mod</span>
@@ -534,13 +311,12 @@
 
         <div class="hero-buttons">
           <button class="btn btn-primary" id="btn-best">💸 En ucuz fiyatı bul</button>
+          <button class="btn btn-secondary btn-small" id="btn-refresh">🔄 Fiyatları Yenile</button>
           <button class="btn btn-secondary btn-small" id="btn-music">🎵 Müziği Aç</button>
         </div>
 
-        <p class="hero-note">
-          Not: Bu site sadece fiyat karşılaştırma rehberi olarak tasarlanmıştır.
-          Satın alma işlemleri ilgili sitelerin kendi sayfalarında gerçekleşir.
-        </p>
+        <p class="hero-note">Not: Bu site sadece fiyat karşılaştırma rehberi olarak tasarlanmıştır.
+          Satın alma işlemleri ilgili sitelerin kendi sayfalarında gerçekleşir.</p>
       </div>
 
       <aside class="hero-video-card" id="video">
@@ -555,7 +331,7 @@
 
     <!-- DUYURU -->
     <section class="ad-section">
-      <div class="ad-grid">
+      <div class="ad-grid" id="ad-grid">
         <div class="ad-card">
           <span class="ad-tag">Etkinlik</span>
           <h3>Hafta Sonu Çift Elmas Fırsatları</h3>
@@ -580,6 +356,7 @@
         <div>
           <h2>Site Fiyat Karşılaştırması</h2>
           <small>“En ucuz fiyatı bul” butonu tabloda en düşük fiyatı öne çıkarır. Yıldıza basarak favori siteni seçebilirsin.</small>
+          <div class="last-update" id="last-update"></div>
         </div>
 
         <div class="section-controls">
@@ -593,14 +370,8 @@
           <table id="price-table">
             <thead>
               <tr>
-                <th>Site Adı</th>
-                <th>Açıklama</th>
-                <th>Link</th>
-                <th>Not</th>
-                <th>Güncel Fiyat (TL)</th>
-                <th>Eski Fiyat</th>
-                <th>İndirim</th>
-                <th>Stok / Favori</th>
+                <th>Site Adı</th><th>Açıklama</th><th>Link</th><th>Not</th>
+                <th>Güncel Fiyat (TL)</th><th>Eski Fiyat</th><th>İndirim</th><th>Stok / Favori</th>
               </tr>
             </thead>
             <tbody>
@@ -609,9 +380,7 @@
                 <td>Güvenilir MLBB TR elmas satış platformu</td>
                 <td><a href="https://www.bynogame.com" target="_blank">Siteye Git</a></td>
                 <td><span class="badge-small">Onaylı Satıcı</span></td>
-                <td>349.99</td>
-                <td><del>449.99 TL</del></td>
-                <td>%22 İndirim</td>
+                <td>349.99</td><td><del>449.99 TL</del></td><td>%22 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
@@ -620,9 +389,7 @@
                 <td>Uygun fiyatlı MLBB elmas &amp; kod</td>
                 <td><a href="https://www.dijipin.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>74.99</td>
-                <td><del>89.99 TL</del></td>
-                <td>%17 İndirim</td>
+                <td>74.99</td><td><del>89.99 TL</del></td><td>%17 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
@@ -631,9 +398,7 @@
                 <td>Hızlı teslimatlı MLBB elmas &amp; oyun parası</td>
                 <td><a href="https://www.gamesatis.com" target="_blank">Siteye Git</a></td>
                 <td><span class="badge-small">Önerilen</span></td>
-                <td>16.99</td>
-                <td><del>21.99 TL</del></td>
-                <td>%11 İndirim</td>
+                <td>16.99</td><td><del>21.99 TL</del></td><td>%11 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
@@ -642,9 +407,7 @@
                 <td>MLBB elmas satış sitesi</td>
                 <td><a href="https://www.kabasakalonline.com/" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>57.99</td>
-                <td><del>70.99 TL</del></td>
-                <td>%14 İndirim</td>
+                <td>57.99</td><td><del>70.99 TL</del></td><td>%14 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
@@ -653,9 +416,7 @@
                 <td>MLBB elmas ve diğer oyun epinleri</td>
                 <td><a href="https://www.vatangame.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>52.99</td>
-                <td><del>64.99 TL</del></td>
-                <td>%18 İndirim</td>
+                <td>52.99</td><td><del>64.99 TL</del></td><td>%18 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
@@ -664,9 +425,7 @@
                 <td>Joy alışveriş üzerinden MLBB elmas</td>
                 <td><a href="https://www.joyalisveris.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>59.99</td>
-                <td><del>69.99 TL</del></td>
-                <td>%14 İndirim</td>
+                <td>59.99</td><td><del>69.99 TL</del></td><td>%14 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
@@ -675,9 +434,7 @@
                 <td>Dijital kod ve MLBB elmas bakiyesi</td>
                 <td><a href="https://www.perdigital.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>54.99</td>
-                <td><del>62.99 TL</del></td>
-                <td>%13 İndirim</td>
+                <td>54.99</td><td><del>62.99 TL</del></td><td>%13 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
@@ -686,9 +443,7 @@
                 <td>Oyuneks üzerinde MLBB elmas satışı</td>
                 <td><a href="https://www.oyuneks.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>48.99</td>
-                <td><del>59.99 TL</del></td>
-                <td>%18 İndirim</td>
+                <td>48.99</td><td><del>59.99 TL</del></td><td>%18 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
             </tbody>
@@ -702,35 +457,17 @@
           <div class="table-scroll">
             <table>
               <thead>
-                <tr>
-                  <th>Site Adı</th>
-                  <th>Paket / Skin</th>
-                  <th>Açıklama</th>
-                  <th>Yaklaşık Fiyat (TL)</th>
-                  <th>Not</th>
-                </tr>
+                <tr><th>Site Adı</th><th>Paket / Skin</th><th>Açıklama</th><th>Yaklaşık Fiyat (TL)</th><th>Not</th></tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>ByNoGame</td>
-                  <td>Starlight Üyeliği</td>
-                  <td>Sezonluk Starlight üyelik kodu</td>
-                  <td>~149 TL</td>
-                  <td>Örnek veri, gerçek fiyatı siteden kontrol et.</td>
+                  <td>ByNoGame</td><td>Starlight Üyeliği</td><td>Sezonluk Starlight üyelik kodu</td><td>~149 TL</td><td>Örnek veri, gerçek fiyatı siteden kontrol et.</td>
                 </tr>
                 <tr>
-                  <td>GameSatış</td>
-                  <td>Twilight Pass</td>
-                  <td>Etkinlik dönemine özel paket</td>
-                  <td>~99 TL</td>
-                  <td>Örnek tablo, sadece rehber amaçlı.</td>
+                  <td>GameSatış</td><td>Twilight Pass</td><td>Etkinlik dönemine özel paket</td><td>~99 TL</td><td>Örnek tablo, sadece rehber amaçlı.</td>
                 </tr>
                 <tr>
-                  <td>Perdigital</td>
-                  <td>Elit Skin Paketi</td>
-                  <td>Kampanyalı skin paketi</td>
-                  <td>~120 TL</td>
-                  <td>Satın almadan önce açıklamayı oku.</td>
+                  <td>Perdigital</td><td>Elit Skin Paketi</td><td>Kampanyalı skin paketi</td><td>~120 TL</td><td>Satın almadan önce açıklamayı oku.</td>
                 </tr>
               </tbody>
             </table>
@@ -738,9 +475,7 @@
         </div>
       </div>
 
-      <p class="info-row">
-        Fiyatlar örnek olarak yazılmıştır; gerçek fiyatlar için ilgili sitelerin sayfalarını ziyaret etmelisiniz.
-      </p>
+      <p class="info-row">Fiyatlar örnek olarak yazılmıştır; gerçek fiyatlar için ilgili sitelerin sayfalarını ziyaret etmelisiniz.</p>
     </section>
 
     <!-- YORUMLAR -->
@@ -755,11 +490,7 @@
         </div>
         <div class="comment-form-row" style="align-items:center">
           <div id="rating" class="stars" aria-label="Puan">
-            <span data-s="1">☆</span>
-            <span data-s="2">☆</span>
-            <span data-s="3">☆</span>
-            <span data-s="4">☆</span>
-            <span data-s="5">☆</span>
+            <span data-s="1">☆</span><span data-s="2">☆</span><span data-s="3">☆</span><span data-s="4">☆</span><span data-s="5">☆</span>
           </div>
           <small style="color:var(--text-sub)">Puan ver (isteğe bağlı)</small>
         </div>
@@ -773,6 +504,21 @@
       <div id="comment-list" class="comment-list"></div>
     </section>
 
+    <!-- SOHBET -->
+    <section class="chat-section" id="sohbet">
+      <div class="section-title-row">
+        <div>
+          <h2>Sohbet (Yerel)</h2>
+          <small>Bu sohbet sadece bu cihazda saklanır. Diğer oyuncular görmez.</small>
+        </div>
+      </div>
+      <div class="chat-box" id="chat-box"></div>
+      <form class="chat-form" id="chat-form">
+        <input type="text" id="chat-input" placeholder="Mesaj yaz...">
+        <button type="submit" class="btn btn-secondary btn-small">Gönder</button>
+      </form>
+    </section>
+
     <footer>
       Bu site Mobile Legends oyuncuları için hazırlanmış bağımsız bir fiyat karşılaştırma rehberidir.
     </footer>
@@ -780,9 +526,7 @@
 </div>
 
 <!-- Müzik -->
-<audio id="bg-music" loop>
-  <source src="mlbb-muzik.mp3" type="audio/mpeg"/>
-</audio>
+<audio id="bg-music" loop><source src="mlbb-music.mp3" type="audio/mpeg"/></audio>
 
 <!-- Go Top -->
 <button id="go-top-btn" class="go-top-btn" title="Anasayfaya dön">↑</button>
@@ -792,7 +536,7 @@
   const goTopBtn=document.getElementById("go-top-btn");
   window.addEventListener("scroll",()=>{
     const offset=window.scrollY||0;
-    document.body.style.backgroundPositionY=-(offset*0.15)+"px";
+    document.body.style.backgroundPositionY=-(offset*0.15)+"px";   // parallax
     if(offset>20) navbar.classList.add("scrolled"); else navbar.classList.remove("scrolled");
     if(offset>200) goTopBtn.classList.add("show"); else goTopBtn.classList.remove("show");
   });
@@ -846,6 +590,24 @@
     if(minRow){ minRow.classList.add("best-row"); minRow.scrollIntoView({behavior:"smooth",block:"center"}); }
   });
 
+  // Fiyatları "canlı yenile" (rehber amaçlı random)
+  const basePrices=getRows().map(r=>({row:r,base:parseFloat(r.getAttribute("data-price"))}));
+  const lastUpdateEl=document.getElementById("last-update");
+  function setLastUpdate(){
+    const now=new Date();
+    lastUpdateEl.textContent="Son güncelleme (örnek): "+now.toLocaleString("tr-TR",{hour12:false});
+  }
+  document.getElementById("btn-refresh").addEventListener("click",()=>{
+    basePrices.forEach(item=>{
+      const factor=0.9+Math.random()*0.2; // % -10 / +10
+      const newPrice=(item.base*factor).toFixed(2);
+      item.row.setAttribute("data-price",newPrice);
+      item.row.children[4].textContent=newPrice;
+    });
+    setLastUpdate();
+  });
+  setLastUpdate();
+
   // Arama
   const searchInput=document.getElementById("search-input");
   searchInput.addEventListener("input",()=>{
@@ -867,11 +629,7 @@
     });
     if(!fav) return;
     const favRow=rows.find(r=>r.getAttribute("data-site")===fav);
-    if(favRow){
-      favRow.classList.add("fav-row");
-      const b=favRow.querySelector(".fav-btn"); if(b) b.textContent="★";
-      tbody.insertBefore(favRow,tbody.firstChild);
-    }
+    if(favRow){ favRow.classList.add("fav-row"); const b=favRow.querySelector(".fav-btn"); if(b) b.textContent="★"; tbody.insertBefore(favRow,tbody.firstChild); }
   }
   function setupFavorites(){
     getRows().forEach(r=>{
@@ -880,8 +638,7 @@
       b.addEventListener("click",()=>{
         const site=r.getAttribute("data-site");
         const cur=localStorage.getItem(favKey);
-        if(cur===site) localStorage.removeItem(favKey);
-        else localStorage.setItem(favKey,site);
+        if(cur===site) localStorage.removeItem(favKey); else localStorage.setItem(favKey,site);
         applySavedFavorite();
       });
     });
@@ -894,16 +651,8 @@
   let musicOn=false;
   musicBtn.addEventListener("click",async()=>{
     try{
-      if(!musicOn){
-        music.volume=.18;
-        await music.play();
-        musicOn=true;
-        musicBtn.textContent="🔇 Müziği Kapat";
-      } else {
-        music.pause();
-        musicOn=false;
-        musicBtn.textContent="🎵 Müziği Aç";
-      }
+      if(!musicOn){ music.volume=.45; await music.play(); musicOn=true; musicBtn.textContent="🔊 Müziği Kapat"; }
+      else { music.pause(); musicOn=false; musicBtn.textContent="🎵 Müziği Aç"; }
     }catch(e){ console.log(e); }
   });
 
@@ -911,24 +660,39 @@
   const themeToggle=document.getElementById("theme-toggle");
   const themeIcon=document.getElementById("theme-icon");
   const themeText=document.getElementById("theme-text");
+  const themeFlash=document.getElementById("theme-flash");
   function applyTheme(t){
-    if(t==="light"){
-      document.body.classList.add("theme-light");
-      themeIcon.textContent="☀️";
-      themeText.textContent="Açık Mod";
-    } else {
-      document.body.classList.remove("theme-light");
-      themeIcon.textContent="🌙";
-      themeText.textContent="Koyu Mod";
-    }
+    if(t==="light"){ document.body.classList.add("theme-light"); themeIcon.textContent="☀️"; themeText.textContent="Açık Mod"; }
+    else { document.body.classList.remove("theme-light"); themeIcon.textContent="🌙"; themeText.textContent="Koyu Mod"; }
   }
   applyTheme(localStorage.getItem("mlbb-theme")||"dark");
   themeToggle.addEventListener("click",()=>{
+    themeFlash.classList.add("show");
+    setTimeout(()=>themeFlash.classList.remove("show"),300);
     const cur=document.body.classList.contains("theme-light")?"light":"dark";
     const next=cur==="light"?"dark":"light";
-    localStorage.setItem("mlbb-theme",next);
-    applyTheme(next);
+    localStorage.setItem("mlbb-theme",next); applyTheme(next);
   });
+
+  // Basit giriş sistemi (yerel)
+  const USER_KEY="mlbb-user-name";
+  const userArea=document.getElementById("user-area");
+  const userInput=document.getElementById("user-name-input");
+  const userBtn=document.getElementById("user-login-btn");
+  function renderUser(){
+    const name=localStorage.getItem(USER_KEY);
+    if(name){
+      userArea.innerHTML="👤 "+name+"<button id='logout-btn' style='margin-left:6px;font-size:11px;padding:3px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);cursor:pointer'>Çıkış</button>";
+      document.getElementById("logout-btn").addEventListener("click",()=>{localStorage.removeItem(USER_KEY);location.reload();});
+    }
+  }
+  userBtn.addEventListener("click",()=>{
+    const v=userInput.value.trim();
+    if(!v) return;
+    localStorage.setItem(USER_KEY,v);
+    renderUser();
+  });
+  renderUser();
 
   // Yorumlar + yıldızlı puan
   const commentForm=document.getElementById("comment-form");
@@ -946,67 +710,58 @@
   function paintStars(n){
     [...starWrap.children].forEach((el,i)=>{ el.textContent=(i<n)?"★":"☆"; });
   }
-  function loadComments(){
-    try{
-      const raw=localStorage.getItem(COMMENT_KEY);
-      return raw?JSON.parse(raw):[];
-    }catch{ return []; }
-  }
-  function saveComments(arr){
-    localStorage.setItem(COMMENT_KEY,JSON.stringify(arr.slice(-50)));
-  }
+  function loadComments(){ try{ const raw=localStorage.getItem(COMMENT_KEY); return raw?JSON.parse(raw):[] }catch{ return [] } }
+  function saveComments(arr){ localStorage.setItem(COMMENT_KEY,JSON.stringify(arr.slice(-50))); }
   function renderComments(){
-    const arr=loadComments();
-    commentListEl.innerHTML="";
-    if(arr.length===0){
-      const div=document.createElement("div");
-      div.className="comment-item";
-      div.textContent="Henüz yorum yok. İlk yorumu sen yaz.";
-      commentListEl.appendChild(div);
-      return;
-    }
+    const arr=loadComments(); commentListEl.innerHTML="";
+    if(arr.length===0){ const div=document.createElement("div"); div.className="comment-item"; div.textContent="Henüz yorum yok. İlk yorumu sen yaz."; commentListEl.appendChild(div); return; }
     arr.forEach((c,idx)=>{
-      const item=document.createElement("div");
-      item.className="comment-item";
-      const meta=document.createElement("div");
-      meta.className="comment-meta";
+      const item=document.createElement("div"); item.className="comment-item";
+      const meta=document.createElement("div"); meta.className="comment-meta";
       const stars="★".repeat(c.stars||0)+"☆".repeat(5-(c.stars||0));
-      meta.textContent=(c.name||"Anonim")+
-        (c.server?(" • "+c.server):"")+
-        " • "+(c.time||"")+
-        " • "+stars;
-      const del=document.createElement("button");
-      del.className="del-btn";
-      del.textContent="Sil";
-      del.addEventListener("click",()=>{
-        const a=loadComments();
-        a.splice(idx,1);
-        saveComments(a);
-        renderComments();
-      });
-      const text=document.createElement("div");
-      text.textContent=c.text;
-      item.appendChild(meta);
-      item.appendChild(text);
-      item.appendChild(del);
-      commentListEl.appendChild(item);
+      meta.textContent=(c.name||"Anonim")+(c.server?(" • "+c.server):"")+" • "+(c.time||"")+" • "+stars;
+      const del=document.createElement("button"); del.className="del-btn"; del.textContent="Sil";
+      del.addEventListener("click",()=>{ const arr=loadComments(); arr.splice(idx,1); saveComments(arr); renderComments(); });
+      const text=document.createElement("div"); text.textContent=c.text;
+      item.appendChild(meta); item.appendChild(text); item.appendChild(del); commentListEl.appendChild(item);
     });
   }
   commentForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     const name=document.getElementById("comment-name").value.trim();
     const server=document.getElementById("comment-server").value.trim();
-    const text=document.getElementById("comment-text").value.trim();
-    if(!text) return;
-    const now=new Date();
-    const timeStr=now.toLocaleString("tr-TR",{hour12:false});
-    const arr=loadComments();
-    arr.push({name,server,text,time:timeStr,stars:currentStars});
-    saveComments(arr);
-    commentForm.reset();
-    currentStars=0;
-    paintStars(0);
-    renderComments();
+    const text=document.getElementById("comment-text").value.trim(); if(!text) return;
+    const now=new Date(); const timeStr=now.toLocaleString("tr-TR",{hour12:false});
+    const arr=loadComments(); arr.push({name,server,text,time:timeStr,stars:currentStars}); saveComments(arr);
+    commentForm.reset(); currentStars=0; paintStars(0); renderComments();
+  });
+
+  // Sohbet (yerel)
+  const CHAT_KEY="mlbb-chat";
+  const chatBox=document.getElementById("chat-box");
+  const chatForm=document.getElementById("chat-form");
+  const chatInput=document.getElementById("chat-input");
+  function loadChat(){ try{ const raw=localStorage.getItem(CHAT_KEY); return raw?JSON.parse(raw):[] }catch{ return [] } }
+  function saveChat(arr){ localStorage.setItem(CHAT_KEY,JSON.stringify(arr.slice(-80))); }
+  function renderChat(){
+    const arr=loadChat(); chatBox.innerHTML="";
+    if(arr.length===0){ chatBox.textContent="Henüz mesaj yok. İlk mesajı sen yaz."; return; }
+    arr.forEach(msg=>{
+      const div=document.createElement("div");
+      div.className="chat-msg";
+      const meta=document.createElement("div"); meta.className="chat-meta";
+      meta.textContent=(msg.name||"Oyuncu")+": "+msg.time;
+      const txt=document.createElement("div"); txt.textContent=msg.text;
+      div.appendChild(meta); div.appendChild(txt); chatBox.appendChild(div);
+    });
+    chatBox.scrollTop=chatBox.scrollHeight;
+  }
+  chatForm.addEventListener("submit",e=>{
+    e.preventDefault();
+    const text=chatInput.value.trim(); if(!text) return;
+    const name=localStorage.getItem(USER_KEY)||"Oyuncu";
+    const now=new Date(); const timeStr=now.toLocaleTimeString("tr-TR",{hour12:false});
+    const arr=loadChat(); arr.push({name,text,time:timeStr}); saveChat(arr); chatInput.value=""; renderChat();
   });
 
   // Skin/Paket aç-kapa
@@ -1014,18 +769,34 @@
   const extraWrap=document.getElementById("extra-prices-wrap");
   toggleExtraBtn.addEventListener("click",()=>{
     const isOpen=extraWrap.classList.toggle("open");
-    toggleExtraBtn.textContent=isOpen?
-      "🎭 Skin / Paket Fiyatlarını Gizle":
-      "🎭 Skin / Paket Fiyatları";
-    if(isOpen){
-      extraWrap.scrollIntoView({behavior:"smooth",block:"start"});
-    }
+    toggleExtraBtn.textContent=isOpen?"🎭 Skin / Paket Fiyatlarını Gizle":"🎭 Skin / Paket Fiyatları";
+    if(isOpen){ extraWrap.scrollIntoView({behavior:"smooth",block:"start"}); }
   });
+
+  // Duyuru kartlarını ufak ufak döndür (örnek)
+  const adGrid=document.getElementById("ad-grid");
+  const adMessages=[
+    {tag:"Etkinlik",title:"Hafta Sonu Çift Elmas",text:"Bazı sitelerde bonus elmas çıkabilir, satın almadan önce kontrol et."},
+    {tag:"PvP Öneri",title:"Solo Rank İpuçları",text:"Yüksek ping saatlerinde ranked girmek yerine klasik oyna."},
+    {tag:"Güvenlik",title:"Hesap Bağlama",text:"Hesabını mutlaka Moonton veya sosyal medya ile bağla, çalma riskini azalt."}
+  ];
+  let adIdx=0;
+  setInterval(()=>{
+    const cards=adGrid.querySelectorAll(".ad-card");
+    if(cards.length===0) return;
+    const c=cards[0];
+    const data=adMessages[adIdx];
+    c.querySelector(".ad-tag").textContent=data.tag;
+    c.querySelector("h3").textContent=data.title;
+    c.querySelector("p").textContent=data.text;
+    adIdx=(adIdx+1)%adMessages.length;
+  },12000);
 
   // İlk yükleme
   colorizeDiscounts();
   setupFavorites();
   renderComments();
+  renderChat();
 </script>
 </body>
 </html>
