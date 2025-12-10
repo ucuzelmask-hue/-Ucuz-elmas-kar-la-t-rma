@@ -9,7 +9,7 @@
   <!-- SEO -->
   <link rel="canonical" href="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/"/>
   <meta name="description" content="Mobile Legends: Bang Bang ucuz elmas fiyat karşılaştırma rehberi. Türkiye'deki popüler sitelerdeki MLBB elmas fiyatlarını tek ekranda gör.">
-  <meta name="keywords" content="mobile legends, mlbb, ucuz elmas, elmas fiyat, bynogame, dijipin, gamesatış, kabasakal, vatan game, joy alışveriş, perdigital, oyuneks">
+  <meta name="keywords" content="mobile legends, mlbb, ucuz elmas, elmas fiyat, bynogame, dijipin, gamesatış, kabasakal, vatan game, joy alışveriş, perdigital, oyuneks, itemsatis, dunmaplay, xgame">
   <meta name="author" content="MLBB Fiyat Rehberi">
   <meta name="theme-color" content="#050812"/>
 
@@ -27,28 +27,39 @@
       --page-bg:rgba(5,6,12,.94);
       --navbar-bg:linear-gradient(90deg,#101728,#181b35);
       --navbar-shadow:0 10px 25px rgba(0,0,0,.6);
-      --text-main:#f5f5f5;--text-sub:#c9d4ff;
+      --text-main:#f5f5f5;
+      --text-sub:#c9d4ff;
       --card-bg:rgba(5,8,18,.96);
       --hero-video-bg:radial-gradient(circle at top left,#28345c,#070814);
-      --table-head-bg:#131726;--table-row-hover:rgba(255,255,255,.06);
-      --accent-yellow:#ffd54a;--accent-blue:#4da6ff;
-      --good:#49d29a;--warn:#ffa72b;--bad:#ff4d4d;
+      --table-head-bg:#131726;
+      --table-row-hover:rgba(255,255,255,.06);
+      --accent-yellow:#ffd54a;
+      --accent-blue:#4da6ff;
+      --good:#49d29a;
+      --warn:#ffa72b;
+      --bad:#ff4d4d;
     }
     body.theme-light{
       --page-bg:rgba(245,248,255,.96);
       --navbar-bg:linear-gradient(90deg,#edf2ff,#dde7ff);
       --navbar-shadow:0 8px 20px rgba(80,100,150,.35);
-      --text-main:#111320;--text-sub:#4b5678;
-      --card-bg:#fff;--hero-video-bg:linear-gradient(145deg,#f4f6ff,#dde6ff);
-      --table-head-bg:#e5ebff;--table-row-hover:rgba(40,60,120,.06);
-      --accent-yellow:#f4a600;--accent-blue:#1f6fff;
+      --text-main:#111320;
+      --text-sub:#4b5678;
+      --card-bg:#fff;
+      --hero-video-bg:linear-gradient(145deg,#f4f6ff,#dde6ff);
+      --table-head-bg:#e5ebff;
+      --table-row-hover:rgba(40,60,120,.06);
+      --accent-yellow:#f4a600;
+      --accent-blue:#1f6fff;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       background-image:url("bg-mlbb.webp");
-      background-size:cover;background-position:center top;color:var(--text-main);
-      padding:10px;transition:background-color .25s ease,color .25s ease,background-position .25s ease;
+      background-size:cover;background-position:center top;
+      color:var(--text-main);
+      padding:10px;
+      transition:background-color .25s ease,color .25s ease,background-position .25s ease;
     }
     a{color:var(--accent-blue);text-decoration:none}
     a:hover{text-decoration:underline}
@@ -94,10 +105,10 @@
     .theme-toggle:hover{background:rgba(0,0,0,.4);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.6)}
     .theme-toggle span.icon{font-size:14px}
 
-    .user-area{font-size:12px;color:var(--text-sub);display:flex;align-items:center;gap:6px}
-    .user-area input{padding:3px 7px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:var(--text-main);font-size:11px;outline:none}
-    body.theme-light .user-area input{background:#fff;border-color:rgba(0,0,0,.15)}
-    .user-area button{font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:var(--text-main);cursor:pointer}
+    /* Login kutusu */
+    .user-box{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-sub)}
+    .user-box button{font-size:11px;padding:4px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.25);color:var(--text-main);cursor:pointer}
+    body.theme-light .user-box button{background:rgba(255,255,255,.9);border-color:rgba(0,0,0,.15)}
 
     /* Haber bandı */
     .news-ticker{display:flex;align-items:center;gap:8px;padding:6px 18px;font-size:11px;background:rgba(0,0,0,.35);border-bottom:1px solid rgba(255,255,255,.08)}
@@ -146,6 +157,13 @@
     .search-input{padding:6px 10px;font-size:12px;border-radius:999px;border:1px solid rgba(255,255,255,.3);outline:none;min-width:160px;background:rgba(0,0,0,.2);color:var(--text-main)}
     body.theme-light .search-input{background:rgba(255,255,255,.95);border-color:rgba(0,0,0,.15)}
     .search-input::placeholder{color:#9ca0c0}
+
+    .filter-chip{font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.3);cursor:pointer}
+    .filter-chip.active{background:#0fdc7b;color:#041019;border-color:transparent;font-weight:600}
+
+    .range-wrap{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-sub)}
+    #price-range{width:120px}
+
     .table-container{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.18);background:var(--card-bg);transition:background .25s ease,border .25s ease}
     .table-scroll{overflow-x:auto}
     table{width:100%;border-collapse:collapse;min-width:700px}
@@ -161,7 +179,7 @@
     .fav-btn{margin-left:6px;font-size:12px;padding:2px 6px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(0,0,0,.4);color:#ffd54a;cursor:pointer}
     body.theme-light .fav-btn{background:rgba(255,255,255,.9);border-color:rgba(0,0,0,.15)}
     .info-row{margin-top:8px;font-size:11px;color:var(--text-sub)}
-    .last-update{font-size:11px;color:var(--text-sub);margin-left:6px}
+    .clickable-price{cursor:pointer;text-decoration:underline;text-decoration-style:dotted}
 
     /* Skin/Paket kutusu: aç/kapa animasyon */
     #extra-prices-wrap{overflow:hidden;max-height:0;transition:max-height .35s ease}
@@ -182,33 +200,27 @@
     .stars{cursor:pointer;font-size:16px;user-select:none}
     .del-btn{margin-left:8px;font-size:11px;padding:2px 6px;border-radius:8px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:var(--text-main);cursor:pointer}
 
-    /* Sohbet */
-    .chat-section{padding:4px 18px 18px}
-    .chat-box{background:var(--card-bg);border-radius:14px;padding:10px 12px;border:1px solid rgba(255,255,255,.16);max-height:260px;overflow-y:auto;font-size:12px}
-    .chat-msg{margin-bottom:4px}
-    .chat-meta{font-size:10px;color:var(--text-sub)}
-    .chat-form{display:flex;gap:6px;margin-top:6px}
-    .chat-form input{flex:1;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:var(--text-main);font-size:12px;outline:none}
-    body.theme-light .chat-form input{background:#fff;border-color:rgba(0,0,0,.15)}
-
-    /* 2. ekran: Kampanyalar */
-    #kampanyalar-screen{display:none}
-    .kampanya-note{font-size:11px;color:var(--text-sub);margin-top:6px}
-
     footer{padding:10px 18px 14px;font-size:11px;text-align:center;color:var(--text-sub);border-top:1px solid rgba(255,255,255,.12);background:rgba(3,5,13,.96)}
 
     /* Go top */
     .go-top-btn{position:fixed;right:14px;bottom:18px;width:40px;height:40px;border-radius:50%;border:none;background:linear-gradient(135deg,#0fdc7b,#00aaff);color:#051018;font-size:20px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:50}
     .go-top-btn.show{display:flex}
 
-    /* Tema geçiş efekti */
-    .theme-flash{
-      position:fixed;inset:0;pointer-events:none;
-      background:radial-gradient(circle at center,rgba(255,255,255,.6),transparent 70%);
-      opacity:0;transition:opacity .35s ease;
-      z-index:100;
+    /* Kampanya 2. ekran */
+    #kampanya-ekran{
+      position:fixed;inset:0;
+      background:rgba(2,4,10,0.98);
+      display:none;flex-direction:column;
+      z-index:60;color:#f5f5f5;
     }
-    .theme-flash.show{opacity:1}
+    #kampanya-icerik{max-width:1200px;margin:0 auto;padding:16px 12px 20px;overflow-y:auto}
+    .kamp-header{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+    .kamp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+    .kamp-kart{background:rgba(10,12,22,.95);border-radius:12px;padding:8px 10px;border:1px solid rgba(255,255,255,.16);font-size:12px}
+    .kamp-kart h3{font-size:13px;margin-bottom:4px;color:var(--accent-yellow)}
+    .kamp-kart ul{padding-left:18px;font-size:11px}
+    .tag{display:inline-block;font-size:10px;padding:2px 6px;border-radius:999px;background:rgba(0,0,0,.5);margin-bottom:3px}
+    .btn-ghost{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:transparent;color:#fff;cursor:pointer}
 
     /* Mobil */
     @media (max-width:600px){
@@ -222,15 +234,13 @@
       .hero-buttons{flex-direction:column;align-items:stretch}
       .btn{width:100%;text-align:center}
       .hero-video-card{padding:8px}.hero-video-card h3{font-size:13px}.hero-video-card p{font-size:10px}
-      .section,.ad-section,.comments-section,.chat-section{padding:4px 10px 12px}
+      .section,.ad-section,.comments-section{padding:4px 10px 12px}
       .section-title-row h2{font-size:16px}
       footer{font-size:10px;padding:8px 10px 10px}
     }
   </style>
 </head>
 <body>
-
-<div class="theme-flash" id="theme-flash"></div>
 
 <div class="page-shell">
   <!-- SOL PANEL -->
@@ -280,12 +290,13 @@
           <a href="#fiyatlar">Fiyatlar</a>
           <a href="#video">Video</a>
           <a href="#yorumlar">Yorumlar</a>
-          <a href="#sohbet">Sohbet</a>
         </nav>
 
-        <div class="user-area" id="user-area">
-          <input type="text" id="user-name-input" placeholder="İsim yaz">
-          <button id="user-login-btn">Giriş</button>
+        <!-- Demo giriş kutusu -->
+        <div class="user-box">
+          <span id="user-info">Misafir</span>
+          <button id="btn-login-demo">Giriş</button>
+          <button id="btn-logout-demo" style="display:none;">Çıkış</button>
         </div>
 
         <button id="theme-toggle" class="theme-toggle">
@@ -315,12 +326,13 @@
 
         <div class="hero-buttons">
           <button class="btn btn-primary" id="btn-best">💸 En ucuz fiyatı bul</button>
-          <button class="btn btn-secondary btn-small" id="btn-refresh">🔄 Fiyatları Yenile</button>
           <button class="btn btn-secondary btn-small" id="btn-music">🎵 Müziği Aç</button>
         </div>
 
-        <p class="hero-note">Not: Bu site sadece fiyat karşılaştırma rehberi olarak tasarlanmıştır.
-          Satın alma işlemleri ilgili sitelerin kendi sayfalarında gerçekleşir.</p>
+        <p class="hero-note">
+          Not: Bu site sadece fiyat karşılaştırma rehberi olarak tasarlanmıştır.
+          Satın alma işlemleri ilgili sitelerin kendi sayfalarında gerçekleşir.
+        </p>
       </div>
 
       <aside class="hero-video-card" id="video">
@@ -335,7 +347,7 @@
 
     <!-- DUYURU -->
     <section class="ad-section">
-      <div class="ad-grid" id="ad-grid">
+      <div class="ad-grid">
         <div class="ad-card">
           <span class="ad-tag">Etkinlik</span>
           <h3>Hafta Sonu Çift Elmas Fırsatları</h3>
@@ -360,11 +372,23 @@
         <div>
           <h2>Site Fiyat Karşılaştırması</h2>
           <small>“En ucuz fiyatı bul” butonu tabloda en düşük fiyatı öne çıkarır. Yıldıza basarak favori siteni seçebilirsin.</small>
-          <div class="last-update" id="last-update"></div>
         </div>
 
         <div class="section-controls">
           <input id="search-input" class="search-input" type="text" placeholder="Site veya açıklama ara..."/>
+
+          <div class="filter-chip-group">
+            <button type="button" class="filter-chip active" data-server="ALL" id="filter-all">Hepsi</button>
+            <button type="button" class="filter-chip" data-server="TR" id="filter-tr">TR</button>
+            <button type="button" class="filter-chip" data-server="GLOBAL" id="filter-global">Global</button>
+          </div>
+
+          <div class="range-wrap">
+            <label for="price-range">Azami fiyat:</label>
+            <input type="range" id="price-range" min="0" max="400" step="5" value="400">
+            <span id="price-range-value">400 TL</span>
+          </div>
+
           <button type="button" class="btn btn-secondary btn-small" id="toggle-extra">🎭 Skin / Paket Fiyatları</button>
         </div>
       </div>
@@ -374,270 +398,335 @@
           <table id="price-table">
             <thead>
               <tr>
-                <th>Site Adı</th><th>Açıklama</th><th>Link</th><th>Not</th>
-                <th>Güncel Fiyat (TL)</th><th>Eski Fiyat</th><th>İndirim</th><th>Stok / Favori</th>
+                <th>Site Adı</th>
+                <th>Açıklama</th>
+                <th>Link</th>
+                <th>Not</th>
+                <th>Güncel Fiyat (TL)</th>
+                <th>Eski Fiyat</th>
+                <th>İndirim</th>
+                <th>Stok / Favori</th>
               </tr>
             </thead>
             <tbody>
-              <tr data-price="349.99" data-discount="22" data-site="ByNoGame">
+              <!-- Mevcut siteler -->
+              <tr data-price="349.99" data-discount="22" data-site="ByNoGame" data-server="TR">
                 <td>ByNoGame</td>
                 <td>Güvenilir MLBB TR elmas satış platformu</td>
                 <td><a href="https://www.bynogame.com" target="_blank">Siteye Git</a></td>
                 <td><span class="badge-small">Onaylı Satıcı</span></td>
-                <td>349.99</td><td><del>449.99 TL</del></td><td>%22 İndirim</td>
+                <td class="clickable-price">349.99</td>
+                <td><del>449.99 TL</del></td>
+                <td>%22 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="74.99" data-discount="17" data-site="Dijipin">
+              <tr data-price="74.99" data-discount="17" data-site="Dijipin" data-server="TR">
                 <td>Dijipin</td>
                 <td>Uygun fiyatlı MLBB elmas &amp; kod</td>
                 <td><a href="https://www.dijipin.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>74.99</td><td><del>89.99 TL</del></td><td>%17 İndirim</td>
+                <td class="clickable-price">74.99</td>
+                <td><del>89.99 TL</del></td>
+                <td>%17 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="16.99" data-discount="11" data-site="GameSatış">
+              <tr data-price="16.99" data-discount="11" data-site="GameSatış" data-server="GLOBAL">
                 <td>GameSatış</td>
                 <td>Hızlı teslimatlı MLBB elmas &amp; oyun parası</td>
                 <td><a href="https://www.gamesatis.com" target="_blank">Siteye Git</a></td>
                 <td><span class="badge-small">Önerilen</span></td>
-                <td>16.99</td><td><del>21.99 TL</del></td><td>%11 İndirim</td>
+                <td class="clickable-price">16.99</td>
+                <td><del>21.99 TL</del></td>
+                <td>%11 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="57.99" data-discount="14" data-site="Kabasakal Online">
+              <tr data-price="57.99" data-discount="14" data-site="Kabasakal Online" data-server="TR">
                 <td>Kabasakal Online</td>
                 <td>MLBB elmas satış sitesi</td>
                 <td><a href="https://www.kabasakalonline.com/" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>57.99</td><td><del>70.99 TL</del></td><td>%14 İndirim</td>
+                <td class="clickable-price">57.99</td>
+                <td><del>70.99 TL</del></td>
+                <td>%14 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="52.99" data-discount="18" data-site="VatanGame">
+              <tr data-price="52.99" data-discount="18" data-site="VatanGame" data-server="TR">
                 <td>VatanGame</td>
                 <td>MLBB elmas ve diğer oyun epinleri</td>
                 <td><a href="https://www.vatangame.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>52.99</td><td><del>64.99 TL</del></td><td>%18 İndirim</td>
+                <td class="clickable-price">52.99</td>
+                <td><del>64.99 TL</del></td>
+                <td>%18 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="59.99" data-discount="14" data-site="Joy Alışveriş">
+              <tr data-price="59.99" data-discount="14" data-site="Joy Alışveriş" data-server="TR">
                 <td>Joy Alışveriş</td>
-                <td>Joy Alışveriş üzerinden MLBB elmas</td>
+                <td>Joy alışveriş üzerinden MLBB elmas</td>
                 <td><a href="https://www.joyalisveris.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>59.99</td><td><del>69.99 TL</del></td><td>%14 İndirim</td>
+                <td class="clickable-price">59.99</td>
+                <td><del>69.99 TL</del></td>
+                <td>%14 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="54.99" data-discount="13" data-site="Perdigital">
+              <tr data-price="54.99" data-discount="13" data-site="Perdigital" data-server="TR">
                 <td>Perdigital</td>
                 <td>Dijital kod ve MLBB elmas bakiyesi</td>
                 <td><a href="https://www.perdigital.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>54.99</td><td><del>62.99 TL</del></td><td>%13 İndirim</td>
+                <td class="clickable-price">54.99</td>
+                <td><del>62.99 TL</del></td>
+                <td>%13 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="48.99" data-discount="18" data-site="Oyuneks">
+              <tr data-price="48.99" data-discount="18" data-site="Oyuneks" data-server="TR">
                 <td>Oyuneks</td>
                 <td>Oyuneks üzerinde MLBB elmas satışı</td>
                 <td><a href="https://www.oyuneks.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>48.99</td><td><del>59.99 TL</del></td><td>%18 İndirim</td>
+                <td class="clickable-price">48.99</td>
+                <td><del>59.99 TL</del></td>
+                <td>%18 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <!-- SENİN İSTEDİĞİN EK SİTELER -->
-              <tr data-price="51.99" data-discount="15" data-site="Itemsatis">
+              <!-- Senin eklediklerin -->
+              <tr data-price="53.27" data-discount="15" data-site="Itemsatis" data-server="TR">
                 <td>Itemsatis</td>
-                <td>MLBB elmas &amp; hesap ürünleri</td>
+                <td>Popüler oyunlarda hesap ve elmas satışı</td>
                 <td><a href="https://www.itemsatis.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>51.99</td><td><del>61.99 TL</del></td><td>%15 İndirim</td>
+                <td class="clickable-price">53.27</td>
+                <td><del>62.90 TL</del></td>
+                <td>%15 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="49.49" data-discount="16" data-site="Dunmaplay">
+              <tr data-price="37.90" data-discount="12" data-site="Dunmaplay" data-server="GLOBAL">
                 <td>Dunmaplay</td>
-                <td>MLBB elmas kodu &amp; epin</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>Global MLBB elmas ve oyun içi para</td>
+                <td><a href="https://www.dunmaplay.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>49.49</td><td><del>58.99 TL</del></td><td>%16 İndirim</td>
+                <td class="clickable-price">37.90</td>
+                <td><del>43.50 TL</del></td>
+                <td>%12 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="50.99" data-discount="12" data-site="Xgame">
+              <tr data-price="45.32" data-discount="10" data-site="Xgame" data-server="TR">
                 <td>Xgame.com.tr</td>
-                <td>Türkiye merkezli oyun mağazası</td>
+                <td>MLBB elmas ve epin satışı</td>
                 <td><a href="https://www.xgame.com.tr" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>50.99</td><td><del>57.99 TL</del></td><td>%12 İndirim</td>
+                <td class="clickable-price">45.32</td>
+                <td><del>50.32 TL</del></td>
+                <td>%10 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="47.99" data-discount="19" data-site="Playsell">
+              <tr data-price="41.27" data-discount="9" data-site="Playsell" data-server="TR">
                 <td>Playsell</td>
-                <td>Dijital oyun ve elmas satışı</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>Oyun içi para ve MLBB elmas</td>
+                <td><a href="https://www.playsell.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>47.99</td><td><del>59.49 TL</del></td><td>%19 İndirim</td>
+                <td class="clickable-price">41.27</td>
+                <td><del>45.27 TL</del></td>
+                <td>%9 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="53.49" data-discount="10" data-site="Hesap">
+              <tr data-price="38.75" data-discount="16" data-site="Hesap.com.tr" data-server="TR">
                 <td>Hesap.com.tr</td>
-                <td>Hesap &amp; elmas ürünleri</td>
+                <td>Oyun hesabı ve elmas satışı</td>
                 <td><a href="https://www.hesap.com.tr" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>53.49</td><td><del>59.49 TL</del></td><td>%10 İndirim</td>
+                <td class="clickable-price">38.75</td>
+                <td><del>46.10 TL</del></td>
+                <td>%16 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="46.99" data-discount="20" data-site="Onsrashop">
+              <tr data-price="39.90" data-discount="14" data-site="Onsrashop" data-server="TR">
                 <td>Onsrashop.com</td>
-                <td>Mobil oyun elmas &amp; kod</td>
+                <td>Dijital oyun kodları ve elmas</td>
                 <td><a href="https://www.onsrashop.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>46.99</td><td><del>58.99 TL</del></td><td>%20 İndirim</td>
+                <td class="clickable-price">39.90</td>
+                <td><del>46.90 TL</del></td>
+                <td>%14 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="45.99" data-discount="21" data-site="Eneba">
+              <tr data-price="42.49" data-discount="11" data-site="Eneba" data-server="GLOBAL">
                 <td>Eneba</td>
-                <td>Global oyun kodu ve elmas</td>
+                <td>Global oyun kodu &amp; wallet</td>
                 <td><a href="https://www.eneba.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>45.99</td><td><del>57.99 TL</del></td><td>%21 İndirim</td>
+                <td class="clickable-price">42.49</td>
+                <td><del>47.49 TL</del></td>
+                <td>%11 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="49.99" data-discount="15" data-site="Inovapin">
-                <td>Inovapin</td>
-                <td>Epin &amp; elmas satışı</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
+              <tr data-price="40.15" data-discount="13" data-site="İnovapin" data-server="TR">
+                <td>İnovapin</td>
+                <td>Oyun epin ve MLBB elmas</td>
+                <td><a href="https://www.inovapin.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>49.99</td><td><del>58.99 TL</del></td><td>%15 İndirim</td>
+                <td class="clickable-price">40.15</td>
+                <td><del>46.15 TL</del></td>
+                <td>%13 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="48.49" data-discount="18" data-site="Atagame">
+              <tr data-price="44.22" data-discount="10" data-site="Atagame" data-server="TR">
                 <td>Atagame</td>
-                <td>Oyun içi para ve elmas</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>MLBB ve diğer oyun epinleri</td>
+                <td><a href="https://www.atagame.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>48.49</td><td><del>59.49 TL</del></td><td>%18 İndirim</td>
+                <td class="clickable-price">44.22</td>
+                <td><del>49.22 TL</del></td>
+                <td>%10 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="55.99" data-discount="9" data-site="Turkcell">
+              <tr data-price="55.00" data-discount="8" data-site="Turkcell" data-server="TR">
                 <td>Turkcell</td>
-                <td>Fatura ile ödeme elmas</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>Mobil ödeme ile MLBB elmas</td>
+                <td><a href="https://www.turkcell.com.tr" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>55.99</td><td><del>61.99 TL</del></td><td>%9 İndirim</td>
+                <td class="clickable-price">55.00</td>
+                <td><del>59.90 TL</del></td>
+                <td>%8 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="56.49" data-discount="8" data-site="Hepsiburada">
+              <tr data-price="51.75" data-discount="9" data-site="Hepsiburada" data-server="TR">
                 <td>Hepsiburada</td>
-                <td>Gift card &amp; elmas kodu</td>
+                <td>Dijital kod &amp; hediye kart</td>
                 <td><a href="https://www.hepsiburada.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>56.49</td><td><del>61.99 TL</del></td><td>%8 İndirim</td>
+                <td class="clickable-price">51.75</td>
+                <td><del>56.75 TL</del></td>
+                <td>%9 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="47.49" data-discount="17" data-site="Kopazar">
+              <tr data-price="43.90" data-discount="12" data-site="Kopazar" data-server="TR">
                 <td>Kopazar</td>
-                <td>Online oyun ürünleri</td>
+                <td>Oyun epin &amp; elmas</td>
                 <td><a href="https://www.kopazar.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>47.49</td><td><del>57.49 TL</del></td><td>%17 İndirim</td>
+                <td class="clickable-price">43.90</td>
+                <td><del>49.90 TL</del></td>
+                <td>%12 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="50.49" data-discount="14" data-site="Klasgame">
+              <tr data-price="39.50" data-discount="18" data-site="Klasgame" data-server="TR">
                 <td>Klasgame</td>
-                <td>Popüler oyun epinleri</td>
+                <td>MLBB elmas ve oyun kodu</td>
                 <td><a href="https://www.klasgame.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>50.49</td><td><del>58.99 TL</del></td><td>%14 İndirim</td>
+                <td class="clickable-price">39.50</td>
+                <td><del>48.50 TL</del></td>
+                <td>%18 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="51.49" data-discount="13" data-site="Epindigital">
+              <tr data-price="42.10" data-discount="10" data-site="Epindigital" data-server="TR">
                 <td>Epindigital</td>
-                <td>Dijital epin mağazası</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>Dijital epin &amp; elmas</td>
+                <td><a href="https://www.epindigital.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>51.49</td><td><del>59.49 TL</del></td><td>%13 İndirim</td>
+                <td class="clickable-price">42.10</td>
+                <td><del>46.10 TL</del></td>
+                <td>%10 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="49.29" data-discount="16" data-site="Btkgame">
+              <tr data-price="38.40" data-discount="14" data-site="Btkgame" data-server="TR">
                 <td>Btkgame</td>
-                <td>Oyun içi para &amp; elmas</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>MLBB epin ve oyun içi para</td>
+                <td><a href="https://www.btkgame.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>49.29</td><td><del>58.49 TL</del></td><td>%16 İndirim</td>
+                <td class="clickable-price">38.40</td>
+                <td><del>44.40 TL</del></td>
+                <td>%14 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="46.49" data-discount="19" data-site="Epin">
-                <td>Epin</td>
-                <td>Genel epin mağazası</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
+              <tr data-price="47.00" data-discount="11" data-site="Epin.com" data-server="TR">
+                <td>Epin.com</td>
+                <td>Online epin ve elmas</td>
+                <td><a href="https://www.epin.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>46.49</td><td><del>57.99 TL</del></td><td>%19 İndirim</td>
+                <td class="clickable-price">47.00</td>
+                <td><del>52.00 TL</del></td>
+                <td>%11 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="44.99" data-discount="22" data-site="Cimri">
+              <tr data-price="35.90" data-discount="16" data-site="Cimri" data-server="TR">
                 <td>Cimri</td>
-                <td>Karşılaştırma sitesi üzerinden elmas</td>
+                <td>Karşılaştırma sitesi (çeşitli satıcılar)</td>
                 <td><a href="https://www.cimri.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>44.99</td><td><del>57.99 TL</del></td><td>%22 İndirim</td>
+                <td class="clickable-price">35.90</td>
+                <td><del>42.90 TL</del></td>
+                <td>%16 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="48.59" data-discount="18" data-site="Playsultan">
+              <tr data-price="41.60" data-discount="12" data-site="Playsultan" data-server="TR">
                 <td>Playsultan</td>
-                <td>TR ve global elmas satışı</td>
+                <td>TR sunucusu için elmas</td>
                 <td><a href="https://www.playsultan.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>48.59</td><td><del>59.59 TL</del></td><td>%18 İndirim</td>
+                <td class="clickable-price">41.60</td>
+                <td><del>47.60 TL</del></td>
+                <td>%12 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="47.89" data-discount="17" data-site="Mtcgame">
+              <tr data-price="39.99" data-discount="15" data-site="Mtcgame" data-server="GLOBAL">
                 <td>Mtcgame</td>
-                <td>Global oyun ve elmas kodu</td>
+                <td>Global oyun kodu &amp; elmas</td>
                 <td><a href="https://www.mtcgame.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>47.89</td><td><del>57.89 TL</del></td><td>%17 İndirim</td>
+                <td class="clickable-price">39.99</td>
+                <td><del>47.99 TL</del></td>
+                <td>%15 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="52.49" data-discount="12" data-site="Razer Gold">
+              <tr data-price="43.33" data-discount="10" data-site="Razer Gold" data-server="GLOBAL">
                 <td>Razer Gold</td>
-                <td>Razer Gold kodu ile elmas</td>
+                <td>Global wallet ile MLBB yükleme</td>
                 <td><a href="https://gold.razer.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>52.49</td><td><del>59.99 TL</del></td><td>%12 İndirim</td>
+                <td class="clickable-price">43.33</td>
+                <td><del>48.33 TL</del></td>
+                <td>%10 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="49.19" data-discount="15" data-site="OyunAlisveris">
+              <tr data-price="40.80" data-discount="13" data-site="Oyun Alışveriş" data-server="TR">
                 <td>Oyun Alışveriş</td>
-                <td>Genel oyun alışveriş sitesi</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
+                <td>Oyun alışveriş sitesi, MLBB elmas</td>
+                <td><a href="https://www.oyunalisveris.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
-                <td>49.19</td><td><del>57.99 TL</del></td><td>%15 İndirim</td>
+                <td class="clickable-price">40.80</td>
+                <td><del>46.80 TL</del></td>
+                <td>%13 İndirim</td>
                 <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
@@ -699,130 +788,6 @@
       <div id="comment-list" class="comment-list"></div>
     </section>
 
-    <!-- SOHBET -->
-    <section class="chat-section" id="sohbet">
-      <div class="section-title-row">
-        <div>
-          <h2>Sohbet (Yerel)</h2>
-          <small>Bu sohbet sadece bu cihazda saklanır. Diğer oyuncular görmez.</small>
-        </div>
-      </div>
-      <div class="chat-box" id="chat-box"></div>
-      <form class="chat-form" id="chat-form">
-        <input type="text" id="chat-input" placeholder="Mesaj yaz...">
-        <button type="submit" class="btn btn-secondary btn-small">Gönder</button>
-      </form>
-    </section>
-
-    <!-- 2. EKRAN: KAMPANYALAR -->
-    <section class="section" id="kampanyalar-screen">
-      <div class="section-title-row">
-        <div>
-          <h2>MLBB Elmas Kampanyaları – Tüm Siteler</h2>
-          <small>Fiyat hücrelerine tıklayınca bu ekran açılır. Burada her sitenin örnek elmas paketlerini görürsün.</small>
-        </div>
-        <button id="btn-home" class="btn btn-secondary btn-small">🏠 Anasayfa</button>
-      </div>
-
-      <div class="table-container">
-        <div class="table-scroll">
-          <table>
-            <thead>
-              <tr>
-                <th>Site</th><th>Paket</th><th>Kampanya / Not</th><th>Yaklaşık Fiyat (TL)</th><th>Link</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>ByNoGame</td>
-                <td>86 / 172 / 257 Elmas (TR)</td>
-                <td>Sezon sonu %20’ye varan indirimler.</td>
-                <td>~50–350</td>
-                <td><a href="https://www.bynogame.com" target="_blank">Git</a></td>
-              </tr>
-              <tr>
-                <td>Dijipin</td>
-                <td>Weekly Pass &amp; küçük paket</td>
-                <td>Hafta içi düşük komisyonlu kampanya.</td>
-                <td>~25–150</td>
-                <td><a href="https://www.dijipin.com" target="_blank">Git</a></td>
-              </tr>
-              <tr>
-                <td>GameSatış</td>
-                <td>Starlight + Elmas bundle</td>
-                <td>Hızlı teslimat, stok durumuna göre indirim.</td>
-                <td>~40–300</td>
-                <td><a href="https://www.gamesatis.com" target="_blank">Git</a></td>
-              </tr>
-              <tr>
-                <td>Kabasakal Online</td>
-                <td>86 / 257 / 514 Elmas</td>
-                <td>Zaman zaman hafta sonu bonus elmas.</td>
-                <td>~45–320</td>
-                <td><a href="https://www.kabasakalonline.com" target="_blank">Git</a></td>
-              </tr>
-              <tr>
-                <td>VatanGame</td>
-                <td>TR &amp; Global elmas paketleri</td>
-                <td>Yeni oyunculara özel indirim kuponu olabilir.</td>
-                <td>~40–280</td>
-                <td><a href="https://www.vatangame.com" target="_blank">Git</a></td>
-              </tr>
-              <tr>
-                <td>Joy Alışveriş</td>
-                <td>Orta seviye elmas paketleri</td>
-                <td>Kart &amp; havale ile farklı fiyatlar.</td>
-                <td>~50–260</td>
-                <td><a href="https://www.joyalisveris.com" target="_blank">Git</a></td>
-              </tr>
-              <tr>
-                <td>Perdigital</td>
-                <td>Kod ile elmas yükleme</td>
-                <td>Arada toplu alıma küçük indirimler.</td>
-                <td>~45–250</td>
-                <td><a href="https://www.perdigital.com" target="_blank">Git</a></td>
-              </tr>
-              <tr>
-                <td>Oyuneks</td>
-                <td>Küçük &amp; orta paketler</td>
-                <td>Hafta sonu seçili paketlere kampanya.</td>
-                <td>~35–220</td>
-                <td><a href="https://www.oyuneks.com" target="_blank">Git</a></td>
-              </tr>
-
-              <!-- Ek sitelerin kampanya satırları -->
-              <tr><td>Itemsatis</td><td>86 / 172 / 257 Elmas</td><td>Satıcıya göre değişen indirimler.</td><td>~40–260</td><td><a href="https://www.itemsatis.com" target="_blank">Git</a></td></tr>
-              <tr><td>Dunmaplay</td><td>Küçük elmas paketleri</td><td>Yeni kayıt olanlara kupon olabilir.</td><td>~35–200</td><td><a href="#" target="_blank">Git</a></td></tr>
-              <tr><td>Xgame.com.tr</td><td>TR elmas paketleri</td><td>Sezonluk indirim dönemleri.</td><td>~40–240</td><td><a href="https://www.xgame.com.tr" target="_blank">Git</a></td></tr>
-              <tr><td>Playsell</td><td>Elmas &amp; oyun kodları</td><td>Ödeme yöntemine göre promosyon.</td><td>~35–230</td><td><a href="#" target="_blank">Git</a></td></tr>
-              <tr><td>Hesap.com.tr</td><td>Hesap + elmas paket</td><td>Hazır hesap yanında bonus elmas olabilir.</td><td>~60–300</td><td><a href="https://www.hesap.com.tr" target="_blank">Git</a></td></tr>
-              <tr><td>Onsrashop</td><td>Mobil oyun elmasları</td><td>Kampanyalı ödeme seçenekleri.</td><td>~35–210</td><td><a href="https://www.onsrashop.com" target="_blank">Git</a></td></tr>
-              <tr><td>Eneba</td><td>Global elmas kodu</td><td>Döviz kuruna göre değişir.</td><td>~30–220</td><td><a href="https://www.eneba.com" target="_blank">Git</a></td></tr>
-              <tr><td>Inovapin</td><td>MLBB Epin</td><td>Belirli kartlara özel indirim.</td><td>~40–230</td><td><a href="#" target="_blank">Git</a></td></tr>
-              <tr><td>Atagame</td><td>Elmas ve farklı oyunlar</td><td>Dönemsel kampanyalar.</td><td>~35–200</td><td><a href="#" target="_blank">Git</a></td></tr>
-              <tr><td>Turkcell</td><td>Fatura ile elmas</td><td>Kampanya paketleri TV reklamlarında olur genelde.</td><td>Operatör tarifesine göre</td><td><a href="#" target="_blank">Git</a></td></tr>
-              <tr><td>Hepsiburada</td><td>Gift card / kod</td><td>Özel günlerde kupon indirimleri.</td><td>~40–250</td><td><a href="https://www.hepsiburada.com" target="_blank">Git</a></td></tr>
-              <tr><td>Kopazar</td><td>TR elmas</td><td>Mağaza içi indirim kuponları.</td><td>~35–210</td><td><a href="https://www.kopazar.com" target="_blank">Git</a></td></tr>
-              <tr><td>Klasgame</td><td>TR &amp; Global epin</td><td>Haftalık seçili oyun kampanyaları.</td><td>~40–230</td><td><a href="https://www.klasgame.com" target="_blank">Git</a></td></tr>
-              <tr><td>Epindigital</td><td>Genel epin &amp; elmas</td><td>Toplu alıma küçük indirim.</td><td>~35–200</td><td><a href="#" target="_blank">Git</a></td></tr>
-              <tr><td>Btkgame</td><td>Oyun içi para</td><td>Belirli dönemlerde MLBB kampanyaları.</td><td>~35–190</td><td><a href="#" target="_blank">Git</a></td></tr>
-              <tr><td>Epin</td><td>Elmas epin</td><td>Farklı ödeme ile farklı komisyon.</td><td>~30–200</td><td><a href="#" target="_blank">Git</a></td></tr>
-              <tr><td>Cimri</td><td>Karşılaştırma listeleri</td><td>Farklı mağazaların fiyatını gösterir.</td><td>Mağazaya göre</td><td><a href="https://www.cimri.com" target="_blank">Git</a></td></tr>
-              <tr><td>Playsultan</td><td>TR &amp; Global elmas</td><td>Arada bonus elmas kampanyası.</td><td>~35–220</td><td><a href="https://www.playsultan.com" target="_blank">Git</a></td></tr>
-              <tr><td>Mtcgame</td><td>Global elmas &amp; kod</td><td>Kur farkına göre fiyat değişir.</td><td>~30–210</td><td><a href="https://www.mtcgame.com" target="_blank">Git</a></td></tr>
-              <tr><td>Razer Gold</td><td>Razer Gold ile elmas</td><td>Razer Gold bakiyeni MLBB’ye çevirirsin.</td><td>Razer fiyatına göre</td><td><a href="https://gold.razer.com" target="_blank">Git</a></td></tr>
-              <tr><td>Oyun Alışveriş</td><td>Farklı elmas paketleri</td><td>Site içi kampanyalar dönem dönem olur.</td><td>~35–220</td><td><a href="#" target="_blank">Git</a></td></tr>
-
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <p class="kampanya-note">
-        Buradaki kampanya bilgilerinin hepsi örnektir. Gerçek fiyatlar ve indirimler için mutlaka ilgili sitenin sayfasına gitmelisin.
-      </p>
-    </section>
-
     <footer>
       Bu site Mobile Legends oyuncuları için hazırlanmış bağımsız bir fiyat karşılaştırma rehberidir.
     </footer>
@@ -830,17 +795,97 @@
 </div>
 
 <!-- Müzik -->
-<audio id="bg-music" loop><source src="mlbb-music.mp3" type="audio/mpeg"/></audio>
+<audio id="bg-music" loop>
+  <source src="mlbb-music.mp3" type="audio/mpeg"/>
+</audio>
 
 <!-- Go Top -->
 <button id="go-top-btn" class="go-top-btn" title="Anasayfaya dön">↑</button>
+
+<!-- Kampanya 2. ekran -->
+<div id="kampanya-ekran">
+  <div id="kampanya-icerik">
+    <div class="kamp-header">
+      <div>
+        <h2>MLBB Elmas Kampanyaları – Tüm Siteler</h2>
+        <small>Burada tüm sitelerin örnek elmas paketlerini tek ekranda görüyorsun.</small>
+      </div>
+      <button class="btn-ghost" id="btn-kamp-home">🏠 Anasayfa</button>
+    </div>
+
+    <div class="kamp-grid">
+      <!-- Örnek kartlar (statik rehber) -->
+      <div class="kamp-kart">
+        <div class="tag">TR</div>
+        <h3>ByNoGame</h3>
+        <ul>
+          <li>86 Elmas ~ 35 TL</li>
+          <li>172 Elmas ~ 69 TL</li>
+          <li>257+Bonus Elmas ~ 99 TL</li>
+        </ul>
+      </div>
+
+      <div class="kamp-kart">
+        <div class="tag">TR</div>
+        <h3>GameSatış</h3>
+        <ul>
+          <li>86 Elmas ~ 32 TL</li>
+          <li>256 Elmas ~ 92 TL</li>
+          <li>Starlight Pass kodu ~ 149 TL</li>
+        </ul>
+      </div>
+
+      <div class="kamp-kart">
+        <div class="tag">Global</div>
+        <h3>Mtcgame</h3>
+        <ul>
+          <li>Global 100 Elmas ~ 30 TL</li>
+          <li>Global 250 Elmas ~ 69 TL</li>
+          <li>Global 500 Elmas ~ 129 TL</li>
+        </ul>
+      </div>
+
+      <div class="kamp-kart">
+        <div class="tag">TR</div>
+        <h3>Itemsatis</h3>
+        <ul>
+          <li>86 Elmas ~ 34 TL</li>
+          <li>257 Elmas ~ 95 TL</li>
+          <li>Hafta sonu %10 ek indirim kampanyası</li>
+        </ul>
+      </div>
+
+      <div class="kamp-kart">
+        <div class="tag">TR</div>
+        <h3>VatanGame</h3>
+        <ul>
+          <li>86 Elmas ~ 33 TL</li>
+          <li>257 Elmas ~ 93 TL</li>
+          <li>Yeni müşteri kuponu: VATANMLBB</li>
+        </ul>
+      </div>
+
+      <div class="kamp-kart">
+        <div class="tag">TR</div>
+        <h3>Playsultan</h3>
+        <ul>
+          <li>Haftalık Starlight paketi ~ 149 TL</li>
+          <li>Twilight Pass ~ 99 TL</li>
+          <li>Seçili skinlerde %15 indirim</li>
+        </ul>
+      </div>
+
+      <!-- İstersen sonrada buraya yeni kartlar ekleyebilirsin -->
+    </div>
+  </div>
+</div>
 
 <script>
   const navbar=document.getElementById("navbar");
   const goTopBtn=document.getElementById("go-top-btn");
   window.addEventListener("scroll",()=>{
     const offset=window.scrollY||0;
-    document.body.style.backgroundPositionY=-(offset*0.15)+"px";   // parallax
+    document.body.style.backgroundPositionY=-(offset*0.15)+"px";
     if(offset>20) navbar.classList.add("scrolled"); else navbar.classList.remove("scrolled");
     if(offset>200) goTopBtn.classList.add("show"); else goTopBtn.classList.remove("show");
   });
@@ -894,33 +939,48 @@
     if(minRow){ minRow.classList.add("best-row"); minRow.scrollIntoView({behavior:"smooth",block:"center"}); }
   });
 
-  // Fiyatları "canlı yenile" (rehber amaçlı random)
-  const basePrices=getRows().map(r=>({row:r,base:parseFloat(r.getAttribute("data-price"))}));
-  const lastUpdateEl=document.getElementById("last-update");
-  function setLastUpdate(){
-    const now=new Date();
-    lastUpdateEl.textContent="Son güncelleme (örnek): "+now.toLocaleString("tr-TR",{hour12:false});
-  }
-  document.getElementById("btn-refresh").addEventListener("click",()=>{
-    basePrices.forEach(item=>{
-      const factor=0.9+Math.random()*0.2; // % -10 / +10
-      const newPrice=(item.base*factor).toFixed(2);
-      item.row.setAttribute("data-price",newPrice);
-      item.row.children[4].textContent=newPrice;
-    });
-    setLastUpdate();
-  });
-  setLastUpdate();
-
-  // Arama
+  // Filtreler: arama + sunucu + fiyat
   const searchInput=document.getElementById("search-input");
-  searchInput.addEventListener("input",()=>{
-    const q=searchInput.value.toLowerCase().trim();
+  const priceRange=document.getElementById("price-range");
+  const priceRangeValue=document.getElementById("price-range-value");
+  let activeServer="ALL";
+
+  function applyFilters(){
+    const q=(searchInput.value||"").toLowerCase().trim();
+    const maxPrice=parseFloat(priceRange.value||"400");
     getRows().forEach(r=>{
-      const t=r.innerText.toLowerCase();
-      r.style.display=(!q||t.includes(q))?"":"none";
+      const text=r.innerText.toLowerCase();
+      const price=parseFloat(r.getAttribute("data-price")||"0");
+      const srv=r.getAttribute("data-server")||"ALL";
+      const matchesSearch=!q || text.includes(q);
+      const matchesPrice=isNaN(price)?true:price<=maxPrice;
+      const matchesServer=(activeServer==="ALL") || (srv===activeServer);
+      r.style.display=(matchesSearch && matchesPrice && matchesServer)?"":"none";
     });
+  }
+
+  searchInput.addEventListener("input",applyFilters);
+  priceRange.addEventListener("input",()=>{
+    priceRangeValue.textContent=priceRange.value+" TL";
+    applyFilters();
   });
+
+  document.getElementById("filter-all").addEventListener("click",()=>setServerFilter("ALL"));
+  document.getElementById("filter-tr").addEventListener("click",()=>setServerFilter("TR"));
+  document.getElementById("filter-global").addEventListener("click",()=>setServerFilter("GLOBAL"));
+
+  function setServerFilter(val){
+    activeServer=val;
+    document.querySelectorAll(".filter-chip").forEach(chip=>{
+      chip.classList.toggle("active",chip.getAttribute("data-server")===val);
+      if(val==="ALL" && chip.id==="filter-all"){chip.classList.add("active");}
+    });
+    if(val==="ALL"){
+      document.getElementById("filter-tr").classList.remove("active");
+      document.getElementById("filter-global").classList.remove("active");
+    }
+    applyFilters();
+  }
 
   // Favori
   const favKey="mlbb-favorite-site";
@@ -933,7 +993,11 @@
     });
     if(!fav) return;
     const favRow=rows.find(r=>r.getAttribute("data-site")===fav);
-    if(favRow){ favRow.classList.add("fav-row"); const b=favRow.querySelector(".fav-btn"); if(b) b.textContent="★"; tbody.insertBefore(favRow,tbody.firstChild); }
+    if(favRow){
+      favRow.classList.add("fav-row");
+      const b=favRow.querySelector(".fav-btn"); if(b) b.textContent="★";
+      tbody.insertBefore(favRow,tbody.firstChild);
+    }
   }
   function setupFavorites(){
     getRows().forEach(r=>{
@@ -955,7 +1019,7 @@
   let musicOn=false;
   musicBtn.addEventListener("click",async()=>{
     try{
-      if(!musicOn){ music.volume=.45; await music.play(); musicOn=true; musicBtn.textContent="🔊 Müziği Kapat"; }
+      if(!musicOn){ music.volume=.18; await music.play(); musicOn=true; musicBtn.textContent="🔇 Müziği Kapat"; }
       else { music.pause(); musicOn=false; musicBtn.textContent="🎵 Müziği Aç"; }
     }catch(e){ console.log(e); }
   });
@@ -964,41 +1028,16 @@
   const themeToggle=document.getElementById("theme-toggle");
   const themeIcon=document.getElementById("theme-icon");
   const themeText=document.getElementById("theme-text");
-  const themeFlash=document.getElementById("theme-flash");
   function applyTheme(t){
     if(t==="light"){ document.body.classList.add("theme-light"); themeIcon.textContent="☀️"; themeText.textContent="Açık Mod"; }
     else { document.body.classList.remove("theme-light"); themeIcon.textContent="🌙"; themeText.textContent="Koyu Mod"; }
   }
   applyTheme(localStorage.getItem("mlbb-theme")||"dark");
   themeToggle.addEventListener("click",()=>{
-    themeFlash.classList.add("show");
-    setTimeout(()=>themeFlash.classList.remove("show"),300);
     const cur=document.body.classList.contains("theme-light")?"light":"dark";
     const next=cur==="light"?"dark":"light";
     localStorage.setItem("mlbb-theme",next); applyTheme(next);
   });
-
-  // Basit giriş sistemi (yerel)
-  const USER_KEY="mlbb-user-name";
-  const userArea=document.getElementById("user-area");
-  const userInput=document.getElementById("user-name-input");
-  const userBtn=document.getElementById("user-login-btn");
-  function renderUser(){
-    const name=localStorage.getItem(USER_KEY);
-    if(name){
-      userArea.innerHTML="👤 "+name+"<button id='logout-btn' style='margin-left:6px;font-size:11px;padding:3px 8px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);cursor:pointer'>Çıkış</button>";
-      document.getElementById("logout-btn").addEventListener("click",()=>{localStorage.removeItem(USER_KEY);location.reload();});
-    }
-  }
-  if(userBtn){
-    userBtn.addEventListener("click",()=>{
-      const v=userInput.value.trim();
-      if(!v) return;
-      localStorage.setItem(USER_KEY,v);
-      renderUser();
-    });
-  }
-  renderUser();
 
   // Yorumlar + yıldızlı puan
   const commentForm=document.getElementById("comment-form");
@@ -1020,14 +1059,16 @@
   function saveComments(arr){ localStorage.setItem(COMMENT_KEY,JSON.stringify(arr.slice(-50))); }
   function renderComments(){
     const arr=loadComments(); commentListEl.innerHTML="";
-    if(arr.length===0){ const div=document.createElement("div"); div.className="comment-item"; div.textContent="Henüz yorum yok. İlk yorumu sen yaz."; commentListEl.appendChild(div); return; }
+    if(arr.length===0){
+      const div=document.createElement("div"); div.className="comment-item"; div.textContent="Henüz yorum yok. İlk yorumu sen yaz."; commentListEl.appendChild(div); return;
+    }
     arr.forEach((c,idx)=>{
       const item=document.createElement("div"); item.className="comment-item";
       const meta=document.createElement("div"); meta.className="comment-meta";
       const stars="★".repeat(c.stars||0)+"☆".repeat(5-(c.stars||0));
       meta.textContent=(c.name||"Anonim")+(c.server?(" • "+c.server):"")+" • "+(c.time||"")+" • "+stars;
       const del=document.createElement("button"); del.className="del-btn"; del.textContent="Sil";
-      del.addEventListener("click",()=>{ const arr=loadComments(); arr.splice(idx,1); saveComments(arr); renderComments(); });
+      del.addEventListener("click",()=>{ const arr2=loadComments(); arr2.splice(idx,1); saveComments(arr2); renderComments(); });
       const text=document.createElement("div"); text.textContent=c.text;
       item.appendChild(meta); item.appendChild(text); item.appendChild(del); commentListEl.appendChild(item);
     });
@@ -1042,34 +1083,6 @@
     commentForm.reset(); currentStars=0; paintStars(0); renderComments();
   });
 
-  // Sohbet (yerel)
-  const CHAT_KEY="mlbb-chat";
-  const chatBox=document.getElementById("chat-box");
-  const chatForm=document.getElementById("chat-form");
-  const chatInput=document.getElementById("chat-input");
-  function loadChat(){ try{ const raw=localStorage.getItem(CHAT_KEY); return raw?JSON.parse(raw):[] }catch{ return [] } }
-  function saveChat(arr){ localStorage.setItem(CHAT_KEY,JSON.stringify(arr.slice(-80))); }
-  function renderChat(){
-    const arr=loadChat(); chatBox.innerHTML="";
-    if(arr.length===0){ chatBox.textContent="Henüz mesaj yok. İlk mesajı sen yaz."; return; }
-    arr.forEach(msg=>{
-      const div=document.createElement("div");
-      div.className="chat-msg";
-      const meta=document.createElement("div"); meta.className="chat-meta";
-      meta.textContent=(msg.name||"Oyuncu")+": "+msg.time;
-      const txt=document.createElement("div"); txt.textContent=msg.text;
-      div.appendChild(meta); div.appendChild(txt); chatBox.appendChild(div);
-    });
-    chatBox.scrollTop=chatBox.scrollHeight;
-  }
-  chatForm.addEventListener("submit",e=>{
-    e.preventDefault();
-    const text=chatInput.value.trim(); if(!text) return;
-    const name=localStorage.getItem(USER_KEY)||"Oyuncu";
-    const now=new Date(); const timeStr=now.toLocaleTimeString("tr-TR",{hour12:false});
-    const arr=loadChat(); arr.push({name,text,time:timeStr}); saveChat(arr); chatInput.value=""; renderChat();
-  });
-
   // Skin/Paket aç-kapa
   const toggleExtraBtn=document.getElementById("toggle-extra");
   const extraWrap=document.getElementById("extra-prices-wrap");
@@ -1079,54 +1092,55 @@
     if(isOpen){ extraWrap.scrollIntoView({behavior:"smooth",block:"start"}); }
   });
 
-  // Duyuru kartlarını ufak ufak döndür (örnek)
-  const adGrid=document.getElementById("ad-grid");
-  const adMessages=[
-    {tag:"Etkinlik",title:"Hafta Sonu Çift Elmas",text:"Bazı sitelerde bonus elmas çıkabilir, satın almadan önce kontrol et."},
-    {tag:"PvP Öneri",title:"Solo Rank İpuçları",text:"Yüksek ping saatlerinde ranked girmek yerine klasik oyna."},
-    {tag:"Güvenlik",title:"Hesap Bağlama",text:"Hesabını mutlaka Moonton veya sosyal medya ile bağla, çalma riskini azalt."}
-  ];
-  let adIdx=0;
-  setInterval(()=>{
-    const cards=adGrid.querySelectorAll(".ad-card");
-    if(cards.length===0) return;
-    const c=cards[0];
-    const data=adMessages[adIdx];
-    c.querySelector(".ad-tag").textContent=data.tag;
-    c.querySelector("h3").textContent=data.title;
-    c.querySelector("p").textContent=data.text;
-    adIdx=(adIdx+1)%adMessages.length;
-  },12000);
-
-  // 2. ekran: kampanyalar aç/kapa
-  const kampanyaScreen=document.getElementById("kampanyalar-screen");
-  const homeBtn=document.getElementById("btn-home");
+  // Fiyat hücresine tıklayınca kampanya ekranı
+  const kampEkran=document.getElementById("kampanya-ekran");
+  const kampHomeBtn=document.getElementById("btn-kamp-home");
   function openKampanya(){
-    kampanyaScreen.style.display="block";
-    kampanyaScreen.scrollIntoView({behavior:"smooth",block:"start"});
+    kampEkran.style.display="flex";
   }
   function closeKampanya(){
-    kampanyaScreen.style.display="none";
-    document.getElementById("ust").scrollIntoView({behavior:"smooth",block:"start"});
+    kampEkran.style.display="none";
   }
-  // fiyat hücrelerine tıklama
-  function bindPriceClicks(){
-    getRows().forEach(r=>{
-      const priceCell=r.children[4];
-      if(!priceCell) return;
-      priceCell.style.cursor="pointer";
-      priceCell.title="Kampanyaları gör";
+  kampHomeBtn.addEventListener("click",closeKampanya);
+  getRows().forEach(r=>{
+    const priceCell=r.querySelector(".clickable-price");
+    if(priceCell){
       priceCell.addEventListener("click",openKampanya);
-    });
+    }
+  });
+
+  // Basit demo giriş sistemi (localStorage) – gerçek Gmail değil
+  const USER_KEY="mlbb-user-name";
+  const userInfo=document.getElementById("user-info");
+  const loginBtn=document.getElementById("btn-login-demo");
+  const logoutBtn=document.getElementById("btn-logout-demo");
+
+  function applyUser(){
+    const name=localStorage.getItem(USER_KEY);
+    if(name){
+      userInfo.textContent=name;
+      loginBtn.style.display="none";
+      logoutBtn.style.display="inline-block";
+    }else{
+      userInfo.textContent="Misafir";
+      loginBtn.style.display="inline-block";
+      logoutBtn.style.display="none";
+    }
   }
-  bindPriceClicks();
-  homeBtn.addEventListener("click",closeKampanya);
+  loginBtn.addEventListener("click",()=>{
+    const name=prompt("Görünsün istediğin isim (Google yerine şimdilik bu yazılacak):","");
+    if(name){ localStorage.setItem(USER_KEY,name); applyUser(); }
+  });
+  logoutBtn.addEventListener("click",()=>{
+    localStorage.removeItem(USER_KEY); applyUser();
+  });
 
   // İlk yükleme
   colorizeDiscounts();
   setupFavorites();
   renderComments();
-  renderChat();
+  applyFilters();
+  applyUser();
 </script>
 </body>
 </html>
