@@ -596,15 +596,29 @@
   }
 
   // Müzik
-  const musicBtn=document.getElementById("btn-music");
-  const music=document.getElementById("bg-music");
-  let musicOn=false;
-  musicBtn.addEventListener("click",async()=>{
-    try{
-      if(!musicOn){ music.volume=.18; await music.play(); musicOn=true; musicBtn.textContent="🔇 Müziği Kapat"; }
-      else { music.pause(); musicOn=false; musicBtn.textContent="🎵 Müziği Aç"; }
-    }catch(e){ console.log(e); }
-  });
+const musicBtn = document.getElementById("btn-music");
+const music = document.getElementById("bg-music");
+let musicOn = false;
+
+musicBtn.addEventListener("click", async () => {
+  try {
+    if (!musicOn) {
+      music.volume = 0.18;
+      await music.play();
+      musicOn = true;
+      musicBtn.textContent = "🔇 Müziği Kapat";
+    } else {
+      music.pause();
+      musicOn = false;
+      musicBtn.textContent = "🎵 Müziği Aç";
+    }
+  } catch (e) {
+    console.log(e);
+  }
+});
+<audio id="bg-music" loop>
+  <source src="mlbb-music.mp3" type="audio/mpeg">
+</audio>
 
   // Tema
   const themeToggle=document.getElementById("theme-toggle");
