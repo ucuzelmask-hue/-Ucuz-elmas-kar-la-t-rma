@@ -4,27 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- Google Search Console -->
-  <meta name="google-site-verification" content="cBMVg36412TFoCmdCIuRdihzPfZPAyl00LKvJkEz6Jo" />
-
   <title>MLBB Ucuz Elmas | Fiyat Karşılaştırma</title>
 
-  <!-- SEO -->
+  <!-- Canonical (asıl adres) -->
   <link rel="canonical" href="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/"/>
+
+  <!-- Google Site Doğrulama -->
+  <meta name="google-site-verification" content="cBMVg36412TFoCmdCIuRdihzPfZPAyl00LKvJkEz6Jo" />
+
+  <!-- SEO Açıklama -->
   <meta name="description" content="Mobile Legends: Bang Bang ucuz elmas fiyat karşılaştırma rehberi. Türkiye'deki popüler sitelerdeki MLBB elmas fiyatlarını tek ekranda gör.">
-  <meta name="keywords" content="mobile legends, mlbb, ucuz elmas, elmas fiyat, bynogame, dijipin, gamesatış, kabasakal, vatan game, joy alışveriş, perdigital, oyuneks, itemsatis, dunmaplay, xgame, playsell, inovapin, atagame">
+
+  <!-- Geniş SEO Anahtar Kelimeler -->
+  <meta name="keywords" content="mlbb ucuz elmas, mobile legends elmas fiyatları, en ucuz mlbb elmas, bynogame mlbb, gamesatis mlbb, dijipin mlbb, kabasakal mlbb, vatan game mlbb, joy alışveriş mlbb, perdigital mlbb, oyuneks mlbb, mobile legends ucuz elmas satın al, mlbb fiyat karşılaştırma, 2025 mlbb elmas kampanya">
+
   <meta name="author" content="MLBB Fiyat Rehberi">
   <meta name="theme-color" content="#050812"/>
 
-  <!-- OpenGraph -->
-  <meta property="og:title" content="MLBB Ucuz Elmas | Fiyat Karşılaştırma"/>
-  <meta property="og:description" content="Türkiye'deki MLBB elmas fiyatlarını tek ekranda karşılaştır."/>
+  <!-- OpenGraph (WhatsApp / Facebook önizleme) -->
+  <meta property="og:title" content="MLBB Ucuz Elmas | En Güncel Fiyat Karşılaştırma"/>
+  <meta property="og:description" content="Türkiye'deki MLBB elmas fiyatlarını tek ekranda karşılaştır. En uygun satıcıyı saniyeler içinde bul.">
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/"/>
   <meta property="og:image" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/bg-mlbb.webp"/>
 
+  <!-- JSON-LD (Google için yapılandırılmış veri) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"MLBB Ucuz Elmas",
+    "url":"https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/",
+    "description":"MLBB en ucuz elmas fiyatlarını karşılaştır. Türkiye'deki güvenilir satıcıların fiyat listesi tek sayfada.",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/webp" href="bg-mlbb.webp"/>
 
+  <!-- TASARIM / CSS -->
   <style>
     :root{
       --page-bg:rgba(5,6,12,.94);
@@ -51,8 +74,7 @@
       font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       background-image:url("bg-mlbb.webp");
       background-size:cover;background-position:center top;color:var(--text-main);
-      padding:10px;
-      transition:background-color .25s ease,color .25s ease,background-position .25s ease;
+      padding:10px;transition:background-color .25s ease,color .25s ease,background-position .25s ease;
     }
     a{color:var(--accent-blue);text-decoration:none}
     a:hover{text-decoration:underline}
@@ -95,8 +117,8 @@
     .nav-links a{padding:4px 8px;border-radius:999px;background:transparent;border:1px solid transparent;color:var(--text-main);transition:background .15s ease,border .15s ease,transform .12s ease}
     .nav-links a:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);transform:translateY(-1px)}
     .theme-toggle{border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(0,0,0,.2);color:#fff;padding:4px 10px;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:background .15s ease,transform .12s ease,box-shadow .12s ease}
-    .theme-toggle span.icon{font-size:14px}
     .theme-toggle:hover{background:rgba(0,0,0,.4);transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.6)}
+    .theme-toggle span.icon{font-size:14px}
 
     /* Haber bandı */
     .news-ticker{display:flex;align-items:center;gap:8px;padding:6px 18px;font-size:11px;background:rgba(0,0,0,.35);border-bottom:1px solid rgba(255,255,255,.08)}
@@ -186,46 +208,7 @@
     .go-top-btn{position:fixed;right:14px;bottom:18px;width:40px;height:40px;border-radius:50%;border:none;background:linear-gradient(135deg,#0fdc7b,#00aaff);color:#051018;font-size:20px;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:50}
     .go-top-btn.show{display:flex}
 
-    /* Canlı sohbet butonu */
-    .chat-button{
-      position:fixed;left:14px;bottom:18px;width:auto;padding:8px 14px;border-radius:999px;border:none;
-      background:linear-gradient(135deg,#ffb347,#ff5f6d);color:#050812;font-size:13px;cursor:pointer;
-      box-shadow:0 8px 20px rgba(0,0,0,.7);z-index:50
-    }
-
-    /* Detay ekranı (2. sayfa görünümlü) */
-    #detail-screen{
-      position:fixed;inset:0;background:rgba(3,5,14,.9);backdrop-filter:blur(8px);
-      display:none;justify-content:center;align-items:flex-start;padding:18px;z-index:200;
-    }
-    .detail-inner{
-      max-width:1120px;width:100%;background:var(--page-bg);border-radius:18px;
-      box-shadow:0 20px 40px rgba(0,0,0,.9);padding:14px 16px 16px;
-      display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:14px;
-    }
-    .detail-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-    .detail-title{font-size:18px;font-weight:600}
-    .detail-sub{font-size:12px;color:var(--text-sub)}
-    .package-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:8px}
-    .package-card{
-      background:var(--card-bg);border-radius:12px;padding:8px 9px;
-      border:1px solid rgba(255,255,255,.14);font-size:12px;
-    }
-    .package-name{font-weight:600;margin-bottom:2px}
-    .package-price{font-size:13px;margin-bottom:2px;color:var(--accent-yellow)}
-    .package-note{font-size:11px;color:var(--text-sub)}
-    .detail-banner{
-      border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.12);
-      background:radial-gradient(circle at top,#344,#111);display:flex;flex-direction:column;justify-content:space-between;
-    }
-    .detail-banner img{width:100%;display:block;object-fit:cover}
-    .detail-banner-body{padding:8px 10px;font-size:12px;color:var(--text-sub)}
-
     /* Mobil */
-    @media (max-width:900px){
-      #detail-screen{padding:10px}
-      .detail-inner{grid-template-columns:1fr}
-    }
     @media (max-width:600px){
       body{padding:4px}.page{border-radius:12px}
       .navbar{padding:8px 10px}.navbar.scrolled{padding:6px 8px}
@@ -240,7 +223,6 @@
       .section,.ad-section,.comments-section{padding:4px 10px 12px}
       .section-title-row h2{font-size:16px}
       footer{font-size:10px;padding:8px 10px 10px}
-      .chat-button{left:8px;bottom:70px}
     }
   </style>
 </head>
@@ -384,213 +366,77 @@
               </tr>
             </thead>
             <tbody>
-              <!-- Ana siteler + senin eklediklerin -->
-              <tr data-price="349.99" data-discount="22" data-site="ByNoGame" data-site-key="bynogame">
+              <tr data-price="349.99" data-discount="22" data-site="ByNoGame">
                 <td>ByNoGame</td>
                 <td>Güvenilir MLBB TR elmas satış platformu</td>
                 <td><a href="https://www.bynogame.com" target="_blank">Siteye Git</a></td>
                 <td><span class="badge-small">Onaylı Satıcı</span></td>
                 <td>349.99</td><td><del>449.99 TL</del></td><td>%22 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="bynogame">Paketleri Gör</button>
-                </td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="74.99" data-discount="17" data-site="Dijipin" data-site-key="dijipin">
+              <tr data-price="74.99" data-discount="17" data-site="Dijipin">
                 <td>Dijipin</td>
                 <td>Uygun fiyatlı MLBB elmas &amp; kod</td>
                 <td><a href="https://www.dijipin.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
                 <td>74.99</td><td><del>89.99 TL</del></td><td>%17 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="dijipin">Paketleri Gör</button>
-                </td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="16.99" data-discount="11" data-site="GameSatış" data-site-key="gamesatis">
+              <tr data-price="16.99" data-discount="11" data-site="GameSatış">
                 <td>GameSatış</td>
                 <td>Hızlı teslimatlı MLBB elmas &amp; oyun parası</td>
                 <td><a href="https://www.gamesatis.com" target="_blank">Siteye Git</a></td>
                 <td><span class="badge-small">Önerilen</span></td>
                 <td>16.99</td><td><del>21.99 TL</del></td><td>%11 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="gamesatis">Paketleri Gör</button>
-                </td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="57.99" data-discount="14" data-site="Kabasakal Online" data-site-key="kabasakal">
+              <tr data-price="57.99" data-discount="14" data-site="Kabasakal Online">
                 <td>Kabasakal Online</td>
                 <td>MLBB elmas satış sitesi</td>
                 <td><a href="https://www.kabasakalonline.com/" target="_blank">Siteye Git</a></td>
                 <td>-</td>
                 <td>57.99</td><td><del>70.99 TL</del></td><td>%14 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="kabasakal">Paketleri Gör</button>
-                </td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="52.99" data-discount="18" data-site="VatanGame" data-site-key="vatangame">
+              <tr data-price="52.99" data-discount="18" data-site="VatanGame">
                 <td>VatanGame</td>
                 <td>MLBB elmas ve diğer oyun epinleri</td>
                 <td><a href="https://www.vatangame.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
                 <td>52.99</td><td><del>64.99 TL</del></td><td>%18 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="vatangame">Paketleri Gör</button>
-                </td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="59.99" data-discount="14" data-site="Joy Alışveriş" data-site-key="joyalisveris">
+              <tr data-price="59.99" data-discount="14" data-site="Joy Alışveriş">
                 <td>Joy Alışveriş</td>
                 <td>Joy alışveriş üzerinden MLBB elmas</td>
                 <td><a href="https://www.joyalisveris.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
                 <td>59.99</td><td><del>69.99 TL</del></td><td>%14 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="joyalisveris">Paketleri Gör</button>
-                </td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="54.99" data-discount="13" data-site="Perdigital" data-site-key="perdigital">
+              <tr data-price="54.99" data-discount="13" data-site="Perdigital">
                 <td>Perdigital</td>
                 <td>Dijital kod ve MLBB elmas bakiyesi</td>
                 <td><a href="https://www.perdigital.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
                 <td>54.99</td><td><del>62.99 TL</del></td><td>%13 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="perdigital">Paketleri Gör</button>
-                </td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
 
-              <tr data-price="48.99" data-discount="18" data-site="Oyuneks" data-site-key="oyuneks">
+              <tr data-price="48.99" data-discount="18" data-site="Oyuneks">
                 <td>Oyuneks</td>
                 <td>Oyuneks üzerinde MLBB elmas satışı</td>
                 <td><a href="https://www.oyuneks.com" target="_blank">Siteye Git</a></td>
                 <td>-</td>
                 <td>48.99</td><td><del>59.99 TL</del></td><td>%18 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="oyuneks">Paketleri Gör</button>
-                </td>
+                <td>Var <button class="fav-btn" type="button">☆</button></td>
               </tr>
-
-              <!-- Ek siteler (örnek fiyatlar, rehber amaçlı) -->
-              <tr data-price="47.50" data-discount="15" data-site="Itemsatis" data-site-key="itemsatis">
-                <td>ItemSatis</td>
-                <td>Popüler oyunlar için elmas &amp; epin</td>
-                <td><a href="https://www.itemsatis.com" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>47.50</td><td><del>55.90 TL</del></td><td>%15 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="itemsatis">Paketleri Gör</button>
-                </td>
-              </tr>
-
-              <tr data-price="49.90" data-discount="12" data-site="Dunmaplay" data-site-key="dunmaplay">
-                <td>Dunmaplay</td>
-                <td>MLBB ve diğer mobil oyunlar</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>49.90</td><td><del>56.90 TL</del></td><td>%12 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="dunmaplay">Paketleri Gör</button>
-                </td>
-              </tr>
-
-              <tr data-price="46.90" data-discount="10" data-site="XGame" data-site-key="xgame">
-                <td>XGame.com.tr</td>
-                <td>Mobil elmas &amp; hediye kartları</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>46.90</td><td><del>52.90 TL</del></td><td>%10 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="xgame">Paketleri Gör</button>
-                </td>
-              </tr>
-
-              <tr data-price="45.90" data-discount="9" data-site="PlaySell" data-site-key="playsell">
-                <td>PlaySell</td>
-                <td>Oyun içi para ve hesap satışları</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>45.90</td><td><del>50.90 TL</del></td><td>%9 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="playsell">Paketleri Gör</button>
-                </td>
-              </tr>
-
-              <tr data-price="44.90" data-discount="8" data-site="HesapCom" data-site-key="hesap">
-                <td>Hesap.com.tr</td>
-                <td>Hesap ve elmas ürünleri</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>44.90</td><td><del>48.90 TL</del></td><td>%8 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="hesap">Paketleri Gör</button>
-                </td>
-              </tr>
-
-              <tr data-price="43.90" data-discount="7" data-site="Onsrashop" data-site-key="onsra">
-                <td>Onsrashop.com</td>
-                <td>MLBB elmas ve kod</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>43.90</td><td><del>47.90 TL</del></td><td>%7 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="onsra">Paketleri Gör</button>
-                </td>
-              </tr>
-
-              <tr data-price="42.90" data-discount="6" data-site="Eneba" data-site-key="eneba">
-                <td>Eneba</td>
-                <td>Global oyun mağazası</td>
-                <td><a href="https://www.eneba.com" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>42.90</td><td><del>45.90 TL</del></td><td>%6 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="eneba">Paketleri Gör</button>
-                </td>
-              </tr>
-
-              <tr data-price="41.90" data-discount="5" data-site="Inovapin" data-site-key="inovapin">
-                <td>İnovapin</td>
-                <td>TR elmas ve hediye kartı</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>41.90</td><td><del>44.90 TL</del></td><td>%5 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="inovapin">Paketleri Gör</button>
-                </td>
-              </tr>
-
-              <tr data-price="40.90" data-discount="5" data-site="Atagame" data-site-key="atagame">
-                <td>Atagame</td>
-                <td>Oyun epinleri &amp; elmas</td>
-                <td><a href="#" target="_blank">Siteye Git</a></td>
-                <td>-</td>
-                <td>40.90</td><td><del>43.90 TL</del></td><td>%5 İndirim</td>
-                <td>Var
-                  <button class="fav-btn" type="button">☆</button>
-                  <button class="btn btn-secondary btn-small detail-btn" data-site-key="atagame">Paketleri Gör</button>
-                </td>
-              </tr>
-
-              <!-- Daha fazlası için aynı formatta satır ekleyebilirsin -->
             </tbody>
           </table>
         </div>
@@ -655,29 +501,6 @@
   </div>
 </div>
 
-<!-- Fiyat detay ekranı -->
-<div id="detail-screen">
-  <div class="detail-inner">
-    <div>
-      <div class="detail-header">
-        <div>
-          <div class="detail-title" id="detail-title">Site Adı</div>
-          <div class="detail-sub" id="detail-sub">Seçili sitenin MLBB elmas paketleri (örnek veriler)</div>
-        </div>
-        <button id="detail-close" class="btn btn-primary btn-small">← Anasayfaya Dön</button>
-      </div>
-      <div class="package-grid" id="package-grid"></div>
-    </div>
-    <div class="detail-banner">
-      <img src="bg-mlbb.webp" alt="MLBB Banner">
-      <div class="detail-banner-body">
-        Seçtiğin satıcıya ait <strong>örnek</strong> MLBB elmas paketleri burada gösterilir.
-        Gerçek kampanyalar ve fiyatlar için mutlaka ilgili sitenin kendi sayfasını kontrol et.
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- Müzik -->
 <audio id="bg-music" loop>
   <source src="mlbb-music.mp3" type="audio/mpeg"/>
@@ -685,9 +508,6 @@
 
 <!-- Go Top -->
 <button id="go-top-btn" class="go-top-btn" title="Anasayfaya dön">↑</button>
-
-<!-- Canlı sohbet (örnek) -->
-<button id="chat-button" class="chat-button">💬 Canlı Sohbet</button>
 
 <script>
   const navbar=document.getElementById("navbar");
@@ -771,8 +591,7 @@
     const favRow=rows.find(r=>r.getAttribute("data-site")===fav);
     if(favRow){
       favRow.classList.add("fav-row");
-      const b=favRow.querySelector(".fav-btn");
-      if(b) b.textContent="★";
+      const b=favRow.querySelector(".fav-btn"); if(b) b.textContent="★";
       tbody.insertBefore(favRow,tbody.firstChild);
     }
   }
@@ -828,7 +647,8 @@
   themeToggle.addEventListener("click",()=>{
     const cur=document.body.classList.contains("theme-light")?"light":"dark";
     const next=cur==="light"?"dark":"light";
-    localStorage.setItem("mlbb-theme",next); applyTheme(next);
+    localStorage.setItem("mlbb-theme",next);
+    applyTheme(next);
   });
 
   // Yorumlar + yıldızlı puan
@@ -847,10 +667,20 @@
   function paintStars(n){
     [...starWrap.children].forEach((el,i)=>{ el.textContent=(i<n)?"★":"☆"; });
   }
-  function loadComments(){ try{ const raw=localStorage.getItem(COMMENT_KEY); return raw?JSON.parse(raw):[] }catch{ return [] } }
-  function saveComments(arr){ localStorage.setItem(COMMENT_KEY,JSON.stringify(arr.slice(-50))); }
+  function loadComments(){
+    try{
+      const raw=localStorage.getItem(COMMENT_KEY);
+      return raw?JSON.parse(raw):[];
+    }catch{
+      return [];
+    }
+  }
+  function saveComments(arr){
+    localStorage.setItem(COMMENT_KEY,JSON.stringify(arr.slice(-50)));
+  }
   function renderComments(){
-    const arr=loadComments(); commentListEl.innerHTML="";
+    const arr=loadComments();
+    commentListEl.innerHTML="";
     if(arr.length===0){
       const div=document.createElement("div");
       div.className="comment-item";
@@ -864,10 +694,14 @@
       meta.textContent=(c.name||"Anonim")+(c.server?(" • "+c.server):"")+" • "+(c.time||"")+" • "+stars;
       const del=document.createElement("button"); del.className="del-btn"; del.textContent="Sil";
       del.addEventListener("click",()=>{
-        const arr=loadComments(); arr.splice(idx,1); saveComments(arr); renderComments();
+        const arr=loadComments();
+        arr.splice(idx,1);
+        saveComments(arr);
+        renderComments();
       });
       const text=document.createElement("div"); text.textContent=c.text;
-      item.appendChild(meta); item.appendChild(text); item.appendChild(del); commentListEl.appendChild(item);
+      item.appendChild(meta); item.appendChild(text); item.appendChild(del);
+      commentListEl.appendChild(item);
     });
   }
   commentForm.addEventListener("submit",(e)=>{
@@ -875,9 +709,14 @@
     const name=document.getElementById("comment-name").value.trim();
     const server=document.getElementById("comment-server").value.trim();
     const text=document.getElementById("comment-text").value.trim(); if(!text) return;
-    const now=new Date(); const timeStr=now.toLocaleString("tr-TR",{hour12:false});
-    const arr=loadComments(); arr.push({name,server,text,time:timeStr,stars:currentStars}); saveComments(arr);
-    commentForm.reset(); currentStars=0; paintStars(0); renderComments();
+    const now=new Date();
+    const timeStr=now.toLocaleString("tr-TR",{hour12:false});
+    const arr=loadComments();
+    arr.push({name,server,text,time:timeStr,stars:currentStars});
+    saveComments(arr);
+    commentForm.reset();
+    currentStars=0; paintStars(0);
+    renderComments();
   });
 
   // Skin/Paket aç-kapa
@@ -887,126 +726,6 @@
     const isOpen=extraWrap.classList.toggle("open");
     toggleExtraBtn.textContent=isOpen?"🎭 Skin / Paket Fiyatlarını Gizle":"🎭 Skin / Paket Fiyatları";
     if(isOpen){ extraWrap.scrollIntoView({behavior:"smooth",block:"start"}); }
-  });
-
-  // Canlı sohbet (şimdilik uyarı)
-  document.getElementById("chat-button").addEventListener("click",()=>{
-    alert("Bu canlı sohbet düğmesi örnektir.\nGerçek sohbet için buraya Discord / WhatsApp / LiveChat linki ekleyebilirsin.");
-  });
-
-  // Detay ekranı için örnek paket verileri
-  const siteDetails={
-    bynogame:[
-      {name:"86 Elmas",price:"24,99 TL",note:"TR sunucu örnek paket"},
-      {name:"172 Elmas",price:"47,99 TL",note:"Haftalık kampanya"},
-      {name:"257 Elmas",price:"69,99 TL",note:"Bonus elmaslı paket"}
-    ],
-    dijipin:[
-      {name:"78 Elmas",price:"22,99 TL",note:"Dijipin hızlı teslim"},
-      {name:"156 Elmas",price:"42,99 TL",note:"Popüler tercih"},
-      {name:"320 Elmas",price:"82,99 TL",note:"Kampanyalı set"}
-    ],
-    gamesatis:[
-      {name:"50 Elmas",price:"16,99 TL",note:"En düşük giriş paketi"},
-      {name:"250 Elmas",price:"69,90 TL",note:"Sadakat puanı kazandırır"},
-      {name:"500 Elmas",price:"129,90 TL",note:"Ekstra bonuslu"}
-    ],
-    kabasakal:[
-      {name:"96 Elmas",price:"27,99 TL",note:"Standart paket"},
-      {name:"288 Elmas",price:"79,99 TL",note:"Etkinlik dönemi indirimi"}
-    ],
-    vatangame:[
-      {name:"74 Elmas",price:"23,99 TL",note:"Örnek fiyat"},
-      {name:"222 Elmas",price:"69,99 TL",note:"Hafta sonu indirimi"}
-    ],
-    joyalisveris:[
-      {name:"60 Elmas",price:"21,99 TL",note:"Kart ile anında teslim"},
-      {name:"310 Elmas",price:"94,99 TL",note:"Paket içeriğini siteden kontrol et"}
-    ],
-    perdigital:[
-      {name:"85 Elmas",price:"24,99 TL",note:"Dijital kod şeklinde"},
-      {name:"255 Elmas",price:"72,99 TL",note:"Cüzdana kod olarak gelir"}
-    ],
-    oyuneks:[
-      {name:"90 Elmas",price:"25,90 TL",note:"TR sunucu örneği"},
-      {name:"275 Elmas",price:"76,90 TL",note:"Etkinlik dönemine uygun"}
-    ],
-    itemsatis:[
-      {name:"70 Elmas",price:"22,50 TL",note:"Örnek veri"},
-      {name:"210 Elmas",price:"63,50 TL",note:"Toplu alım"}
-    ],
-    dunmaplay:[
-      {name:"60 Elmas",price:"21,90 TL",note:"Örnek veri"},
-      {name:"300 Elmas",price:"94,90 TL",note:"Kampanyalı"}
-    ],
-    xgame:[
-      {name:"65 Elmas",price:"21,90 TL",note:"Global elmas"},
-      {name:"260 Elmas",price:"79,90 TL",note:"Çoklu paket"}
-    ],
-    playsell:[
-      {name:"72 Elmas",price:"22,90 TL",note:"Örnek veri"},
-      {name:"360 Elmas",price:"109,90 TL",note:"İndirimli"}
-    ],
-    hesap:[
-      {name:"80 Elmas",price:"23,90 TL",note:"Hesap bazlı"},
-      {name:"400 Elmas",price:"119,90 TL",note:"Örnek paket"}
-    ],
-    onsra:[
-      {name:"68 Elmas",price:"22,90 TL",note:"Örnek veri"},
-      {name:"340 Elmas",price:"102,90 TL",note:"Kampanyalı"}
-    ],
-    eneba:[
-      {name:"Global 86 Elmas",price:"2,50 €",note:"Global fiyat, TL’ye çevrilir"},
-      {name:"Global 257 Elmas",price:"6,90 €",note:"Kart ile ödeme"}
-    ],
-    inovapin:[
-      {name:"75 Elmas",price:"23,90 TL",note:"TR elmas"},
-      {name:"300 Elmas",price:"89,90 TL",note:"Örnek veri"}
-    ],
-    atagame:[
-      {name:"70 Elmas",price:"22,90 TL",note:"Örnek paket"},
-      {name:"280 Elmas",price:"84,90 TL",note:"Standart set"}
-    ]
-  };
-
-  const detailScreen=document.getElementById("detail-screen");
-  const detailTitle=document.getElementById("detail-title");
-  const packageGrid=document.getElementById("package-grid");
-  function openDetail(siteKey){
-    const list=siteDetails[siteKey]||[];
-    detailTitle.textContent=siteKey?siteKey.toUpperCase()+" – Örnek MLBB Paketleri":"MLBB Elmas Paketleri";
-    packageGrid.innerHTML="";
-    if(list.length===0){
-      const div=document.createElement("div");
-      div.textContent="Bu site için henüz örnek paket eklenmedi. Gerçek fiyatlar için sitenin sayfasına git.";
-      div.style.fontSize="12px";
-      packageGrid.appendChild(div);
-    }else{
-      list.forEach(p=>{
-        const card=document.createElement("div");
-        card.className="package-card";
-        card.innerHTML=
-          '<div class="package-name">'+p.name+'</div>'+
-          '<div class="package-price">'+p.price+'</div>'+
-          '<div class="package-note">'+p.note+'</div>';
-        packageGrid.appendChild(card);
-      });
-    }
-    detailScreen.style.display="flex";
-    document.body.style.overflow="hidden";
-  }
-  function closeDetail(){
-    detailScreen.style.display="none";
-    document.body.style.overflow="";
-  }
-  document.getElementById("detail-close").addEventListener("click",closeDetail);
-  detailScreen.addEventListener("click",e=>{ if(e.target===detailScreen) closeDetail(); });
-
-  document.querySelectorAll(".detail-btn").forEach(btn=>{
-    btn.addEventListener("click",()=>{
-      const key=btn.dataset.siteKey;
-      openDetail(key);
-    });
   });
 
   // İlk yükleme
