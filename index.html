@@ -6,36 +6,30 @@
 
   <title>MLBB Ucuz Elmas | Fiyat Karşılaştırma</title>
 
-  <!-- Canonical (asıl adres) -->
+  <!-- Canonical & Google doğrulama -->
   <link rel="canonical" href="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/"/>
-
-  <!-- Google Site Doğrulama -->
   <meta name="google-site-verification" content="cBMVg36412TFoCmdCIuRdihzPfZPAyl00LKvJkEz6Jo" />
 
-  <!-- SEO Açıklama -->
+  <!-- SEO -->
   <meta name="description" content="Mobile Legends: Bang Bang ucuz elmas fiyat karşılaştırma rehberi. Türkiye'deki popüler sitelerdeki MLBB elmas fiyatlarını tek ekranda gör.">
-
-  <!-- Geniş SEO Anahtar Kelimeler -->
-  <meta name="keywords" content="mlbb ucuz elmas, mobile legends elmas fiyatları, en ucuz mlbb elmas, bynogame mlbb, gamesatis mlbb, dijipin mlbb, kabasakal mlbb, vatan game mlbb, joy alışveriş mlbb, perdigital mlbb, oyuneks mlbb, mobile legends ucuz elmas satın al, mlbb fiyat karşılaştırma, 2025 mlbb elmas kampanya">
-
+  <meta name="keywords" content="mobile legends, mlbb, ucuz elmas, elmas fiyat, bynogame, dijipin, gamesatış, kabasakal, vatan game, joy alışveriş, perdigital, oyuneks">
   <meta name="author" content="MLBB Fiyat Rehberi">
   <meta name="theme-color" content="#050812"/>
 
-  <!-- OpenGraph (WhatsApp / Facebook önizleme) -->
-  <meta property="og:title" content="MLBB Ucuz Elmas | En Güncel Fiyat Karşılaştırma"/>
-  <meta property="og:description" content="Türkiye'deki MLBB elmas fiyatlarını tek ekranda karşılaştır. En uygun satıcıyı saniyeler içinde bul.">
+  <!-- OpenGraph -->
+  <meta property="og:title" content="MLBB Ucuz Elmas | Fiyat Karşılaştırma"/>
+  <meta property="og:description" content="Türkiye'deki MLBB elmas fiyatlarını tek ekranda karşılaştır."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/"/>
   <meta property="og:image" content="https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/bg-mlbb.webp"/>
 
-  <!-- JSON-LD (Google için yapılandırılmış veri) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"WebSite",
     "name":"MLBB Ucuz Elmas",
     "url":"https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/",
-    "description":"MLBB en ucuz elmas fiyatlarını karşılaştır. Türkiye'deki güvenilir satıcıların fiyat listesi tek sayfada.",
     "potentialAction":{
       "@type":"SearchAction",
       "target":"https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/?q={search_term_string}",
@@ -44,10 +38,8 @@
   }
   </script>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/webp" href="bg-mlbb.webp"/>
 
-  <!-- TASARIM / CSS -->
   <style>
     :root{
       --page-bg:rgba(5,6,12,.94);
@@ -360,10 +352,10 @@
         <div class="table-scroll">
           <table id="price-table">
             <thead>
-              <tr>
-                <th>Site Adı</th><th>Açıklama</th><th>Link</th><th>Not</th>
-                <th>Güncel Fiyat (TL)</th><th>Eski Fiyat</th><th>İndirim</th><th>Stok / Favori</th>
-              </tr>
+            <tr>
+              <th>Site Adı</th><th>Açıklama</th><th>Link</th><th>Not</th>
+              <th>Güncel Fiyat (TL)</th><th>Eski Fiyat</th><th>İndirim</th><th>Stok / Favori</th>
+            </tr>
             </thead>
             <tbody>
               <tr data-price="349.99" data-discount="22" data-site="ByNoGame">
@@ -448,7 +440,7 @@
           <div class="table-scroll">
             <table>
               <thead>
-                <tr><th>Site Adı</th><th>Paket / Skin</th><th>Açıklama</th><th>Yaklaşık Fiyat (TL)</th><th>Not</th></tr>
+              <tr><th>Site Adı</th><th>Paket / Skin</th><th>Açıklama</th><th>Yaklaşık Fiyat (TL)</th><th>Not</th></tr>
               </thead>
               <tbody>
                 <tr>
@@ -502,9 +494,7 @@
 </div>
 
 <!-- Müzik -->
-<audio id="bg-music" loop>
-  <source src="mlbb-music.mp3" type="audio/mpeg"/>
-</audio>
+<audio id="bg-music" loop><source src="mlbb-music.mp3" type="audio/mpeg"/></audio>
 
 <!-- Go Top -->
 <button id="go-top-btn" class="go-top-btn" title="Anasayfaya dön">↑</button>
@@ -589,11 +579,7 @@
     });
     if(!fav) return;
     const favRow=rows.find(r=>r.getAttribute("data-site")===fav);
-    if(favRow){
-      favRow.classList.add("fav-row");
-      const b=favRow.querySelector(".fav-btn"); if(b) b.textContent="★";
-      tbody.insertBefore(favRow,tbody.firstChild);
-    }
+    if(favRow){ favRow.classList.add("fav-row"); const b=favRow.querySelector(".fav-btn"); if(b) b.textContent="★"; tbody.insertBefore(favRow,tbody.firstChild); }
   }
   function setupFavorites(){
     getRows().forEach(r=>{
@@ -620,7 +606,7 @@
         await music.play();
         musicOn=true;
         musicBtn.textContent="🔇 Müziği Kapat";
-      }else{
+      } else {
         music.pause();
         musicOn=false;
         musicBtn.textContent="🎵 Müziği Aç";
@@ -635,20 +621,17 @@
   function applyTheme(t){
     if(t==="light"){
       document.body.classList.add("theme-light");
-      themeIcon.textContent="☀️";
-      themeText.textContent="Açık Mod";
-    }else{
+      themeIcon.textContent="☀️"; themeText.textContent="Açık Mod";
+    } else {
       document.body.classList.remove("theme-light");
-      themeIcon.textContent="🌙";
-      themeText.textContent="Koyu Mod";
+      themeIcon.textContent="🌙"; themeText.textContent="Koyu Mod";
     }
   }
   applyTheme(localStorage.getItem("mlbb-theme")||"dark");
   themeToggle.addEventListener("click",()=>{
     const cur=document.body.classList.contains("theme-light")?"light":"dark";
     const next=cur==="light"?"dark":"light";
-    localStorage.setItem("mlbb-theme",next);
-    applyTheme(next);
+    localStorage.setItem("mlbb-theme",next); applyTheme(next);
   });
 
   // Yorumlar + yıldızlı puan
@@ -667,20 +650,10 @@
   function paintStars(n){
     [...starWrap.children].forEach((el,i)=>{ el.textContent=(i<n)?"★":"☆"; });
   }
-  function loadComments(){
-    try{
-      const raw=localStorage.getItem(COMMENT_KEY);
-      return raw?JSON.parse(raw):[];
-    }catch{
-      return [];
-    }
-  }
-  function saveComments(arr){
-    localStorage.setItem(COMMENT_KEY,JSON.stringify(arr.slice(-50)));
-  }
+  function loadComments(){ try{ const raw=localStorage.getItem(COMMENT_KEY); return raw?JSON.parse(raw):[] }catch{ return [] } }
+  function saveComments(arr){ localStorage.setItem(COMMENT_KEY,JSON.stringify(arr.slice(-50))); }
   function renderComments(){
-    const arr=loadComments();
-    commentListEl.innerHTML="";
+    const arr=loadComments(); commentListEl.innerHTML="";
     if(arr.length===0){
       const div=document.createElement("div");
       div.className="comment-item";
@@ -694,10 +667,8 @@
       meta.textContent=(c.name||"Anonim")+(c.server?(" • "+c.server):"")+" • "+(c.time||"")+" • "+stars;
       const del=document.createElement("button"); del.className="del-btn"; del.textContent="Sil";
       del.addEventListener("click",()=>{
-        const arr=loadComments();
-        arr.splice(idx,1);
-        saveComments(arr);
-        renderComments();
+        const arr2=loadComments();
+        arr2.splice(idx,1); saveComments(arr2); renderComments();
       });
       const text=document.createElement("div"); text.textContent=c.text;
       item.appendChild(meta); item.appendChild(text); item.appendChild(del);
@@ -709,14 +680,9 @@
     const name=document.getElementById("comment-name").value.trim();
     const server=document.getElementById("comment-server").value.trim();
     const text=document.getElementById("comment-text").value.trim(); if(!text) return;
-    const now=new Date();
-    const timeStr=now.toLocaleString("tr-TR",{hour12:false});
-    const arr=loadComments();
-    arr.push({name,server,text,time:timeStr,stars:currentStars});
-    saveComments(arr);
-    commentForm.reset();
-    currentStars=0; paintStars(0);
-    renderComments();
+    const now=new Date(); const timeStr=now.toLocaleString("tr-TR",{hour12:false});
+    const arr=loadComments(); arr.push({name,server,text,time:timeStr,stars:currentStars}); saveComments(arr);
+    commentForm.reset(); currentStars=0; paintStars(0); renderComments();
   });
 
   // Skin/Paket aç-kapa
@@ -724,7 +690,8 @@
   const extraWrap=document.getElementById("extra-prices-wrap");
   toggleExtraBtn.addEventListener("click",()=>{
     const isOpen=extraWrap.classList.toggle("open");
-    toggleExtraBtn.textContent=isOpen?"🎭 Skin / Paket Fiyatlarını Gizle":"🎭 Skin / Paket Fiyatları";
+    toggleExtraBtn.textContent=isOpen?
+      "🎭 Skin / Paket Fiyatlarını Gizle":"🎭 Skin / Paket Fiyatları";
     if(isOpen){ extraWrap.scrollIntoView({behavior:"smooth",block:"start"}); }
   });
 
