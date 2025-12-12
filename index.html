@@ -1846,6 +1846,52 @@ logoutBtn.addEventListener("click", () => {
 });
 
 updateLoginUI();
+
+/* ====== LOGIN KONTROL (Favori + Yorum kilidi) ====== */
+function isLoggedIn() {
+  return !!localStorage.getItem("mlbb_user");
+}
+
+function requireLogin(actionText) {
+  alert("Bu işlemi yapmak için önce giriş yapmalısın: " + actionText);
+}
+
+function bindFavoriteLock() {
+  document.querySelectorAll(".fav-btn, .fav, .fav-bar, [data-site]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      if (!isLoggedIn()) {
+        e.preventDefault();
+        e.stopPropagation();
+        requireLogin("Favori");
+        return false;
+      }
+    }, true);
+  });
+}
+
+function bindCommentLock() {
+  const commentForm = document.getElementById("comment-form");
+  if (!commentForm) return;
+
+  commentForm.addEventListener("submit", (e) => {
+    if (!isLoggedIn()) {
+      e.preventDefault();
+      requireLogin("Yorum");
+      return false;
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  bindFavoriteLock();
+  bindCommentLock();
+});
+
+</script>
+
+</body>
+</html>
+
 </script>
 
 </body>
