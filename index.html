@@ -750,6 +750,23 @@
 </head>
 
 <body>
+<!-- Giriş Paneli -->
+<div class="login-card">
+    <div class="login-status" id="login-status">👤 Henüz giriş yapılmadı</div>
+
+    <div class="login-input-row">
+        <input id="login-email" type="text" placeholder="Email" class="input">
+        <input id="login-pass" type="password" placeholder="Şifre" class="input">
+    </div>
+
+    <div class="login-actions">
+        <button id="login-btn" class="btn-green">Giriş Yap</button>
+        <button id="logout-btn" class="btn-red">Çıkış Yap</button>
+    </div>
+
+    <div class="login-note">• Giriş yapanlar favori ekleyebilir ve yorum yazabilir.</div>
+</div>
+
   <div class="page-shell">
     <!-- SOL PANEL -->
     <div class="side-panel side-panel-left">
@@ -1792,6 +1809,45 @@
       });
     });
   </script>
+<script>
+const loginBtn = document.getElementById("login-btn");
+const logoutBtn = document.getElementById("logout-btn");
+const loginStatus = document.getElementById("login-status");
+const emailInput = document.getElementById("login-email");
+const passInput = document.getElementById("login-pass");
+
+function updateLoginUI() {
+  const user = localStorage.getItem("mlbb_user");
+  if (user) {
+    loginStatus.textContent = "✅ Giriş yapıldı: " + user;
+    loginBtn.style.display = "none";
+    logoutBtn.style.display = "inline-block";
+  } else {
+    loginStatus.textContent = "👤 Henüz giriş yapılmadı";
+    loginBtn.style.display = "inline-block";
+    logoutBtn.style.display = "none";
+  }
+}
+
+loginBtn.addEventListener("click", () => {
+  const email = emailInput.value.trim();
+  const pass = passInput.value.trim();
+  if (!email || !pass) {
+    alert("Email ve şifre gir");
+    return;
+  }
+  localStorage.setItem("mlbb_user", email);
+  updateLoginUI();
+});
+
+logoutBtn.addEventListener("click", () => {
+  localStorage.removeItem("mlbb_user");
+  updateLoginUI();
+});
+
+updateLoginUI();
+</script>
+
 </body>
 </html>
 
