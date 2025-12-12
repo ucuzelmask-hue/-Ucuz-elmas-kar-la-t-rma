@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ucuzelmask-hue.github.io/-Ucuz-elmas-kar-la-t-rma/sitemap.xml
