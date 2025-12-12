@@ -1907,10 +1907,88 @@ document.addEventListener("DOMContentLoaded", () => {
     measurementId: "G-CXR57TSH5J"
   };
 
-  // Initialize Firebase
+  // Init
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  // DOM
+  const emailInput = document.getElementById("login-email");
+  const passInput = document.getElementById("login-pass");
+  const loginBtn = document.getElementById("login-btn");
+  const logoutBtn = document.getElementById("logout-btn");
+  const statusEl = document.getElementById("login-status");
+  const googleBtn = document.getElementById("google-btn"); // varsa çalışır
+
+  function setStatus(text) {
+    if (statusEl) statusEl.textContent = text;
+  }
+
+  function updateUI(user) {
+    if (user) {
+      setStatus(`✅ Giriş yapıldı: ${user.email || "Google Kullanıcısı"}`);
+      if (loginBtn) loginBtn.style.display = "none";
+      if (googleBtn) googleBtn.style.display = "none";
+      if (logoutBtn) logoutBtn.style.display = "inline-block";
+    } else {
+      setStatus("⛔ Henüz giriş yapılmadı");
+      if (loginBtn) loginBtn.style.display = "inline-block";
+      if (googleBtn) googleBtn.style.display = "inline-block";
+      if (logoutBtn) logoutBtn.style.display = "none";
+    }
+  }
+
+  // Kullanıcı durumunu canlı takip et
+  onAuthStateChanged(auth, (user) => updateUI(user));
+
+  // Email/Şifre ile giriş (kayıtlıysa giriş yapar, değilse kayıt açar)
+  if (loginBtn) {
+    loginBtn.addEventListener("click", async () => {
+      const email = (emailInput?.value || "").trim();
+      const pass = (passInput?.value || "").trim();
+
+      if (!email || !pass) {
+        alert("Email ve şifre gir");
+        return;
+      }
+
+      try {
+        // Önce giriş dene
+        await signInWithEmailAndPassword(auth, email, pass);
+      } catch (err) {
+        // Kullanıcı yoksa kayıt aç
+        if (err?.code === "auth/user-not-found") {
+          await createUserWithEmailAndPassword(auth, email, pass);
+        } else {
+          alert("Hata: " + (err?.message || err));
+        }
+      }
+    });
+  }
+
+  // Google ile giriş
+  if (googleBtn) {
+    googleBtn.addEventListener("click", async () => {
+      try {
+        await signInWithPopup(auth, provider);
+      } catch (err) {
+        alert("Google giriş hatası: " + (err?.message || err));
+      }
+    });
+  }
+
+  // Çıkış
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", async () => {
+      try {
+        await signOut(auth);
+      } catch (err) {
+        alert("Çıkış hatası: " + (err?.message || err));
+      }
+    });
+  }
 </script>
+
 </body>
 </html>
 
